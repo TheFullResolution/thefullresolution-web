@@ -10,20 +10,20 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@babel/core": "^7.3.4",
-    "gatsby": "^2.1.20",
-    "gatsby-plugin-sass": "^2.0.10",
-    "gatsby-plugin-typescript": "^2.0.10",
+    "@babel/core": "^7.4.3",
+    "gatsby": "^2.3.25",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-typescript": "^2.0.12",
     "node-sass": "^4.11.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "typescript": "^3.3.3333",
-    "webpack": "^4.29.6"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typescript": "^3.4.4",
+    "webpack": "^4.30.0"
   },
   "devDependencies": {
-    "gatsby-plugin-tslint": "^0.0.1",
-    "tslint": "^5.13.1",
+    "gatsby-plugin-tslint": "^0.0.2",
+    "tslint": "^5.16.0",
     "tslint-loader": "^3.5.4",
-    "tslint-react": "^3.6.0"
+    "tslint-react": "^4.0.0"
   }
 }
