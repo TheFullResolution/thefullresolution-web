@@ -6,12 +6,22 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+  - label: "Resume"
+    name: "resume"
+    files:
+      - label: "Dev Experience"
+        name: "dev_experience"
+        file: "_content/dev_experience.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - label: Entry
+            name: entry
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Started, name: started, widget: date}
+              - {label: Finished, name: finished, widget: date}
+              - {label: "Technologies & Tools", name: technologies, widget: 'markdown'}
+              - {label: "Accomplishments", name: accomplishments, widget: 'markdown'}
+
