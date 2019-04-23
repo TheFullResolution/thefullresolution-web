@@ -1,0 +1,45 @@
+{
+  "name": "Jedrzej (Andrew) Lewandowski",
+  "phone": "+31 631 044 555",
+  "email": "lewandowski.jedrzej@gmail.com",
+  "links": [
+    {
+      "name": "github.com/thefullresolution",
+      "url": "https://github.com/TheFullResolution"
+    },
+    {
+      "name": " linkedin.com/in/lewandowskijedrzej",
+      "url": "https://www.linkedin.com/in/lewandowskijedrzej/"
+    }
+  ],
+  "section": [
+    {
+      "title": "Developer Experience",
+      "date_display": "month",
+      "content": [
+        {
+          "started": "2018-07-01T13:49:20.232Z",
+          "position": "Front-End Developer",
+          "technologies": "* JavaScript, React, Redux, Sass\n* Webpack, Git, Gulp\n* Jest, BrowserStack, Cypress",
+          "name": "de Bijenkorf",
+          "url": "https://www.debijenkorf.nl/over-de-bijenkorf",
+          "finished": "2018-11-30T14:49:20.248Z",
+          "accomplishments": "* Rewrote Search component, introducing keyboard support, accessibility and modularizing it, so it can be implemented across different repositories.",
+          "location": "Amsterdam, NL",
+          "description": "A chain of high-end department stores in the Netherlands, with its flagship store on Dam Square in Amsterdam."
+        },
+        {
+          "started": "2017-05-01T13:51:46.857Z",
+          "position": "Front-End Developer",
+          "technologies": "* Typescript, React, Angular 1.5, Redux, Sass\r\n* Webpack, Git, Gulp\r\n* Jest, BrowserStack, Cypress \r\n",
+          "name": "Bleeve BV (GreenHome)",
+          "url": "https://greenhome.nl/over-greenhome",
+          "finished": "2018-06-30T13:51:46.876Z",
+          "accomplishments": "* Implemented end to end testing and integration testing with Cypress and Jest\r\n* Rewrite and transfer of greenhome.nl from Angular 1.5 to React.\r\n* Cooperation with the designer to improve user experience and accessibility of the products.\r\n",
+          "location": "Amsterdam, NL",
+          "description": "An independent marketplace for energy-neutral house improvements, with the competitive advantage of applying e-commerce methods in a traditional industry."
+        }
+      ]
+    }
+  ]
+}
