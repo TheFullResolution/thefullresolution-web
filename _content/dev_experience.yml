@@ -1,0 +1,14 @@
+title: Development Experience
+entry:
+  - accomplishments: >-
+      * Rewrote Search component, introducing keyboard support, accessibility
+      and modularizing it, so it can be implemented across different
+      repositories.
+    finished: 2019-11-30T14:02:24.491Z
+    name: de Bijenkorf
+    position: Front-End Developer
+    started: 2018-07-01T13:02:24.477Z
+    technologies: |-
+      * JavaScript, React, Redux, Sass
+      * Webpack, Git, Gulp
+      * Jest, BrowserStack, Cypress
