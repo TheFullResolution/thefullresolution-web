@@ -20,6 +20,7 @@ collections:
             fields:
               - {label: Name, name: name, widget: string}
               - {label: Position, name: position, widget: string}
+              - {label: Location, name: location, widget: string}
               - {label: Started, name: started, widget: date}
               - {label: Finished, name: finished, widget: date}
               - {label: "Technologies & Tools", name: technologies, widget: 'markdown'}
