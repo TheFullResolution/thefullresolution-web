@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Dev Experience"
         name: "dev_experience"
-        file: "_content/dev_experience.yml"
+        file: "_content/dev_experience.json"
         fields:
           - {label: Title, name: title, widget: string}
           - label: Entry
