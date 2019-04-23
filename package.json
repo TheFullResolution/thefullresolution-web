@@ -10,20 +10,28 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@babel/core": "^7.4.3",
-    "gatsby": "^2.3.25",
-    "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-typescript": "^2.0.12",
-    "node-sass": "^4.11.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "typescript": "^3.4.4",
-    "webpack": "^4.30.0"
+    "@babel/core": "7.4.3",
+    "@mdx-js/mdx": "1.0.14",
+    "@mdx-js/react": "1.0.6",
+    "@mdx-js/tag": "0.20.3",
+    "gatsby": "2.3.25",
+    "gatsby-mdx": "0.6.2",
+    "gatsby-plugin-netlify-cms": "^3.0.18",
+    "gatsby-plugin-sass": "2.0.11",
+    "gatsby-plugin-typescript": "2.0.12",
+    "gatsby-source-filesystem": "^2.0.29",
+    "netlify-cms": "^2.9.1",
+    "node-sass": "4.11.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "typescript": "3.4.4",
+    "webpack": "4.30.0"
   },
   "devDependencies": {
-    "gatsby-plugin-tslint": "^0.0.2",
-    "tslint": "^5.16.0",
-    "tslint-loader": "^3.5.4",
-    "tslint-react": "^4.0.0"
+    "gatsby-plugin-tslint": "0.0.2",
+    "sass": "1.19.0",
+    "tslint": "5.16.0",
+    "tslint-loader": "3.5.4",
+    "tslint-react": "4.0.0"
   }
 }
