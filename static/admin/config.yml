@@ -8,10 +8,10 @@ public_folder: assets
 collections:
   - label: "Resume"
     name: "resume"
-    files:
+    file: "_content/resume.json"
+    fields:
       - label: "Dev Experience"
         name: "dev_experience"
-        file: "_content/dev_experience.json"
         fields:
           - {label: Title, name: title, widget: string}
           - label: Entry
