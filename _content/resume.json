@@ -18,9 +18,19 @@
       "date_display": "month",
       "content": [
         {
+          "name": "Zoover Media B.V.",
+          "url": "https://greatplacefortalent.nl/about-zoover/",
+          "description": "Zoover is a Dutch website that focuses on collecting and sharing reviews about holiday destinations. ",
+          "position": "Front-End Developer",
+          "location": "Amsterdam, NL",
+          "started": "2018-12-01T15:07:09.769Z",
+          "finished": "2019-04-23T14:07:09.792Z",
+          "technologies": "JavaScript and Flow, React, Redux\nJest, Testcafe\n"
+        },
+        {
           "started": "2018-07-01T13:49:20.232Z",
           "position": "Front-End Developer",
-          "technologies": "* JavaScript, React, Redux, Sass\n* Webpack, Git, Gulp\n* Jest, BrowserStack, Cypress",
+          "technologies": "* JavaScript, React, Redux, Sass\n* Jest, BrowserStack, Cypress",
           "name": "de Bijenkorf",
           "url": "https://www.debijenkorf.nl/over-de-bijenkorf",
           "finished": "2018-11-30T14:49:20.248Z",
@@ -31,8 +41,8 @@
         {
           "started": "2017-05-01T13:51:46.857Z",
           "position": "Front-End Developer",
-          "technologies": "* Typescript, React, Angular 1.5, Redux, Sass\r\n* Webpack, Git, Gulp\r\n* Jest, BrowserStack, Cypress \r\n",
-          "name": "Bleeve BV (GreenHome)",
+          "technologies": "* Typescript, React, Angular 1.5, Redux, Sass\r\n* Jest, BrowserStack, Cypress \r\n",
+          "name": "Bleeve B.V. (GreenHome)",
           "url": "https://greenhome.nl/over-greenhome",
           "finished": "2018-06-30T13:51:46.876Z",
           "accomplishments": "* Implemented end to end testing and integration testing with Cypress and Jest\r\n* Rewrite and transfer of greenhome.nl from Angular 1.5 to React.\r\n* Cooperation with the designer to improve user experience and accessibility of the products.\r\n",
