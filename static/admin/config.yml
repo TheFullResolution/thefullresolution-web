@@ -6,23 +6,29 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - label: "Resume"
-    name: "resume"
-    file: "_content/resume.json"
-    fields:
-      - label: "Dev Experience"
-        name: "dev_experience"
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Resume"
+        name: "resume"
+        file: "_content/resume.json"
         fields:
-          - {label: Title, name: title, widget: string}
-          - label: Entry
-            name: entry
+          - label: "Section"
+            name: section
             widget: list
             fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Position, name: position, widget: string}
-              - {label: Location, name: location, widget: string}
-              - {label: Started, name: started, widget: date}
-              - {label: Finished, name: finished, widget: date}
-              - {label: "Technologies & Tools", name: technologies, widget: 'markdown'}
-              - {label: "Accomplishments", name: accomplishments, widget: 'markdown'}
+              - {label: Title, name: title, widget: string}
+              - label: "content"
+                name: content
+                widget: list
+                fields:
+                  - {label: Name, name: name, widget: string}
+                  - {label: Url, name: url, widget: string, required: false}
+                  - {label: Description, name: description, widget: markdown, required: false}
+                  - {label: Position, name: position, widget: string, required: false}
+                  - {label: Location, name: location, widget: string, required: false}
+                  - {label: Started, name: started, widget: date}
+                  - {label: Finished, name: finished, widget: date}
+                  - {label: "Technologies & Tools", name: technologies, widget: markdown, required: false}
+                  - {label: "Accomplishments", name: accomplishments, widget: markdown, required: false}
 
