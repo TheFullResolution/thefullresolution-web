@@ -21,6 +21,7 @@ collections:
             widget: list
             fields:
               - {label: Name, name: name, widget: string}
+              - {label: Label, name: label, widget: string}
               - {label: Url, name: url, widget: string}
           - label: "Section"
             name: section
@@ -36,12 +37,13 @@ collections:
                 widget: list
                 fields:
                   - {label: Name, name: name, widget: string}
-                  - {label: Url, name: url, widget: string, required: false}
-                  - {label: Description, name: description, widget: markdown, required: false}
                   - {label: Position, name: position, widget: string, required: false}
                   - {label: Location, name: location, widget: string, required: false}
+                  - {label: Url, name: url, widget: string, required: false}
+                  - {label: Description, name: description, widget: markdown, required: false}
                   - {label: Started, name: started, widget: date}
-                  - {label: Finished, name: finished, widget: date}
+                  - {label: "Present", name: "present", widget: "boolean", default: false}
+                  - {label: Finished, name: finished, widget: date, required: false}
                   - {label: "Technologies & Tools", name: technologies, widget: markdown, required: false}
                   - {label: "Accomplishments", name: accomplishments, widget: markdown, required: false}
 
