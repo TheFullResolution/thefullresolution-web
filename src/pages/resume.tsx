@@ -36,7 +36,7 @@ const Resume: React.FC<Props> = ({ data }) => {
             }) => (
               <div key={`${name}${position}`}>
                 <h3>
-                  {name} - {position} ({location}){url && <a href={url}>About Page</a>}
+                  {name} - {position} {location && `(${location})`}{url && <a href={url}>About Page</a>}
                 </h3>
                 <p>
                   {formatDate(started, date_display)} -{' '}
