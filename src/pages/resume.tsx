@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
 import { Page } from '../components/Page/Page'
-import { ResumeDataQuery } from '../graphqlTypes'
+import { ResumeDataQuery } from '../graphql-types.d.ts'
 
 interface Props {
   data: ResumeDataQuery;
@@ -42,6 +42,7 @@ export const query = graphql`
           url
           description
           started
+          present
           finished
           technologies
           accomplishments
