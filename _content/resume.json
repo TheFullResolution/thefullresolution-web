@@ -4,11 +4,13 @@
   "email": "lewandowski.jedrzej@gmail.com",
   "links": [
     {
-      "name": "github.com/thefullresolution",
+      "name": "github.com/TheFullResolution",
+      "label": "Github",
       "url": "https://github.com/TheFullResolution"
     },
     {
-      "name": " linkedin.com/in/lewandowskijedrzej",
+      "name": "linkedin.com/in/lewandowskijedrzej/",
+      "label": "Linkedin",
       "url": "https://www.linkedin.com/in/lewandowskijedrzej/"
     }
   ],
@@ -18,14 +20,15 @@
       "date_display": "month",
       "content": [
         {
+          "started": "2018-12-01T15:07:09.769Z",
+          "position": "Front-End Developer",
+          "technologies": "JavaScript and Flow, React, Redux\nJest, Testcafe\n",
           "name": "Zoover Media B.V.",
           "url": "https://greatplacefortalent.nl/about-zoover/",
-          "description": "Zoover is a Dutch website that focuses on collecting and sharing reviews about holiday destinations. ",
-          "position": "Front-End Developer",
+          "finished": "",
           "location": "Amsterdam, NL",
-          "started": "2018-12-01T15:07:09.769Z",
-          "finished": "2019-04-23T14:07:09.792Z",
-          "technologies": "JavaScript and Flow, React, Redux\nJest, Testcafe\n"
+          "present": true,
+          "description": "Zoover is a Dutch website that focuses on collecting and sharing reviews about holiday destinations. "
         },
         {
           "started": "2018-07-01T13:49:20.232Z",
@@ -68,9 +71,9 @@
         },
         {
           "name": "Udacity",
-          "description": "Course for intermediate front-end developers, created together with Google to teach the latest web technologies and standards.",
           "position": "Senior Web Developer Nanodegree",
           "location": "Online Education",
+          "description": "Course for intermediate front-end developers, created together with Google to teach the latest web technologies and standards.",
           "started": "2016-03-31T22:00:00.000Z",
           "finished": "2016-11-29T23:00:00.000Z",
           "technologies": "* Angular 1.5, React, Redux, Sass\r\n* Web Forms, Web Accessibility\r\n",
