@@ -42,7 +42,7 @@ const Resume: React.FC<Props> = ({ data }) => {
                   {formatDate(started, date_display)} -{' '}
                   {present ? 'Present' : formatDate(finished, date_display)}
                 </p>
-                <p>{description}</p>
+               {description && <p>{description}</p>}
                 <div>
                   {technologies && (
                     <div>
