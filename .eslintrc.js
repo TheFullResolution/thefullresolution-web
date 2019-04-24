@@ -19,10 +19,10 @@ module.exports = {
     browser: true,
     node: true,
   },
-  ignorePath: '.eslintignore',
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/camelcase': 'off',
     'react/prop-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',

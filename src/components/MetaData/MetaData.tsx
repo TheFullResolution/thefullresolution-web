@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import { HelmetDataQuery } from '../../graphql-types.d.ts'
+import { HelmetDataQuery } from '../../graphql-types'
 
 export const MetaData: React.FC = () => {
   const { site }: HelmetDataQuery = useStaticQuery(graphql`
@@ -14,15 +14,15 @@ export const MetaData: React.FC = () => {
       }
     }
   `)
-  const { title, description } = site!.siteMetadata!
+  const { title, description } = site.siteMetadata
 
   return (
     <Helmet
-      title={title!}
+      title={title}
       meta={[
         {
           name: 'description',
-          content: description!,
+          content: description,
         },
         {
           name: 'keywords',

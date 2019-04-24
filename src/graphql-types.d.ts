@@ -1,4 +1,4 @@
-export type Maybe<T> = T | null
+export type Maybe<T> = T
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string
@@ -13,31 +13,31 @@ export type Scalars = {
 }
 
 export type BooleanQueryOperatorInput = {
-  eq?: Maybe<Scalars['Boolean']>
-  ne?: Maybe<Scalars['Boolean']>
-  in?: Maybe<Array<Maybe<Scalars['Boolean']>>>
-  nin?: Maybe<Array<Maybe<Scalars['Boolean']>>>
+  readonly eq: Maybe<Scalars['Boolean']>
+  readonly ne: Maybe<Scalars['Boolean']>
+  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Boolean']>>>
+  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Boolean']>>>
 }
 
 export type ContentJson = Node & {
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-  name?: Maybe<Scalars['String']>
-  phone?: Maybe<Scalars['String']>
-  email?: Maybe<Scalars['String']>
-  links?: Maybe<Array<Maybe<ContentJsonLinks>>>
-  section?: Maybe<Array<Maybe<ContentJsonSection>>>
+  readonly id: Scalars['ID']
+  readonly parent: Maybe<Node>
+  readonly children: ReadonlyArray<Node>
+  readonly internal: Internal
+  readonly name: Maybe<Scalars['String']>
+  readonly phone: Maybe<Scalars['String']>
+  readonly email: Maybe<Scalars['String']>
+  readonly links: Maybe<ReadonlyArray<Maybe<ContentJsonLinks>>>
+  readonly section: Maybe<ReadonlyArray<Maybe<ContentJsonSection>>>
 }
 
 export type ContentJsonConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<ContentJsonEdge>
-  nodes: Array<ContentJson>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  group: Array<ContentJsonGroupConnection>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<ContentJsonEdge>
+  readonly nodes: ReadonlyArray<ContentJson>
+  readonly pageInfo: PageInfo
+  readonly distinct: ReadonlyArray<Scalars['String']>
+  readonly group: ReadonlyArray<ContentJsonGroupConnection>
 }
 
 export type ContentJsonConnectionDistinctArgs = {
@@ -45,15 +45,15 @@ export type ContentJsonConnectionDistinctArgs = {
 }
 
 export type ContentJsonConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
   field: ContentJsonFieldsEnum
 }
 
 export type ContentJsonEdge = {
-  next?: Maybe<ContentJson>
-  node: ContentJson
-  previous?: Maybe<ContentJson>
+  readonly next: Maybe<ContentJson>
+  readonly node: ContentJson
+  readonly previous: Maybe<ContentJson>
 }
 
 export enum ContentJsonFieldsEnum {
@@ -167,221 +167,221 @@ export enum ContentJsonFieldsEnum {
 }
 
 export type ContentJsonFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  name?: Maybe<StringQueryOperatorInput>
-  phone?: Maybe<StringQueryOperatorInput>
-  email?: Maybe<StringQueryOperatorInput>
-  links?: Maybe<ContentJsonLinksFilterListInput>
-  section?: Maybe<ContentJsonSectionFilterListInput>
+  readonly id: Maybe<StringQueryOperatorInput>
+  readonly parent: Maybe<NodeFilterInput>
+  readonly children: Maybe<NodeFilterListInput>
+  readonly internal: Maybe<InternalFilterInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly phone: Maybe<StringQueryOperatorInput>
+  readonly email: Maybe<StringQueryOperatorInput>
+  readonly links: Maybe<ContentJsonLinksFilterListInput>
+  readonly section: Maybe<ContentJsonSectionFilterListInput>
 }
 
 export type ContentJsonGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<ContentJsonEdge>
-  nodes: Array<ContentJson>
-  pageInfo: PageInfo
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<ContentJsonEdge>
+  readonly nodes: ReadonlyArray<ContentJson>
+  readonly pageInfo: PageInfo
+  readonly field: Scalars['String']
+  readonly fieldValue: Maybe<Scalars['String']>
 }
 
 export type ContentJsonLinks = {
-  name?: Maybe<Scalars['String']>
-  label?: Maybe<Scalars['String']>
-  url?: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly label: Maybe<Scalars['String']>
+  readonly url: Maybe<Scalars['String']>
 }
 
 export type ContentJsonLinksFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>
-  label?: Maybe<StringQueryOperatorInput>
-  url?: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly label: Maybe<StringQueryOperatorInput>
+  readonly url: Maybe<StringQueryOperatorInput>
 }
 
 export type ContentJsonLinksFilterListInput = {
-  elemMatch?: Maybe<ContentJsonLinksFilterInput>
+  readonly elemMatch: Maybe<ContentJsonLinksFilterInput>
 }
 
 export type ContentJsonSection = {
-  title?: Maybe<Scalars['String']>
-  date_display?: Maybe<Scalars['String']>
-  content?: Maybe<Array<Maybe<ContentJsonSectionContent>>>
+  readonly title: Maybe<Scalars['String']>
+  readonly date_display: Maybe<Scalars['String']>
+  readonly content: Maybe<ReadonlyArray<Maybe<ContentJsonSectionContent>>>
 }
 
 export type ContentJsonSectionContent = {
-  started?: Maybe<Scalars['Date']>
-  position?: Maybe<Scalars['String']>
-  technologies?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
-  url?: Maybe<Scalars['String']>
-  finished?: Maybe<Scalars['Date']>
-  location?: Maybe<Scalars['String']>
-  present?: Maybe<Scalars['Boolean']>
-  description?: Maybe<Scalars['String']>
-  accomplishments?: Maybe<Scalars['String']>
+  readonly started: Maybe<Scalars['Date']>
+  readonly position: Maybe<Scalars['String']>
+  readonly technologies: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly url: Maybe<Scalars['String']>
+  readonly finished: Maybe<Scalars['Date']>
+  readonly location: Maybe<Scalars['String']>
+  readonly present: Maybe<Scalars['Boolean']>
+  readonly description: Maybe<Scalars['String']>
+  readonly accomplishments: Maybe<Scalars['String']>
 }
 
 export type ContentJsonSectionContentStartedArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type ContentJsonSectionContentFinishedArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type ContentJsonSectionContentFilterInput = {
-  started?: Maybe<DateQueryOperatorInput>
-  position?: Maybe<StringQueryOperatorInput>
-  technologies?: Maybe<StringQueryOperatorInput>
-  name?: Maybe<StringQueryOperatorInput>
-  url?: Maybe<StringQueryOperatorInput>
-  finished?: Maybe<DateQueryOperatorInput>
-  location?: Maybe<StringQueryOperatorInput>
-  present?: Maybe<BooleanQueryOperatorInput>
-  description?: Maybe<StringQueryOperatorInput>
-  accomplishments?: Maybe<StringQueryOperatorInput>
+  readonly started: Maybe<DateQueryOperatorInput>
+  readonly position: Maybe<StringQueryOperatorInput>
+  readonly technologies: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly url: Maybe<StringQueryOperatorInput>
+  readonly finished: Maybe<DateQueryOperatorInput>
+  readonly location: Maybe<StringQueryOperatorInput>
+  readonly present: Maybe<BooleanQueryOperatorInput>
+  readonly description: Maybe<StringQueryOperatorInput>
+  readonly accomplishments: Maybe<StringQueryOperatorInput>
 }
 
 export type ContentJsonSectionContentFilterListInput = {
-  elemMatch?: Maybe<ContentJsonSectionContentFilterInput>
+  readonly elemMatch: Maybe<ContentJsonSectionContentFilterInput>
 }
 
 export type ContentJsonSectionFilterInput = {
-  title?: Maybe<StringQueryOperatorInput>
-  date_display?: Maybe<StringQueryOperatorInput>
-  content?: Maybe<ContentJsonSectionContentFilterListInput>
+  readonly title: Maybe<StringQueryOperatorInput>
+  readonly date_display: Maybe<StringQueryOperatorInput>
+  readonly content: Maybe<ContentJsonSectionContentFilterListInput>
 }
 
 export type ContentJsonSectionFilterListInput = {
-  elemMatch?: Maybe<ContentJsonSectionFilterInput>
+  readonly elemMatch: Maybe<ContentJsonSectionFilterInput>
 }
 
 export type ContentJsonSortInput = {
-  fields?: Maybe<Array<Maybe<ContentJsonFieldsEnum>>>
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>
+  readonly fields: Maybe<ReadonlyArray<Maybe<ContentJsonFieldsEnum>>>
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
 }
 
 export type DateQueryOperatorInput = {
-  eq?: Maybe<Scalars['Date']>
-  ne?: Maybe<Scalars['Date']>
-  gt?: Maybe<Scalars['Date']>
-  gte?: Maybe<Scalars['Date']>
-  lt?: Maybe<Scalars['Date']>
-  lte?: Maybe<Scalars['Date']>
-  in?: Maybe<Array<Maybe<Scalars['Date']>>>
-  nin?: Maybe<Array<Maybe<Scalars['Date']>>>
+  readonly eq: Maybe<Scalars['Date']>
+  readonly ne: Maybe<Scalars['Date']>
+  readonly gt: Maybe<Scalars['Date']>
+  readonly gte: Maybe<Scalars['Date']>
+  readonly lt: Maybe<Scalars['Date']>
+  readonly lte: Maybe<Scalars['Date']>
+  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Date']>>>
+  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Date']>>>
 }
 
 export type Directory = Node & {
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-  sourceInstanceName?: Maybe<Scalars['String']>
-  absolutePath?: Maybe<Scalars['String']>
-  relativePath?: Maybe<Scalars['String']>
-  extension?: Maybe<Scalars['String']>
-  size?: Maybe<Scalars['Int']>
-  prettySize?: Maybe<Scalars['String']>
-  modifiedTime?: Maybe<Scalars['Date']>
-  accessTime?: Maybe<Scalars['Date']>
-  changeTime?: Maybe<Scalars['Date']>
-  birthTime?: Maybe<Scalars['Date']>
-  root?: Maybe<Scalars['String']>
-  dir?: Maybe<Scalars['String']>
-  base?: Maybe<Scalars['String']>
-  ext?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
-  relativeDirectory?: Maybe<Scalars['String']>
-  dev?: Maybe<Scalars['Int']>
-  mode?: Maybe<Scalars['Int']>
-  nlink?: Maybe<Scalars['Int']>
-  uid?: Maybe<Scalars['Int']>
-  gid?: Maybe<Scalars['Int']>
-  rdev?: Maybe<Scalars['Int']>
-  blksize?: Maybe<Scalars['Int']>
-  ino?: Maybe<Scalars['Int']>
-  blocks?: Maybe<Scalars['Int']>
-  atimeMs?: Maybe<Scalars['Float']>
-  mtimeMs?: Maybe<Scalars['Float']>
-  ctimeMs?: Maybe<Scalars['Float']>
-  birthtimeMs?: Maybe<Scalars['Float']>
-  atime?: Maybe<Scalars['Date']>
-  mtime?: Maybe<Scalars['Date']>
-  ctime?: Maybe<Scalars['Date']>
-  birthtime?: Maybe<Scalars['Date']>
+  readonly id: Scalars['ID']
+  readonly parent: Maybe<Node>
+  readonly children: ReadonlyArray<Node>
+  readonly internal: Internal
+  readonly sourceInstanceName: Maybe<Scalars['String']>
+  readonly absolutePath: Maybe<Scalars['String']>
+  readonly relativePath: Maybe<Scalars['String']>
+  readonly extension: Maybe<Scalars['String']>
+  readonly size: Maybe<Scalars['Int']>
+  readonly prettySize: Maybe<Scalars['String']>
+  readonly modifiedTime: Maybe<Scalars['Date']>
+  readonly accessTime: Maybe<Scalars['Date']>
+  readonly changeTime: Maybe<Scalars['Date']>
+  readonly birthTime: Maybe<Scalars['Date']>
+  readonly root: Maybe<Scalars['String']>
+  readonly dir: Maybe<Scalars['String']>
+  readonly base: Maybe<Scalars['String']>
+  readonly ext: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly relativeDirectory: Maybe<Scalars['String']>
+  readonly dev: Maybe<Scalars['Int']>
+  readonly mode: Maybe<Scalars['Int']>
+  readonly nlink: Maybe<Scalars['Int']>
+  readonly uid: Maybe<Scalars['Int']>
+  readonly gid: Maybe<Scalars['Int']>
+  readonly rdev: Maybe<Scalars['Int']>
+  readonly blksize: Maybe<Scalars['Int']>
+  readonly ino: Maybe<Scalars['Int']>
+  readonly blocks: Maybe<Scalars['Int']>
+  readonly atimeMs: Maybe<Scalars['Float']>
+  readonly mtimeMs: Maybe<Scalars['Float']>
+  readonly ctimeMs: Maybe<Scalars['Float']>
+  readonly birthtimeMs: Maybe<Scalars['Float']>
+  readonly atime: Maybe<Scalars['Date']>
+  readonly mtime: Maybe<Scalars['Date']>
+  readonly ctime: Maybe<Scalars['Date']>
+  readonly birthtime: Maybe<Scalars['Date']>
 }
 
 export type DirectoryModifiedTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type DirectoryAccessTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type DirectoryChangeTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type DirectoryBirthTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type DirectoryAtimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type DirectoryMtimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type DirectoryCtimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type DirectoryBirthtimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type DirectoryConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<DirectoryEdge>
-  nodes: Array<Directory>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  group: Array<DirectoryGroupConnection>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<DirectoryEdge>
+  readonly nodes: ReadonlyArray<Directory>
+  readonly pageInfo: PageInfo
+  readonly distinct: ReadonlyArray<Scalars['String']>
+  readonly group: ReadonlyArray<DirectoryGroupConnection>
 }
 
 export type DirectoryConnectionDistinctArgs = {
@@ -389,15 +389,15 @@ export type DirectoryConnectionDistinctArgs = {
 }
 
 export type DirectoryConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
   field: DirectoryFieldsEnum
 }
 
 export type DirectoryEdge = {
-  next?: Maybe<Directory>
-  node: Directory
-  previous?: Maybe<Directory>
+  readonly next: Maybe<Directory>
+  readonly node: Directory
+  readonly previous: Maybe<Directory>
 }
 
 export enum DirectoryFieldsEnum {
@@ -523,165 +523,165 @@ export enum DirectoryFieldsEnum {
 }
 
 export type DirectoryFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  sourceInstanceName?: Maybe<StringQueryOperatorInput>
-  absolutePath?: Maybe<StringQueryOperatorInput>
-  relativePath?: Maybe<StringQueryOperatorInput>
-  extension?: Maybe<StringQueryOperatorInput>
-  size?: Maybe<IntQueryOperatorInput>
-  prettySize?: Maybe<StringQueryOperatorInput>
-  modifiedTime?: Maybe<DateQueryOperatorInput>
-  accessTime?: Maybe<DateQueryOperatorInput>
-  changeTime?: Maybe<DateQueryOperatorInput>
-  birthTime?: Maybe<DateQueryOperatorInput>
-  root?: Maybe<StringQueryOperatorInput>
-  dir?: Maybe<StringQueryOperatorInput>
-  base?: Maybe<StringQueryOperatorInput>
-  ext?: Maybe<StringQueryOperatorInput>
-  name?: Maybe<StringQueryOperatorInput>
-  relativeDirectory?: Maybe<StringQueryOperatorInput>
-  dev?: Maybe<IntQueryOperatorInput>
-  mode?: Maybe<IntQueryOperatorInput>
-  nlink?: Maybe<IntQueryOperatorInput>
-  uid?: Maybe<IntQueryOperatorInput>
-  gid?: Maybe<IntQueryOperatorInput>
-  rdev?: Maybe<IntQueryOperatorInput>
-  blksize?: Maybe<IntQueryOperatorInput>
-  ino?: Maybe<IntQueryOperatorInput>
-  blocks?: Maybe<IntQueryOperatorInput>
-  atimeMs?: Maybe<FloatQueryOperatorInput>
-  mtimeMs?: Maybe<FloatQueryOperatorInput>
-  ctimeMs?: Maybe<FloatQueryOperatorInput>
-  birthtimeMs?: Maybe<FloatQueryOperatorInput>
-  atime?: Maybe<DateQueryOperatorInput>
-  mtime?: Maybe<DateQueryOperatorInput>
-  ctime?: Maybe<DateQueryOperatorInput>
-  birthtime?: Maybe<DateQueryOperatorInput>
+  readonly id: Maybe<StringQueryOperatorInput>
+  readonly parent: Maybe<NodeFilterInput>
+  readonly children: Maybe<NodeFilterListInput>
+  readonly internal: Maybe<InternalFilterInput>
+  readonly sourceInstanceName: Maybe<StringQueryOperatorInput>
+  readonly absolutePath: Maybe<StringQueryOperatorInput>
+  readonly relativePath: Maybe<StringQueryOperatorInput>
+  readonly extension: Maybe<StringQueryOperatorInput>
+  readonly size: Maybe<IntQueryOperatorInput>
+  readonly prettySize: Maybe<StringQueryOperatorInput>
+  readonly modifiedTime: Maybe<DateQueryOperatorInput>
+  readonly accessTime: Maybe<DateQueryOperatorInput>
+  readonly changeTime: Maybe<DateQueryOperatorInput>
+  readonly birthTime: Maybe<DateQueryOperatorInput>
+  readonly root: Maybe<StringQueryOperatorInput>
+  readonly dir: Maybe<StringQueryOperatorInput>
+  readonly base: Maybe<StringQueryOperatorInput>
+  readonly ext: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly relativeDirectory: Maybe<StringQueryOperatorInput>
+  readonly dev: Maybe<IntQueryOperatorInput>
+  readonly mode: Maybe<IntQueryOperatorInput>
+  readonly nlink: Maybe<IntQueryOperatorInput>
+  readonly uid: Maybe<IntQueryOperatorInput>
+  readonly gid: Maybe<IntQueryOperatorInput>
+  readonly rdev: Maybe<IntQueryOperatorInput>
+  readonly blksize: Maybe<IntQueryOperatorInput>
+  readonly ino: Maybe<IntQueryOperatorInput>
+  readonly blocks: Maybe<IntQueryOperatorInput>
+  readonly atimeMs: Maybe<FloatQueryOperatorInput>
+  readonly mtimeMs: Maybe<FloatQueryOperatorInput>
+  readonly ctimeMs: Maybe<FloatQueryOperatorInput>
+  readonly birthtimeMs: Maybe<FloatQueryOperatorInput>
+  readonly atime: Maybe<DateQueryOperatorInput>
+  readonly mtime: Maybe<DateQueryOperatorInput>
+  readonly ctime: Maybe<DateQueryOperatorInput>
+  readonly birthtime: Maybe<DateQueryOperatorInput>
 }
 
 export type DirectoryGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<DirectoryEdge>
-  nodes: Array<Directory>
-  pageInfo: PageInfo
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<DirectoryEdge>
+  readonly nodes: ReadonlyArray<Directory>
+  readonly pageInfo: PageInfo
+  readonly field: Scalars['String']
+  readonly fieldValue: Maybe<Scalars['String']>
 }
 
 export type DirectorySortInput = {
-  fields?: Maybe<Array<Maybe<DirectoryFieldsEnum>>>
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>
+  readonly fields: Maybe<ReadonlyArray<Maybe<DirectoryFieldsEnum>>>
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
 }
 
 export type File = Node & {
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-  sourceInstanceName?: Maybe<Scalars['String']>
-  absolutePath?: Maybe<Scalars['String']>
-  relativePath?: Maybe<Scalars['String']>
-  extension?: Maybe<Scalars['String']>
-  size?: Maybe<Scalars['Int']>
-  prettySize?: Maybe<Scalars['String']>
-  modifiedTime?: Maybe<Scalars['Date']>
-  accessTime?: Maybe<Scalars['Date']>
-  changeTime?: Maybe<Scalars['Date']>
-  birthTime?: Maybe<Scalars['Date']>
-  root?: Maybe<Scalars['String']>
-  dir?: Maybe<Scalars['String']>
-  base?: Maybe<Scalars['String']>
-  ext?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
-  relativeDirectory?: Maybe<Scalars['String']>
-  dev?: Maybe<Scalars['Int']>
-  mode?: Maybe<Scalars['Int']>
-  nlink?: Maybe<Scalars['Int']>
-  uid?: Maybe<Scalars['Int']>
-  gid?: Maybe<Scalars['Int']>
-  rdev?: Maybe<Scalars['Int']>
-  blksize?: Maybe<Scalars['Int']>
-  ino?: Maybe<Scalars['Int']>
-  blocks?: Maybe<Scalars['Int']>
-  atimeMs?: Maybe<Scalars['Float']>
-  mtimeMs?: Maybe<Scalars['Float']>
-  ctimeMs?: Maybe<Scalars['Float']>
-  birthtimeMs?: Maybe<Scalars['Float']>
-  atime?: Maybe<Scalars['Date']>
-  mtime?: Maybe<Scalars['Date']>
-  ctime?: Maybe<Scalars['Date']>
-  birthtime?: Maybe<Scalars['Date']>
+  readonly id: Scalars['ID']
+  readonly parent: Maybe<Node>
+  readonly children: ReadonlyArray<Node>
+  readonly internal: Internal
+  readonly sourceInstanceName: Maybe<Scalars['String']>
+  readonly absolutePath: Maybe<Scalars['String']>
+  readonly relativePath: Maybe<Scalars['String']>
+  readonly extension: Maybe<Scalars['String']>
+  readonly size: Maybe<Scalars['Int']>
+  readonly prettySize: Maybe<Scalars['String']>
+  readonly modifiedTime: Maybe<Scalars['Date']>
+  readonly accessTime: Maybe<Scalars['Date']>
+  readonly changeTime: Maybe<Scalars['Date']>
+  readonly birthTime: Maybe<Scalars['Date']>
+  readonly root: Maybe<Scalars['String']>
+  readonly dir: Maybe<Scalars['String']>
+  readonly base: Maybe<Scalars['String']>
+  readonly ext: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly relativeDirectory: Maybe<Scalars['String']>
+  readonly dev: Maybe<Scalars['Int']>
+  readonly mode: Maybe<Scalars['Int']>
+  readonly nlink: Maybe<Scalars['Int']>
+  readonly uid: Maybe<Scalars['Int']>
+  readonly gid: Maybe<Scalars['Int']>
+  readonly rdev: Maybe<Scalars['Int']>
+  readonly blksize: Maybe<Scalars['Int']>
+  readonly ino: Maybe<Scalars['Int']>
+  readonly blocks: Maybe<Scalars['Int']>
+  readonly atimeMs: Maybe<Scalars['Float']>
+  readonly mtimeMs: Maybe<Scalars['Float']>
+  readonly ctimeMs: Maybe<Scalars['Float']>
+  readonly birthtimeMs: Maybe<Scalars['Float']>
+  readonly atime: Maybe<Scalars['Date']>
+  readonly mtime: Maybe<Scalars['Date']>
+  readonly ctime: Maybe<Scalars['Date']>
+  readonly birthtime: Maybe<Scalars['Date']>
   /** Copy file to static directory and return public url to it */
-  publicURL?: Maybe<Scalars['String']>
-  childContentJson?: Maybe<ContentJson>
+  readonly publicURL: Maybe<Scalars['String']>
+  readonly childContentJson: Maybe<ContentJson>
 }
 
 export type FileModifiedTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type FileAccessTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type FileChangeTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type FileBirthTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type FileAtimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type FileMtimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type FileCtimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type FileBirthtimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type FileConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<FileEdge>
-  nodes: Array<File>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  group: Array<FileGroupConnection>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<FileEdge>
+  readonly nodes: ReadonlyArray<File>
+  readonly pageInfo: PageInfo
+  readonly distinct: ReadonlyArray<Scalars['String']>
+  readonly group: ReadonlyArray<FileGroupConnection>
 }
 
 export type FileConnectionDistinctArgs = {
@@ -689,15 +689,15 @@ export type FileConnectionDistinctArgs = {
 }
 
 export type FileConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
   field: FileFieldsEnum
 }
 
 export type FileEdge = {
-  next?: Maybe<File>
-  node: File
-  previous?: Maybe<File>
+  readonly next: Maybe<File>
+  readonly node: File
+  readonly previous: Maybe<File>
 }
 
 export enum FileFieldsEnum {
@@ -824,349 +824,349 @@ export enum FileFieldsEnum {
 }
 
 export type FileFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  sourceInstanceName?: Maybe<StringQueryOperatorInput>
-  absolutePath?: Maybe<StringQueryOperatorInput>
-  relativePath?: Maybe<StringQueryOperatorInput>
-  extension?: Maybe<StringQueryOperatorInput>
-  size?: Maybe<IntQueryOperatorInput>
-  prettySize?: Maybe<StringQueryOperatorInput>
-  modifiedTime?: Maybe<DateQueryOperatorInput>
-  accessTime?: Maybe<DateQueryOperatorInput>
-  changeTime?: Maybe<DateQueryOperatorInput>
-  birthTime?: Maybe<DateQueryOperatorInput>
-  root?: Maybe<StringQueryOperatorInput>
-  dir?: Maybe<StringQueryOperatorInput>
-  base?: Maybe<StringQueryOperatorInput>
-  ext?: Maybe<StringQueryOperatorInput>
-  name?: Maybe<StringQueryOperatorInput>
-  relativeDirectory?: Maybe<StringQueryOperatorInput>
-  dev?: Maybe<IntQueryOperatorInput>
-  mode?: Maybe<IntQueryOperatorInput>
-  nlink?: Maybe<IntQueryOperatorInput>
-  uid?: Maybe<IntQueryOperatorInput>
-  gid?: Maybe<IntQueryOperatorInput>
-  rdev?: Maybe<IntQueryOperatorInput>
-  blksize?: Maybe<IntQueryOperatorInput>
-  ino?: Maybe<IntQueryOperatorInput>
-  blocks?: Maybe<IntQueryOperatorInput>
-  atimeMs?: Maybe<FloatQueryOperatorInput>
-  mtimeMs?: Maybe<FloatQueryOperatorInput>
-  ctimeMs?: Maybe<FloatQueryOperatorInput>
-  birthtimeMs?: Maybe<FloatQueryOperatorInput>
-  atime?: Maybe<DateQueryOperatorInput>
-  mtime?: Maybe<DateQueryOperatorInput>
-  ctime?: Maybe<DateQueryOperatorInput>
-  birthtime?: Maybe<DateQueryOperatorInput>
-  publicURL?: Maybe<StringQueryOperatorInput>
+  readonly id: Maybe<StringQueryOperatorInput>
+  readonly parent: Maybe<NodeFilterInput>
+  readonly children: Maybe<NodeFilterListInput>
+  readonly internal: Maybe<InternalFilterInput>
+  readonly sourceInstanceName: Maybe<StringQueryOperatorInput>
+  readonly absolutePath: Maybe<StringQueryOperatorInput>
+  readonly relativePath: Maybe<StringQueryOperatorInput>
+  readonly extension: Maybe<StringQueryOperatorInput>
+  readonly size: Maybe<IntQueryOperatorInput>
+  readonly prettySize: Maybe<StringQueryOperatorInput>
+  readonly modifiedTime: Maybe<DateQueryOperatorInput>
+  readonly accessTime: Maybe<DateQueryOperatorInput>
+  readonly changeTime: Maybe<DateQueryOperatorInput>
+  readonly birthTime: Maybe<DateQueryOperatorInput>
+  readonly root: Maybe<StringQueryOperatorInput>
+  readonly dir: Maybe<StringQueryOperatorInput>
+  readonly base: Maybe<StringQueryOperatorInput>
+  readonly ext: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly relativeDirectory: Maybe<StringQueryOperatorInput>
+  readonly dev: Maybe<IntQueryOperatorInput>
+  readonly mode: Maybe<IntQueryOperatorInput>
+  readonly nlink: Maybe<IntQueryOperatorInput>
+  readonly uid: Maybe<IntQueryOperatorInput>
+  readonly gid: Maybe<IntQueryOperatorInput>
+  readonly rdev: Maybe<IntQueryOperatorInput>
+  readonly blksize: Maybe<IntQueryOperatorInput>
+  readonly ino: Maybe<IntQueryOperatorInput>
+  readonly blocks: Maybe<IntQueryOperatorInput>
+  readonly atimeMs: Maybe<FloatQueryOperatorInput>
+  readonly mtimeMs: Maybe<FloatQueryOperatorInput>
+  readonly ctimeMs: Maybe<FloatQueryOperatorInput>
+  readonly birthtimeMs: Maybe<FloatQueryOperatorInput>
+  readonly atime: Maybe<DateQueryOperatorInput>
+  readonly mtime: Maybe<DateQueryOperatorInput>
+  readonly ctime: Maybe<DateQueryOperatorInput>
+  readonly birthtime: Maybe<DateQueryOperatorInput>
+  readonly publicURL: Maybe<StringQueryOperatorInput>
 }
 
 export type FileGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<FileEdge>
-  nodes: Array<File>
-  pageInfo: PageInfo
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<FileEdge>
+  readonly nodes: ReadonlyArray<File>
+  readonly pageInfo: PageInfo
+  readonly field: Scalars['String']
+  readonly fieldValue: Maybe<Scalars['String']>
 }
 
 export type FileSortInput = {
-  fields?: Maybe<Array<Maybe<FileFieldsEnum>>>
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>
+  readonly fields: Maybe<ReadonlyArray<Maybe<FileFieldsEnum>>>
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
 }
 
 export type FloatQueryOperatorInput = {
-  eq?: Maybe<Scalars['Float']>
-  ne?: Maybe<Scalars['Float']>
-  gt?: Maybe<Scalars['Float']>
-  gte?: Maybe<Scalars['Float']>
-  lt?: Maybe<Scalars['Float']>
-  lte?: Maybe<Scalars['Float']>
-  in?: Maybe<Array<Maybe<Scalars['Float']>>>
-  nin?: Maybe<Array<Maybe<Scalars['Float']>>>
+  readonly eq: Maybe<Scalars['Float']>
+  readonly ne: Maybe<Scalars['Float']>
+  readonly gt: Maybe<Scalars['Float']>
+  readonly gte: Maybe<Scalars['Float']>
+  readonly lt: Maybe<Scalars['Float']>
+  readonly lte: Maybe<Scalars['Float']>
+  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>
+  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>
 }
 
 export type Internal = {
-  content?: Maybe<Scalars['String']>
-  contentDigest: Scalars['String']
-  description?: Maybe<Scalars['String']>
-  fieldOwners?: Maybe<Array<Maybe<Scalars['String']>>>
-  ignoreType?: Maybe<Scalars['Boolean']>
-  mediaType?: Maybe<Scalars['String']>
-  owner: Scalars['String']
-  type: Scalars['String']
+  readonly content: Maybe<Scalars['String']>
+  readonly contentDigest: Scalars['String']
+  readonly description: Maybe<Scalars['String']>
+  readonly fieldOwners: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
+  readonly ignoreType: Maybe<Scalars['Boolean']>
+  readonly mediaType: Maybe<Scalars['String']>
+  readonly owner: Scalars['String']
+  readonly type: Scalars['String']
 }
 
 export type InternalFilterInput = {
-  content?: Maybe<StringQueryOperatorInput>
-  contentDigest?: Maybe<StringQueryOperatorInput>
-  description?: Maybe<StringQueryOperatorInput>
-  fieldOwners?: Maybe<StringQueryOperatorInput>
-  ignoreType?: Maybe<BooleanQueryOperatorInput>
-  mediaType?: Maybe<StringQueryOperatorInput>
-  owner?: Maybe<StringQueryOperatorInput>
-  type?: Maybe<StringQueryOperatorInput>
+  readonly content: Maybe<StringQueryOperatorInput>
+  readonly contentDigest: Maybe<StringQueryOperatorInput>
+  readonly description: Maybe<StringQueryOperatorInput>
+  readonly fieldOwners: Maybe<StringQueryOperatorInput>
+  readonly ignoreType: Maybe<BooleanQueryOperatorInput>
+  readonly mediaType: Maybe<StringQueryOperatorInput>
+  readonly owner: Maybe<StringQueryOperatorInput>
+  readonly type: Maybe<StringQueryOperatorInput>
 }
 
 export type IntQueryOperatorInput = {
-  eq?: Maybe<Scalars['Int']>
-  ne?: Maybe<Scalars['Int']>
-  gt?: Maybe<Scalars['Int']>
-  gte?: Maybe<Scalars['Int']>
-  lt?: Maybe<Scalars['Int']>
-  lte?: Maybe<Scalars['Int']>
-  in?: Maybe<Array<Maybe<Scalars['Int']>>>
-  nin?: Maybe<Array<Maybe<Scalars['Int']>>>
+  readonly eq: Maybe<Scalars['Int']>
+  readonly ne: Maybe<Scalars['Int']>
+  readonly gt: Maybe<Scalars['Int']>
+  readonly gte: Maybe<Scalars['Int']>
+  readonly lt: Maybe<Scalars['Int']>
+  readonly lte: Maybe<Scalars['Int']>
+  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>
+  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>
 }
 
 /** Node Interface */
 export type Node = {
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
+  readonly id: Scalars['ID']
+  readonly parent: Maybe<Node>
+  readonly children: ReadonlyArray<Node>
+  readonly internal: Internal
 }
 
 export type NodeFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
+  readonly id: Maybe<StringQueryOperatorInput>
+  readonly parent: Maybe<NodeFilterInput>
+  readonly children: Maybe<NodeFilterListInput>
+  readonly internal: Maybe<InternalFilterInput>
 }
 
 export type NodeFilterListInput = {
-  elemMatch?: Maybe<NodeFilterInput>
+  readonly elemMatch: Maybe<NodeFilterInput>
 }
 
 export type PageInfo = {
-  hasNextPage: Scalars['Boolean']
+  readonly hasNextPage: Scalars['Boolean']
 }
 
 export type Query = {
-  file?: Maybe<File>
-  allFile?: Maybe<FileConnection>
-  sitePage?: Maybe<SitePage>
-  allSitePage?: Maybe<SitePageConnection>
-  sitePlugin?: Maybe<SitePlugin>
-  allSitePlugin?: Maybe<SitePluginConnection>
-  site?: Maybe<Site>
-  allSite?: Maybe<SiteConnection>
-  directory?: Maybe<Directory>
-  allDirectory?: Maybe<DirectoryConnection>
-  contentJson?: Maybe<ContentJson>
-  allContentJson?: Maybe<ContentJsonConnection>
+  readonly file: Maybe<File>
+  readonly allFile: Maybe<FileConnection>
+  readonly sitePage: Maybe<SitePage>
+  readonly allSitePage: Maybe<SitePageConnection>
+  readonly sitePlugin: Maybe<SitePlugin>
+  readonly allSitePlugin: Maybe<SitePluginConnection>
+  readonly site: Maybe<Site>
+  readonly allSite: Maybe<SiteConnection>
+  readonly directory: Maybe<Directory>
+  readonly allDirectory: Maybe<DirectoryConnection>
+  readonly contentJson: Maybe<ContentJson>
+  readonly allContentJson: Maybe<ContentJsonConnection>
 }
 
 export type QueryFileArgs = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  sourceInstanceName?: Maybe<StringQueryOperatorInput>
-  absolutePath?: Maybe<StringQueryOperatorInput>
-  relativePath?: Maybe<StringQueryOperatorInput>
-  extension?: Maybe<StringQueryOperatorInput>
-  size?: Maybe<IntQueryOperatorInput>
-  prettySize?: Maybe<StringQueryOperatorInput>
-  modifiedTime?: Maybe<DateQueryOperatorInput>
-  accessTime?: Maybe<DateQueryOperatorInput>
-  changeTime?: Maybe<DateQueryOperatorInput>
-  birthTime?: Maybe<DateQueryOperatorInput>
-  root?: Maybe<StringQueryOperatorInput>
-  dir?: Maybe<StringQueryOperatorInput>
-  base?: Maybe<StringQueryOperatorInput>
-  ext?: Maybe<StringQueryOperatorInput>
-  name?: Maybe<StringQueryOperatorInput>
-  relativeDirectory?: Maybe<StringQueryOperatorInput>
-  dev?: Maybe<IntQueryOperatorInput>
-  mode?: Maybe<IntQueryOperatorInput>
-  nlink?: Maybe<IntQueryOperatorInput>
-  uid?: Maybe<IntQueryOperatorInput>
-  gid?: Maybe<IntQueryOperatorInput>
-  rdev?: Maybe<IntQueryOperatorInput>
-  blksize?: Maybe<IntQueryOperatorInput>
-  ino?: Maybe<IntQueryOperatorInput>
-  blocks?: Maybe<IntQueryOperatorInput>
-  atimeMs?: Maybe<FloatQueryOperatorInput>
-  mtimeMs?: Maybe<FloatQueryOperatorInput>
-  ctimeMs?: Maybe<FloatQueryOperatorInput>
-  birthtimeMs?: Maybe<FloatQueryOperatorInput>
-  atime?: Maybe<DateQueryOperatorInput>
-  mtime?: Maybe<DateQueryOperatorInput>
-  ctime?: Maybe<DateQueryOperatorInput>
-  birthtime?: Maybe<DateQueryOperatorInput>
-  publicURL?: Maybe<StringQueryOperatorInput>
+  id: Maybe<StringQueryOperatorInput>
+  parent: Maybe<NodeFilterInput>
+  children: Maybe<NodeFilterListInput>
+  internal: Maybe<InternalFilterInput>
+  sourceInstanceName: Maybe<StringQueryOperatorInput>
+  absolutePath: Maybe<StringQueryOperatorInput>
+  relativePath: Maybe<StringQueryOperatorInput>
+  extension: Maybe<StringQueryOperatorInput>
+  size: Maybe<IntQueryOperatorInput>
+  prettySize: Maybe<StringQueryOperatorInput>
+  modifiedTime: Maybe<DateQueryOperatorInput>
+  accessTime: Maybe<DateQueryOperatorInput>
+  changeTime: Maybe<DateQueryOperatorInput>
+  birthTime: Maybe<DateQueryOperatorInput>
+  root: Maybe<StringQueryOperatorInput>
+  dir: Maybe<StringQueryOperatorInput>
+  base: Maybe<StringQueryOperatorInput>
+  ext: Maybe<StringQueryOperatorInput>
+  name: Maybe<StringQueryOperatorInput>
+  relativeDirectory: Maybe<StringQueryOperatorInput>
+  dev: Maybe<IntQueryOperatorInput>
+  mode: Maybe<IntQueryOperatorInput>
+  nlink: Maybe<IntQueryOperatorInput>
+  uid: Maybe<IntQueryOperatorInput>
+  gid: Maybe<IntQueryOperatorInput>
+  rdev: Maybe<IntQueryOperatorInput>
+  blksize: Maybe<IntQueryOperatorInput>
+  ino: Maybe<IntQueryOperatorInput>
+  blocks: Maybe<IntQueryOperatorInput>
+  atimeMs: Maybe<FloatQueryOperatorInput>
+  mtimeMs: Maybe<FloatQueryOperatorInput>
+  ctimeMs: Maybe<FloatQueryOperatorInput>
+  birthtimeMs: Maybe<FloatQueryOperatorInput>
+  atime: Maybe<DateQueryOperatorInput>
+  mtime: Maybe<DateQueryOperatorInput>
+  ctime: Maybe<DateQueryOperatorInput>
+  birthtime: Maybe<DateQueryOperatorInput>
+  publicURL: Maybe<StringQueryOperatorInput>
 }
 
 export type QueryAllFileArgs = {
-  filter?: Maybe<FileFilterInput>
-  sort?: Maybe<FileSortInput>
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  filter: Maybe<FileFilterInput>
+  sort: Maybe<FileSortInput>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
 }
 
 export type QuerySitePageArgs = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  path?: Maybe<StringQueryOperatorInput>
-  jsonName?: Maybe<StringQueryOperatorInput>
-  internalComponentName?: Maybe<StringQueryOperatorInput>
-  component?: Maybe<StringQueryOperatorInput>
-  componentChunkName?: Maybe<StringQueryOperatorInput>
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
-  pluginCreator?: Maybe<SitePluginFilterInput>
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>
-  componentPath?: Maybe<StringQueryOperatorInput>
+  id: Maybe<StringQueryOperatorInput>
+  parent: Maybe<NodeFilterInput>
+  children: Maybe<NodeFilterListInput>
+  internal: Maybe<InternalFilterInput>
+  path: Maybe<StringQueryOperatorInput>
+  jsonName: Maybe<StringQueryOperatorInput>
+  internalComponentName: Maybe<StringQueryOperatorInput>
+  component: Maybe<StringQueryOperatorInput>
+  componentChunkName: Maybe<StringQueryOperatorInput>
+  isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>
+  pluginCreator: Maybe<SitePluginFilterInput>
+  pluginCreatorId: Maybe<StringQueryOperatorInput>
+  componentPath: Maybe<StringQueryOperatorInput>
 }
 
 export type QueryAllSitePageArgs = {
-  filter?: Maybe<SitePageFilterInput>
-  sort?: Maybe<SitePageSortInput>
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  filter: Maybe<SitePageFilterInput>
+  sort: Maybe<SitePageSortInput>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
 }
 
 export type QuerySitePluginArgs = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  resolve?: Maybe<StringQueryOperatorInput>
-  name?: Maybe<StringQueryOperatorInput>
-  version?: Maybe<StringQueryOperatorInput>
-  pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>
-  nodeAPIs?: Maybe<StringQueryOperatorInput>
-  browserAPIs?: Maybe<StringQueryOperatorInput>
-  ssrAPIs?: Maybe<StringQueryOperatorInput>
-  pluginFilepath?: Maybe<StringQueryOperatorInput>
-  packageJson?: Maybe<SitePluginPackageJsonFilterInput>
+  id: Maybe<StringQueryOperatorInput>
+  parent: Maybe<NodeFilterInput>
+  children: Maybe<NodeFilterListInput>
+  internal: Maybe<InternalFilterInput>
+  resolve: Maybe<StringQueryOperatorInput>
+  name: Maybe<StringQueryOperatorInput>
+  version: Maybe<StringQueryOperatorInput>
+  pluginOptions: Maybe<SitePluginPluginOptionsFilterInput>
+  nodeAPIs: Maybe<StringQueryOperatorInput>
+  browserAPIs: Maybe<StringQueryOperatorInput>
+  ssrAPIs: Maybe<StringQueryOperatorInput>
+  pluginFilepath: Maybe<StringQueryOperatorInput>
+  packageJson: Maybe<SitePluginPackageJsonFilterInput>
 }
 
 export type QueryAllSitePluginArgs = {
-  filter?: Maybe<SitePluginFilterInput>
-  sort?: Maybe<SitePluginSortInput>
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  filter: Maybe<SitePluginFilterInput>
+  sort: Maybe<SitePluginSortInput>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
 }
 
 export type QuerySiteArgs = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>
-  port?: Maybe<IntQueryOperatorInput>
-  host?: Maybe<StringQueryOperatorInput>
-  pathPrefix?: Maybe<StringQueryOperatorInput>
-  polyfill?: Maybe<BooleanQueryOperatorInput>
-  buildTime?: Maybe<DateQueryOperatorInput>
+  id: Maybe<StringQueryOperatorInput>
+  parent: Maybe<NodeFilterInput>
+  children: Maybe<NodeFilterListInput>
+  internal: Maybe<InternalFilterInput>
+  siteMetadata: Maybe<SiteSiteMetadataFilterInput>
+  port: Maybe<IntQueryOperatorInput>
+  host: Maybe<StringQueryOperatorInput>
+  pathPrefix: Maybe<StringQueryOperatorInput>
+  polyfill: Maybe<BooleanQueryOperatorInput>
+  buildTime: Maybe<DateQueryOperatorInput>
 }
 
 export type QueryAllSiteArgs = {
-  filter?: Maybe<SiteFilterInput>
-  sort?: Maybe<SiteSortInput>
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  filter: Maybe<SiteFilterInput>
+  sort: Maybe<SiteSortInput>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
 }
 
 export type QueryDirectoryArgs = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  sourceInstanceName?: Maybe<StringQueryOperatorInput>
-  absolutePath?: Maybe<StringQueryOperatorInput>
-  relativePath?: Maybe<StringQueryOperatorInput>
-  extension?: Maybe<StringQueryOperatorInput>
-  size?: Maybe<IntQueryOperatorInput>
-  prettySize?: Maybe<StringQueryOperatorInput>
-  modifiedTime?: Maybe<DateQueryOperatorInput>
-  accessTime?: Maybe<DateQueryOperatorInput>
-  changeTime?: Maybe<DateQueryOperatorInput>
-  birthTime?: Maybe<DateQueryOperatorInput>
-  root?: Maybe<StringQueryOperatorInput>
-  dir?: Maybe<StringQueryOperatorInput>
-  base?: Maybe<StringQueryOperatorInput>
-  ext?: Maybe<StringQueryOperatorInput>
-  name?: Maybe<StringQueryOperatorInput>
-  relativeDirectory?: Maybe<StringQueryOperatorInput>
-  dev?: Maybe<IntQueryOperatorInput>
-  mode?: Maybe<IntQueryOperatorInput>
-  nlink?: Maybe<IntQueryOperatorInput>
-  uid?: Maybe<IntQueryOperatorInput>
-  gid?: Maybe<IntQueryOperatorInput>
-  rdev?: Maybe<IntQueryOperatorInput>
-  blksize?: Maybe<IntQueryOperatorInput>
-  ino?: Maybe<IntQueryOperatorInput>
-  blocks?: Maybe<IntQueryOperatorInput>
-  atimeMs?: Maybe<FloatQueryOperatorInput>
-  mtimeMs?: Maybe<FloatQueryOperatorInput>
-  ctimeMs?: Maybe<FloatQueryOperatorInput>
-  birthtimeMs?: Maybe<FloatQueryOperatorInput>
-  atime?: Maybe<DateQueryOperatorInput>
-  mtime?: Maybe<DateQueryOperatorInput>
-  ctime?: Maybe<DateQueryOperatorInput>
-  birthtime?: Maybe<DateQueryOperatorInput>
+  id: Maybe<StringQueryOperatorInput>
+  parent: Maybe<NodeFilterInput>
+  children: Maybe<NodeFilterListInput>
+  internal: Maybe<InternalFilterInput>
+  sourceInstanceName: Maybe<StringQueryOperatorInput>
+  absolutePath: Maybe<StringQueryOperatorInput>
+  relativePath: Maybe<StringQueryOperatorInput>
+  extension: Maybe<StringQueryOperatorInput>
+  size: Maybe<IntQueryOperatorInput>
+  prettySize: Maybe<StringQueryOperatorInput>
+  modifiedTime: Maybe<DateQueryOperatorInput>
+  accessTime: Maybe<DateQueryOperatorInput>
+  changeTime: Maybe<DateQueryOperatorInput>
+  birthTime: Maybe<DateQueryOperatorInput>
+  root: Maybe<StringQueryOperatorInput>
+  dir: Maybe<StringQueryOperatorInput>
+  base: Maybe<StringQueryOperatorInput>
+  ext: Maybe<StringQueryOperatorInput>
+  name: Maybe<StringQueryOperatorInput>
+  relativeDirectory: Maybe<StringQueryOperatorInput>
+  dev: Maybe<IntQueryOperatorInput>
+  mode: Maybe<IntQueryOperatorInput>
+  nlink: Maybe<IntQueryOperatorInput>
+  uid: Maybe<IntQueryOperatorInput>
+  gid: Maybe<IntQueryOperatorInput>
+  rdev: Maybe<IntQueryOperatorInput>
+  blksize: Maybe<IntQueryOperatorInput>
+  ino: Maybe<IntQueryOperatorInput>
+  blocks: Maybe<IntQueryOperatorInput>
+  atimeMs: Maybe<FloatQueryOperatorInput>
+  mtimeMs: Maybe<FloatQueryOperatorInput>
+  ctimeMs: Maybe<FloatQueryOperatorInput>
+  birthtimeMs: Maybe<FloatQueryOperatorInput>
+  atime: Maybe<DateQueryOperatorInput>
+  mtime: Maybe<DateQueryOperatorInput>
+  ctime: Maybe<DateQueryOperatorInput>
+  birthtime: Maybe<DateQueryOperatorInput>
 }
 
 export type QueryAllDirectoryArgs = {
-  filter?: Maybe<DirectoryFilterInput>
-  sort?: Maybe<DirectorySortInput>
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  filter: Maybe<DirectoryFilterInput>
+  sort: Maybe<DirectorySortInput>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
 }
 
 export type QueryContentJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  name?: Maybe<StringQueryOperatorInput>
-  phone?: Maybe<StringQueryOperatorInput>
-  email?: Maybe<StringQueryOperatorInput>
-  links?: Maybe<ContentJsonLinksFilterListInput>
-  section?: Maybe<ContentJsonSectionFilterListInput>
+  id: Maybe<StringQueryOperatorInput>
+  parent: Maybe<NodeFilterInput>
+  children: Maybe<NodeFilterListInput>
+  internal: Maybe<InternalFilterInput>
+  name: Maybe<StringQueryOperatorInput>
+  phone: Maybe<StringQueryOperatorInput>
+  email: Maybe<StringQueryOperatorInput>
+  links: Maybe<ContentJsonLinksFilterListInput>
+  section: Maybe<ContentJsonSectionFilterListInput>
 }
 
 export type QueryAllContentJsonArgs = {
-  filter?: Maybe<ContentJsonFilterInput>
-  sort?: Maybe<ContentJsonSortInput>
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  filter: Maybe<ContentJsonFilterInput>
+  sort: Maybe<ContentJsonSortInput>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
 }
 
 export type Site = Node & {
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-  siteMetadata?: Maybe<SiteSiteMetadata>
-  port?: Maybe<Scalars['Int']>
-  host?: Maybe<Scalars['String']>
-  pathPrefix?: Maybe<Scalars['String']>
-  polyfill?: Maybe<Scalars['Boolean']>
-  buildTime?: Maybe<Scalars['Date']>
+  readonly id: Scalars['ID']
+  readonly parent: Maybe<Node>
+  readonly children: ReadonlyArray<Node>
+  readonly internal: Internal
+  readonly siteMetadata: Maybe<SiteSiteMetadata>
+  readonly port: Maybe<Scalars['Int']>
+  readonly host: Maybe<Scalars['String']>
+  readonly pathPrefix: Maybe<Scalars['String']>
+  readonly polyfill: Maybe<Scalars['Boolean']>
+  readonly buildTime: Maybe<Scalars['Date']>
 }
 
 export type SiteBuildTimeArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
+  formatString: Maybe<Scalars['String']>
+  fromNow: Maybe<Scalars['Boolean']>
+  difference: Maybe<Scalars['String']>
+  locale: Maybe<Scalars['String']>
 }
 
 export type SiteConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SiteEdge>
-  nodes: Array<Site>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  group: Array<SiteGroupConnection>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<SiteEdge>
+  readonly nodes: ReadonlyArray<Site>
+  readonly pageInfo: PageInfo
+  readonly distinct: ReadonlyArray<Scalars['String']>
+  readonly group: ReadonlyArray<SiteGroupConnection>
 }
 
 export type SiteConnectionDistinctArgs = {
@@ -1174,15 +1174,15 @@ export type SiteConnectionDistinctArgs = {
 }
 
 export type SiteConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
   field: SiteFieldsEnum
 }
 
 export type SiteEdge = {
-  next?: Maybe<Site>
-  node: Site
-  previous?: Maybe<Site>
+  readonly next: Maybe<Site>
+  readonly node: Site
+  readonly previous: Maybe<Site>
 }
 
 export enum SiteFieldsEnum {
@@ -1285,50 +1285,50 @@ export enum SiteFieldsEnum {
 }
 
 export type SiteFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>
-  port?: Maybe<IntQueryOperatorInput>
-  host?: Maybe<StringQueryOperatorInput>
-  pathPrefix?: Maybe<StringQueryOperatorInput>
-  polyfill?: Maybe<BooleanQueryOperatorInput>
-  buildTime?: Maybe<DateQueryOperatorInput>
+  readonly id: Maybe<StringQueryOperatorInput>
+  readonly parent: Maybe<NodeFilterInput>
+  readonly children: Maybe<NodeFilterListInput>
+  readonly internal: Maybe<InternalFilterInput>
+  readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>
+  readonly port: Maybe<IntQueryOperatorInput>
+  readonly host: Maybe<StringQueryOperatorInput>
+  readonly pathPrefix: Maybe<StringQueryOperatorInput>
+  readonly polyfill: Maybe<BooleanQueryOperatorInput>
+  readonly buildTime: Maybe<DateQueryOperatorInput>
 }
 
 export type SiteGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SiteEdge>
-  nodes: Array<Site>
-  pageInfo: PageInfo
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<SiteEdge>
+  readonly nodes: ReadonlyArray<Site>
+  readonly pageInfo: PageInfo
+  readonly field: Scalars['String']
+  readonly fieldValue: Maybe<Scalars['String']>
 }
 
 export type SitePage = Node & {
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-  path?: Maybe<Scalars['String']>
-  jsonName?: Maybe<Scalars['String']>
-  internalComponentName?: Maybe<Scalars['String']>
-  component?: Maybe<Scalars['String']>
-  componentChunkName?: Maybe<Scalars['String']>
-  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>
-  pluginCreator?: Maybe<SitePlugin>
-  pluginCreatorId?: Maybe<Scalars['String']>
-  componentPath?: Maybe<Scalars['String']>
+  readonly id: Scalars['ID']
+  readonly parent: Maybe<Node>
+  readonly children: ReadonlyArray<Node>
+  readonly internal: Internal
+  readonly path: Maybe<Scalars['String']>
+  readonly jsonName: Maybe<Scalars['String']>
+  readonly internalComponentName: Maybe<Scalars['String']>
+  readonly component: Maybe<Scalars['String']>
+  readonly componentChunkName: Maybe<Scalars['String']>
+  readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>
+  readonly pluginCreator: Maybe<SitePlugin>
+  readonly pluginCreatorId: Maybe<Scalars['String']>
+  readonly componentPath: Maybe<Scalars['String']>
 }
 
 export type SitePageConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SitePageEdge>
-  nodes: Array<SitePage>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  group: Array<SitePageGroupConnection>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<SitePageEdge>
+  readonly nodes: ReadonlyArray<SitePage>
+  readonly pageInfo: PageInfo
+  readonly distinct: ReadonlyArray<Scalars['String']>
+  readonly group: ReadonlyArray<SitePageGroupConnection>
 }
 
 export type SitePageConnectionDistinctArgs = {
@@ -1336,15 +1336,15 @@ export type SitePageConnectionDistinctArgs = {
 }
 
 export type SitePageConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
   field: SitePageFieldsEnum
 }
 
 export type SitePageEdge = {
-  next?: Maybe<SitePage>
-  node: SitePage
-  previous?: Maybe<SitePage>
+  readonly next: Maybe<SitePage>
+  readonly node: SitePage
+  readonly previous: Maybe<SitePage>
 }
 
 export enum SitePageFieldsEnum {
@@ -1515,58 +1515,58 @@ export enum SitePageFieldsEnum {
 }
 
 export type SitePageFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  path?: Maybe<StringQueryOperatorInput>
-  jsonName?: Maybe<StringQueryOperatorInput>
-  internalComponentName?: Maybe<StringQueryOperatorInput>
-  component?: Maybe<StringQueryOperatorInput>
-  componentChunkName?: Maybe<StringQueryOperatorInput>
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
-  pluginCreator?: Maybe<SitePluginFilterInput>
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>
-  componentPath?: Maybe<StringQueryOperatorInput>
+  readonly id: Maybe<StringQueryOperatorInput>
+  readonly parent: Maybe<NodeFilterInput>
+  readonly children: Maybe<NodeFilterListInput>
+  readonly internal: Maybe<InternalFilterInput>
+  readonly path: Maybe<StringQueryOperatorInput>
+  readonly jsonName: Maybe<StringQueryOperatorInput>
+  readonly internalComponentName: Maybe<StringQueryOperatorInput>
+  readonly component: Maybe<StringQueryOperatorInput>
+  readonly componentChunkName: Maybe<StringQueryOperatorInput>
+  readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>
+  readonly pluginCreator: Maybe<SitePluginFilterInput>
+  readonly pluginCreatorId: Maybe<StringQueryOperatorInput>
+  readonly componentPath: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePageGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SitePageEdge>
-  nodes: Array<SitePage>
-  pageInfo: PageInfo
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<SitePageEdge>
+  readonly nodes: ReadonlyArray<SitePage>
+  readonly pageInfo: PageInfo
+  readonly field: Scalars['String']
+  readonly fieldValue: Maybe<Scalars['String']>
 }
 
 export type SitePageSortInput = {
-  fields?: Maybe<Array<Maybe<SitePageFieldsEnum>>>
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>
+  readonly fields: Maybe<ReadonlyArray<Maybe<SitePageFieldsEnum>>>
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
 }
 
 export type SitePlugin = Node & {
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-  resolve?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
-  version?: Maybe<Scalars['String']>
-  pluginOptions?: Maybe<SitePluginPluginOptions>
-  nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>
-  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>
-  ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>
-  pluginFilepath?: Maybe<Scalars['String']>
-  packageJson?: Maybe<SitePluginPackageJson>
+  readonly id: Scalars['ID']
+  readonly parent: Maybe<Node>
+  readonly children: ReadonlyArray<Node>
+  readonly internal: Internal
+  readonly resolve: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly version: Maybe<Scalars['String']>
+  readonly pluginOptions: Maybe<SitePluginPluginOptions>
+  readonly nodeAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
+  readonly browserAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
+  readonly ssrAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
+  readonly pluginFilepath: Maybe<Scalars['String']>
+  readonly packageJson: Maybe<SitePluginPackageJson>
 }
 
 export type SitePluginConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SitePluginEdge>
-  nodes: Array<SitePlugin>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  group: Array<SitePluginGroupConnection>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<SitePluginEdge>
+  readonly nodes: ReadonlyArray<SitePlugin>
+  readonly pageInfo: PageInfo
+  readonly distinct: ReadonlyArray<Scalars['String']>
+  readonly group: ReadonlyArray<SitePluginGroupConnection>
 }
 
 export type SitePluginConnectionDistinctArgs = {
@@ -1574,15 +1574,15 @@ export type SitePluginConnectionDistinctArgs = {
 }
 
 export type SitePluginConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
   field: SitePluginFieldsEnum
 }
 
 export type SitePluginEdge = {
-  next?: Maybe<SitePlugin>
-  node: SitePlugin
-  previous?: Maybe<SitePlugin>
+  readonly next: Maybe<SitePlugin>
+  readonly node: SitePlugin
+  readonly previous: Maybe<SitePlugin>
 }
 
 export enum SitePluginFieldsEnum {
@@ -1707,172 +1707,184 @@ export enum SitePluginFieldsEnum {
 }
 
 export type SitePluginFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-  resolve?: Maybe<StringQueryOperatorInput>
-  name?: Maybe<StringQueryOperatorInput>
-  version?: Maybe<StringQueryOperatorInput>
-  pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>
-  nodeAPIs?: Maybe<StringQueryOperatorInput>
-  browserAPIs?: Maybe<StringQueryOperatorInput>
-  ssrAPIs?: Maybe<StringQueryOperatorInput>
-  pluginFilepath?: Maybe<StringQueryOperatorInput>
-  packageJson?: Maybe<SitePluginPackageJsonFilterInput>
+  readonly id: Maybe<StringQueryOperatorInput>
+  readonly parent: Maybe<NodeFilterInput>
+  readonly children: Maybe<NodeFilterListInput>
+  readonly internal: Maybe<InternalFilterInput>
+  readonly resolve: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly version: Maybe<StringQueryOperatorInput>
+  readonly pluginOptions: Maybe<SitePluginPluginOptionsFilterInput>
+  readonly nodeAPIs: Maybe<StringQueryOperatorInput>
+  readonly browserAPIs: Maybe<StringQueryOperatorInput>
+  readonly ssrAPIs: Maybe<StringQueryOperatorInput>
+  readonly pluginFilepath: Maybe<StringQueryOperatorInput>
+  readonly packageJson: Maybe<SitePluginPackageJsonFilterInput>
 }
 
 export type SitePluginGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SitePluginEdge>
-  nodes: Array<SitePlugin>
-  pageInfo: PageInfo
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<SitePluginEdge>
+  readonly nodes: ReadonlyArray<SitePlugin>
+  readonly pageInfo: PageInfo
+  readonly field: Scalars['String']
+  readonly fieldValue: Maybe<Scalars['String']>
 }
 
 export type SitePluginPackageJson = {
-  name?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  version?: Maybe<Scalars['String']>
-  main?: Maybe<Scalars['String']>
-  license?: Maybe<Scalars['String']>
-  dependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDependencies>>>
-  devDependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDevDependencies>>>
-  peerDependencies?: Maybe<Array<Maybe<SitePluginPackageJsonPeerDependencies>>>
-  keywords?: Maybe<Array<Maybe<Scalars['String']>>>
+  readonly name: Maybe<Scalars['String']>
+  readonly description: Maybe<Scalars['String']>
+  readonly version: Maybe<Scalars['String']>
+  readonly main: Maybe<Scalars['String']>
+  readonly license: Maybe<Scalars['String']>
+  readonly dependencies: Maybe<
+    ReadonlyArray<Maybe<SitePluginPackageJsonDependencies>>
+  >
+  readonly devDependencies: Maybe<
+    ReadonlyArray<Maybe<SitePluginPackageJsonDevDependencies>>
+  >
+  readonly peerDependencies: Maybe<
+    ReadonlyArray<Maybe<SitePluginPackageJsonPeerDependencies>>
+  >
+  readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
 }
 
 export type SitePluginPackageJsonDependencies = {
-  name?: Maybe<Scalars['String']>
-  version?: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly version: Maybe<Scalars['String']>
 }
 
 export type SitePluginPackageJsonDependenciesFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>
-  version?: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly version: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePluginPackageJsonDependenciesFilterListInput = {
-  elemMatch?: Maybe<SitePluginPackageJsonDependenciesFilterInput>
+  readonly elemMatch: Maybe<SitePluginPackageJsonDependenciesFilterInput>
 }
 
 export type SitePluginPackageJsonDevDependencies = {
-  name?: Maybe<Scalars['String']>
-  version?: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly version: Maybe<Scalars['String']>
 }
 
 export type SitePluginPackageJsonDevDependenciesFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>
-  version?: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly version: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePluginPackageJsonDevDependenciesFilterListInput = {
-  elemMatch?: Maybe<SitePluginPackageJsonDevDependenciesFilterInput>
+  readonly elemMatch: Maybe<SitePluginPackageJsonDevDependenciesFilterInput>
 }
 
 export type SitePluginPackageJsonFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>
-  description?: Maybe<StringQueryOperatorInput>
-  version?: Maybe<StringQueryOperatorInput>
-  main?: Maybe<StringQueryOperatorInput>
-  license?: Maybe<StringQueryOperatorInput>
-  dependencies?: Maybe<SitePluginPackageJsonDependenciesFilterListInput>
-  devDependencies?: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>
-  peerDependencies?: Maybe<SitePluginPackageJsonPeerDependenciesFilterListInput>
-  keywords?: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly description: Maybe<StringQueryOperatorInput>
+  readonly version: Maybe<StringQueryOperatorInput>
+  readonly main: Maybe<StringQueryOperatorInput>
+  readonly license: Maybe<StringQueryOperatorInput>
+  readonly dependencies: Maybe<SitePluginPackageJsonDependenciesFilterListInput>
+  readonly devDependencies: Maybe<
+    SitePluginPackageJsonDevDependenciesFilterListInput
+  >
+  readonly peerDependencies: Maybe<
+    SitePluginPackageJsonPeerDependenciesFilterListInput
+  >
+  readonly keywords: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePluginPackageJsonPeerDependencies = {
-  name?: Maybe<Scalars['String']>
-  version?: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly version: Maybe<Scalars['String']>
 }
 
 export type SitePluginPackageJsonPeerDependenciesFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>
-  version?: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly version: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
-  elemMatch?: Maybe<SitePluginPackageJsonPeerDependenciesFilterInput>
+  readonly elemMatch: Maybe<SitePluginPackageJsonPeerDependenciesFilterInput>
 }
 
 export type SitePluginPluginOptions = {
-  implementation?: Maybe<SitePluginPluginOptionsImplementation>
-  data?: Maybe<Scalars['String']>
-  includePaths?: Maybe<Array<Maybe<Scalars['String']>>>
-  pathToConfigModule?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
-  path?: Maybe<Scalars['String']>
-  stages?: Maybe<Array<Maybe<Scalars['String']>>>
-  options?: Maybe<SitePluginPluginOptionsOptions>
-  pathCheck?: Maybe<Scalars['Boolean']>
+  readonly implementation: Maybe<SitePluginPluginOptionsImplementation>
+  readonly data: Maybe<Scalars['String']>
+  readonly includePaths: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
+  readonly pathToConfigModule: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly path: Maybe<Scalars['String']>
+  readonly stages: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
+  readonly options: Maybe<SitePluginPluginOptionsOptions>
+  readonly pathCheck: Maybe<Scalars['Boolean']>
 }
 
 export type SitePluginPluginOptionsFilterInput = {
-  implementation?: Maybe<SitePluginPluginOptionsImplementationFilterInput>
-  data?: Maybe<StringQueryOperatorInput>
-  includePaths?: Maybe<StringQueryOperatorInput>
-  pathToConfigModule?: Maybe<StringQueryOperatorInput>
-  name?: Maybe<StringQueryOperatorInput>
-  path?: Maybe<StringQueryOperatorInput>
-  stages?: Maybe<StringQueryOperatorInput>
-  options?: Maybe<SitePluginPluginOptionsOptionsFilterInput>
-  pathCheck?: Maybe<BooleanQueryOperatorInput>
+  readonly implementation: Maybe<
+    SitePluginPluginOptionsImplementationFilterInput
+  >
+  readonly data: Maybe<StringQueryOperatorInput>
+  readonly includePaths: Maybe<StringQueryOperatorInput>
+  readonly pathToConfigModule: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly path: Maybe<StringQueryOperatorInput>
+  readonly stages: Maybe<StringQueryOperatorInput>
+  readonly options: Maybe<SitePluginPluginOptionsOptionsFilterInput>
+  readonly pathCheck: Maybe<BooleanQueryOperatorInput>
 }
 
 export type SitePluginPluginOptionsImplementation = {
-  info?: Maybe<Scalars['String']>
+  readonly info: Maybe<Scalars['String']>
 }
 
 export type SitePluginPluginOptionsImplementationFilterInput = {
-  info?: Maybe<StringQueryOperatorInput>
+  readonly info: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePluginPluginOptionsOptions = {
-  emitWarning?: Maybe<Scalars['Boolean']>
-  failOnError?: Maybe<Scalars['Boolean']>
+  readonly emitWarning: Maybe<Scalars['Boolean']>
+  readonly failOnError: Maybe<Scalars['Boolean']>
 }
 
 export type SitePluginPluginOptionsOptionsFilterInput = {
-  emitWarning?: Maybe<BooleanQueryOperatorInput>
-  failOnError?: Maybe<BooleanQueryOperatorInput>
+  readonly emitWarning: Maybe<BooleanQueryOperatorInput>
+  readonly failOnError: Maybe<BooleanQueryOperatorInput>
 }
 
 export type SitePluginSortInput = {
-  fields?: Maybe<Array<Maybe<SitePluginFieldsEnum>>>
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>
+  readonly fields: Maybe<ReadonlyArray<Maybe<SitePluginFieldsEnum>>>
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
 }
 
 export type SiteSiteMetadata = {
-  title?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  menuLinks?: Maybe<Array<Maybe<SiteSiteMetadataMenuLinks>>>
+  readonly title: Maybe<Scalars['String']>
+  readonly description: Maybe<Scalars['String']>
+  readonly menuLinks: Maybe<ReadonlyArray<Maybe<SiteSiteMetadataMenuLinks>>>
 }
 
 export type SiteSiteMetadataFilterInput = {
-  title?: Maybe<StringQueryOperatorInput>
-  description?: Maybe<StringQueryOperatorInput>
-  menuLinks?: Maybe<SiteSiteMetadataMenuLinksFilterListInput>
+  readonly title: Maybe<StringQueryOperatorInput>
+  readonly description: Maybe<StringQueryOperatorInput>
+  readonly menuLinks: Maybe<SiteSiteMetadataMenuLinksFilterListInput>
 }
 
 export type SiteSiteMetadataMenuLinks = {
-  name?: Maybe<Scalars['String']>
-  link?: Maybe<Scalars['String']>
+  readonly name: Maybe<Scalars['String']>
+  readonly link: Maybe<Scalars['String']>
 }
 
 export type SiteSiteMetadataMenuLinksFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>
-  link?: Maybe<StringQueryOperatorInput>
+  readonly name: Maybe<StringQueryOperatorInput>
+  readonly link: Maybe<StringQueryOperatorInput>
 }
 
 export type SiteSiteMetadataMenuLinksFilterListInput = {
-  elemMatch?: Maybe<SiteSiteMetadataMenuLinksFilterInput>
+  readonly elemMatch: Maybe<SiteSiteMetadataMenuLinksFilterInput>
 }
 
 export type SiteSortInput = {
-  fields?: Maybe<Array<Maybe<SiteFieldsEnum>>>
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>
+  readonly fields: Maybe<ReadonlyArray<Maybe<SiteFieldsEnum>>>
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
 }
 
 export enum SortOrderEnum {
@@ -1881,27 +1893,27 @@ export enum SortOrderEnum {
 }
 
 export type StringQueryOperatorInput = {
-  eq?: Maybe<Scalars['String']>
-  ne?: Maybe<Scalars['String']>
-  in?: Maybe<Array<Maybe<Scalars['String']>>>
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>
-  regex?: Maybe<Scalars['String']>
-  glob?: Maybe<Scalars['String']>
+  readonly eq: Maybe<Scalars['String']>
+  readonly ne: Maybe<Scalars['String']>
+  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
+  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>
+  readonly regex: Maybe<Scalars['String']>
+  readonly glob: Maybe<Scalars['String']>
 }
 export type SiteLinksDataQueryVariables = {}
 
-export type SiteLinksDataQuery = { __typename?: 'Query' } & {
-  site: Maybe<
-    { __typename?: 'Site' } & {
-      siteMetadata: Maybe<
-        { __typename?: 'SiteSiteMetadata' } & Pick<
+export type SiteLinksDataQuery = { readonly __typename?: 'Query' } & {
+  readonly site: Maybe<
+    { readonly __typename?: 'Site' } & {
+      readonly siteMetadata: Maybe<
+        { readonly __typename?: 'SiteSiteMetadata' } & Pick<
           SiteSiteMetadata,
           'title'
         > & {
-            menuLinks: Maybe<
-              Array<
+            readonly menuLinks: Maybe<
+              ReadonlyArray<
                 Maybe<
-                  { __typename?: 'SiteSiteMetadataMenuLinks' } & Pick<
+                  { readonly __typename?: 'SiteSiteMetadataMenuLinks' } & Pick<
                     SiteSiteMetadataMenuLinks,
                     'name' | 'link'
                   >
@@ -1916,11 +1928,11 @@ export type SiteLinksDataQuery = { __typename?: 'Query' } & {
 
 export type HelmetDataQueryVariables = {}
 
-export type HelmetDataQuery = { __typename?: 'Query' } & {
-  site: Maybe<
-    { __typename?: 'Site' } & {
-      siteMetadata: Maybe<
-        { __typename?: 'SiteSiteMetadata' } & Pick<
+export type HelmetDataQuery = { readonly __typename?: 'Query' } & {
+  readonly site: Maybe<
+    { readonly __typename?: 'Site' } & {
+      readonly siteMetadata: Maybe<
+        { readonly __typename?: 'SiteSiteMetadata' } & Pick<
           SiteSiteMetadata,
           'title' | 'description'
         >
@@ -1931,33 +1943,35 @@ export type HelmetDataQuery = { __typename?: 'Query' } & {
 
 export type ResumeDataQueryVariables = {}
 
-export type ResumeDataQuery = { __typename?: 'Query' } & {
-  contentJson: Maybe<
-    { __typename?: 'ContentJson' } & Pick<
+export type ResumeDataQuery = { readonly __typename?: 'Query' } & {
+  readonly contentJson: Maybe<
+    { readonly __typename?: 'ContentJson' } & Pick<
       ContentJson,
       'name' | 'phone' | 'email'
     > & {
-        links: Maybe<
-          Array<
+        readonly links: Maybe<
+          ReadonlyArray<
             Maybe<
-              { __typename?: 'ContentJsonLinks' } & Pick<
+              { readonly __typename?: 'ContentJsonLinks' } & Pick<
                 ContentJsonLinks,
                 'name' | 'url'
               >
             >
           >
         >
-        section: Maybe<
-          Array<
+        readonly section: Maybe<
+          ReadonlyArray<
             Maybe<
-              { __typename?: 'ContentJsonSection' } & Pick<
+              { readonly __typename?: 'ContentJsonSection' } & Pick<
                 ContentJsonSection,
                 'title' | 'date_display'
               > & {
-                  content: Maybe<
-                    Array<
+                  readonly content: Maybe<
+                    ReadonlyArray<
                       Maybe<
-                        { __typename?: 'ContentJsonSectionContent' } & Pick<
+                        {
+                          readonly __typename?: 'ContentJsonSectionContent'
+                        } & Pick<
                           ContentJsonSectionContent,
                           | 'name'
                           | 'position'
