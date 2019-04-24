@@ -1830,10 +1830,53 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars["String"]>;
   glob?: Maybe<Scalars["String"]>;
 };
-export type ResumeQueryVariables = {};
+export type ResumeDataQueryVariables = {};
 
-export type ResumeQuery = { __typename?: "Query" } & {
+export type ResumeDataQuery = { __typename?: "Query" } & {
   contentJson: Maybe<
-    { __typename?: "ContentJson" } & Pick<ContentJson, "name">
+    { __typename?: "ContentJson" } & Pick<
+      ContentJson,
+      "name" | "phone" | "email"
+    > & {
+        links: Maybe<
+          Array<
+            Maybe<
+              { __typename?: "ContentJsonLinks" } & Pick<
+                ContentJsonLinks,
+                "name" | "url"
+              >
+            >
+          >
+        >;
+        section: Maybe<
+          Array<
+            Maybe<
+              { __typename?: "ContentJsonSection" } & Pick<
+                ContentJsonSection,
+                "title" | "date_display"
+              > & {
+                  content: Maybe<
+                    Array<
+                      Maybe<
+                        { __typename?: "ContentJsonSectionContent" } & Pick<
+                          ContentJsonSectionContent,
+                          | "name"
+                          | "position"
+                          | "location"
+                          | "url"
+                          | "description"
+                          | "started"
+                          | "finished"
+                          | "technologies"
+                          | "accomplishments"
+                        >
+                      >
+                    >
+                  >;
+                }
+            >
+          >
+        >;
+      }
   >;
 };

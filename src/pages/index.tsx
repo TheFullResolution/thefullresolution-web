@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Page } from '../components/Page/Page';
+import * as React from 'react'
+import { Page } from '../components/Page/Page'
 
 const HomePage: React.FC = () => (
   <Page>
@@ -13,6 +13,6 @@ const HomePage: React.FC = () => (
       non vel molestie.
     </p>
   </Page>
-);
+)
 
-export default HomePage;
+export default HomePage
