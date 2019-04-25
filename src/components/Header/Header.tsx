@@ -1,8 +1,8 @@
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-import * as styles from './Header.module.scss'
 
-import { useStaticQuery, Link, graphql } from 'gatsby'
 import { SiteLinksDataQuery } from '../../graphql-types'
+import * as styles from './Header.module.scss'
 
 export const Header: React.FC = () => {
   const { site }: SiteLinksDataQuery = useStaticQuery(graphql`
