@@ -28,7 +28,6 @@ module.exports = {
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,6 +35,7 @@ module.exports = {
         path: `${__dirname}/_content`,
       },
     },
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-eslint`,
       options: {

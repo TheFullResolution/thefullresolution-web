@@ -4,17 +4,15 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { HelmetDataQuery } from '../../graphql-types'
 
 export const MetaData: React.FC = () => {
-  const { site }: HelmetDataQuery = useStaticQuery(graphql`
+  const data: HelmetDataQuery = useStaticQuery(graphql`
     query HelmetData {
-      site {
-        siteMetadata {
+      contentJson {
           title
           description
         }
-      }
     }
   `)
-  const { title, description } = site.siteMetadata
+  const { title, description } = data.contentJson
 
   return (
     <Helmet

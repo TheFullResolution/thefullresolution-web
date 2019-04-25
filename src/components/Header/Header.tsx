@@ -9,19 +9,19 @@ export const Header: React.FC = () => {
     query SiteLinksData {
       site {
         siteMetadata {
-          title
           menuLinks {
             name
             link
           }
         }
       }
+
     }
   `)
 
   return (
     <header className={styles.wrapper}>
-      <h1>{site.siteMetadata.title}</h1>
+      {/* <h1>{site.siteMetadata}</h1> */}
       <nav>
         {site.siteMetadata.menuLinks.map(link => (
           <Link key={link.name} to={link.link}>

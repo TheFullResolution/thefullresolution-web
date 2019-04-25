@@ -29,6 +29,8 @@ export type ContentJson = Node & {
   readonly email: Maybe<Scalars['String']>
   readonly links: Maybe<ReadonlyArray<Maybe<ContentJsonLinks>>>
   readonly section: Maybe<ReadonlyArray<Maybe<ContentJsonSection>>>
+  readonly title: Maybe<Scalars['String']>
+  readonly description: Maybe<Scalars['String']>
 }
 
 export type ContentJsonConnection = {
@@ -164,6 +166,8 @@ export enum ContentJsonFieldsEnum {
   SectionContentPresent = 'section___content___present',
   SectionContentDescription = 'section___content___description',
   SectionContentAccomplishments = 'section___content___accomplishments',
+  Title = 'title',
+  Description = 'description',
 }
 
 export type ContentJsonFilterInput = {
@@ -176,6 +180,8 @@ export type ContentJsonFilterInput = {
   readonly email: Maybe<StringQueryOperatorInput>
   readonly links: Maybe<ContentJsonLinksFilterListInput>
   readonly section: Maybe<ContentJsonSectionFilterListInput>
+  readonly title: Maybe<StringQueryOperatorInput>
+  readonly description: Maybe<StringQueryOperatorInput>
 }
 
 export type ContentJsonGroupConnection = {
@@ -1131,6 +1137,8 @@ export type QueryContentJsonArgs = {
   email: Maybe<StringQueryOperatorInput>
   links: Maybe<ContentJsonLinksFilterListInput>
   section: Maybe<ContentJsonSectionFilterListInput>
+  title: Maybe<StringQueryOperatorInput>
+  description: Maybe<StringQueryOperatorInput>
 }
 
 export type QueryAllContentJsonArgs = {
@@ -1272,8 +1280,6 @@ export enum SiteFieldsEnum {
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
-  SiteMetadataTitle = 'siteMetadata___title',
-  SiteMetadataDescription = 'siteMetadata___description',
   SiteMetadataMenuLinks = 'siteMetadata___menuLinks',
   SiteMetadataMenuLinksName = 'siteMetadata___menuLinks___name',
   SiteMetadataMenuLinksLink = 'siteMetadata___menuLinks___link',
@@ -1510,6 +1516,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPackageJsonPeerDependenciesName = 'pluginCreator___packageJson___peerDependencies___name',
   PluginCreatorPackageJsonPeerDependenciesVersion = 'pluginCreator___packageJson___peerDependencies___version',
   PluginCreatorPackageJsonKeywords = 'pluginCreator___packageJson___keywords',
+  PluginCreatorId = 'pluginCreatorId',
   ComponentPath = 'componentPath',
 }
 
@@ -1856,14 +1863,10 @@ export type SitePluginSortInput = {
 }
 
 export type SiteSiteMetadata = {
-  readonly title: Maybe<Scalars['String']>
-  readonly description: Maybe<Scalars['String']>
   readonly menuLinks: Maybe<ReadonlyArray<Maybe<SiteSiteMetadataMenuLinks>>>
 }
 
 export type SiteSiteMetadataFilterInput = {
-  readonly title: Maybe<StringQueryOperatorInput>
-  readonly description: Maybe<StringQueryOperatorInput>
   readonly menuLinks: Maybe<SiteSiteMetadataMenuLinksFilterListInput>
 }
 
@@ -1905,21 +1908,18 @@ export type SiteLinksDataQuery = { readonly __typename?: 'Query' } & {
   readonly site: Maybe<
     { readonly __typename?: 'Site' } & {
       readonly siteMetadata: Maybe<
-        { readonly __typename?: 'SiteSiteMetadata' } & Pick<
-          SiteSiteMetadata,
-          'title'
-        > & {
-            readonly menuLinks: Maybe<
-              ReadonlyArray<
-                Maybe<
-                  { readonly __typename?: 'SiteSiteMetadataMenuLinks' } & Pick<
-                    SiteSiteMetadataMenuLinks,
-                    'name' | 'link'
-                  >
+        { readonly __typename?: 'SiteSiteMetadata' } & {
+          readonly menuLinks: Maybe<
+            ReadonlyArray<
+              Maybe<
+                { readonly __typename?: 'SiteSiteMetadataMenuLinks' } & Pick<
+                  SiteSiteMetadataMenuLinks,
+                  'name' | 'link'
                 >
               >
             >
-          }
+          >
+        }
       >
     }
   >
@@ -1928,15 +1928,11 @@ export type SiteLinksDataQuery = { readonly __typename?: 'Query' } & {
 export type HelmetDataQueryVariables = {}
 
 export type HelmetDataQuery = { readonly __typename?: 'Query' } & {
-  readonly site: Maybe<
-    { readonly __typename?: 'Site' } & {
-      readonly siteMetadata: Maybe<
-        { readonly __typename?: 'SiteSiteMetadata' } & Pick<
-          SiteSiteMetadata,
-          'title' | 'description'
-        >
-      >
-    }
+  readonly contentJson: Maybe<
+    { readonly __typename?: 'ContentJson' } & Pick<
+      ContentJson,
+      'title' | 'description'
+    >
   >
 }
 
