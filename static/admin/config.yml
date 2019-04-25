@@ -20,7 +20,7 @@ collections:
         file: _content/home.json
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Content, name: description, widget: markdown }
+          - { label: Content, name: content, widget: markdown }
       - label: "Resume"
         name: "resume"
         file: "_content/resume.json"

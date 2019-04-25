@@ -1,8 +1,9 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
+
 import { Page } from '../components/Page/Page'
-import { ResumeDataQuery } from '../graphql-types'
 import { Resume } from '../components/Resume/Resume'
+import { ResumeDataQuery } from '../graphql-types'
 
 interface Props {
   data: ResumeDataQuery
