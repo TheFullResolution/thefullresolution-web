@@ -62,7 +62,13 @@ export const Resume: React.FC<Props> = ({ data }) => {
               technologies,
               accomplishments,
             }) => {
-              const nameWithLink = url ? <a href={url}>{name}</a> : name
+              const nameWithLink = url ? (
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {name}
+                </a>
+              ) : (
+                name
+              )
               return (
                 <div key={`${name}${position}`} className={styles.position}>
                   <div className={styles.positionBlock}>

@@ -1,0 +1,31 @@
+.container {
+  padding-top: $space-single;
+  max-width: $max-width;
+  margin: {
+    top: $space-double;
+    bottom: 0;
+    left: auto;
+    right: auto;
+  }
+
+  @media print {
+      display: none;
+  }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+
+    a {
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: $space-quarter;
+        }
+        + a {
+            margin-left: $space-double;
+        }
+    }
+}

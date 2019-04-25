@@ -367,9 +367,9 @@ export type File = Node & {
   readonly birthtime: Maybe<Scalars['Date']>
   /** Copy file to static directory and return public url to it */
   readonly publicURL: Maybe<Scalars['String']>
-  readonly childResume: Maybe<Resume>
   readonly childMetaData: Maybe<MetaData>
   readonly childHome: Maybe<Home>
+  readonly childResume: Maybe<Resume>
 }
 
 export type FileModifiedTimeArgs = {
@@ -830,6 +830,8 @@ export type MetaData = Node & {
   readonly internal: Internal
   readonly title: Maybe<Scalars['String']>
   readonly description: Maybe<Scalars['String']>
+  readonly github: Maybe<Scalars['String']>
+  readonly linkedin: Maybe<Scalars['String']>
 }
 
 export type MetaDataConnection = {
@@ -946,6 +948,8 @@ export enum MetaDataFieldsEnum {
   InternalType = 'internal___type',
   Title = 'title',
   Description = 'description',
+  Github = 'github',
+  Linkedin = 'linkedin',
 }
 
 export type MetaDataFilterInput = {
@@ -955,6 +959,8 @@ export type MetaDataFilterInput = {
   readonly internal: Maybe<InternalFilterInput>
   readonly title: Maybe<StringQueryOperatorInput>
   readonly description: Maybe<StringQueryOperatorInput>
+  readonly github: Maybe<StringQueryOperatorInput>
+  readonly linkedin: Maybe<StringQueryOperatorInput>
 }
 
 export type MetaDataGroupConnection = {
@@ -1005,12 +1011,12 @@ export type Query = {
   readonly allSite: Maybe<SiteConnection>
   readonly directory: Maybe<Directory>
   readonly allDirectory: Maybe<DirectoryConnection>
-  readonly resume: Maybe<Resume>
-  readonly allResume: Maybe<ResumeConnection>
   readonly metaData: Maybe<MetaData>
   readonly allMetaData: Maybe<MetaDataConnection>
   readonly home: Maybe<Home>
   readonly allHome: Maybe<HomeConnection>
+  readonly resume: Maybe<Resume>
+  readonly allResume: Maybe<ResumeConnection>
 }
 
 export type QueryFileArgs = {
@@ -1174,25 +1180,6 @@ export type QueryAllDirectoryArgs = {
   limit: Maybe<Scalars['Int']>
 }
 
-export type QueryResumeArgs = {
-  id: Maybe<StringQueryOperatorInput>
-  parent: Maybe<NodeFilterInput>
-  children: Maybe<NodeFilterListInput>
-  internal: Maybe<InternalFilterInput>
-  name: Maybe<StringQueryOperatorInput>
-  phone: Maybe<StringQueryOperatorInput>
-  email: Maybe<StringQueryOperatorInput>
-  links: Maybe<ResumeLinksFilterListInput>
-  section: Maybe<ResumeSectionFilterListInput>
-}
-
-export type QueryAllResumeArgs = {
-  filter: Maybe<ResumeFilterInput>
-  sort: Maybe<ResumeSortInput>
-  skip: Maybe<Scalars['Int']>
-  limit: Maybe<Scalars['Int']>
-}
-
 export type QueryMetaDataArgs = {
   id: Maybe<StringQueryOperatorInput>
   parent: Maybe<NodeFilterInput>
@@ -1200,6 +1187,8 @@ export type QueryMetaDataArgs = {
   internal: Maybe<InternalFilterInput>
   title: Maybe<StringQueryOperatorInput>
   description: Maybe<StringQueryOperatorInput>
+  github: Maybe<StringQueryOperatorInput>
+  linkedin: Maybe<StringQueryOperatorInput>
 }
 
 export type QueryAllMetaDataArgs = {
@@ -1221,6 +1210,25 @@ export type QueryHomeArgs = {
 export type QueryAllHomeArgs = {
   filter: Maybe<HomeFilterInput>
   sort: Maybe<HomeSortInput>
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
+}
+
+export type QueryResumeArgs = {
+  id: Maybe<StringQueryOperatorInput>
+  parent: Maybe<NodeFilterInput>
+  children: Maybe<NodeFilterListInput>
+  internal: Maybe<InternalFilterInput>
+  name: Maybe<StringQueryOperatorInput>
+  phone: Maybe<StringQueryOperatorInput>
+  email: Maybe<StringQueryOperatorInput>
+  links: Maybe<ResumeLinksFilterListInput>
+  section: Maybe<ResumeSectionFilterListInput>
+}
+
+export type QueryAllResumeArgs = {
+  filter: Maybe<ResumeFilterInput>
+  sort: Maybe<ResumeSortInput>
   skip: Maybe<Scalars['Int']>
   limit: Maybe<Scalars['Int']>
 }
@@ -1353,7 +1361,6 @@ export enum ResumeFieldsEnum {
   Phone = 'phone',
   Email = 'email',
   Links = 'links',
-  LinksName = 'links___name',
   LinksLabel = 'links___label',
   LinksUrl = 'links___url',
   Section = 'section',
@@ -1394,13 +1401,11 @@ export type ResumeGroupConnection = {
 }
 
 export type ResumeLinks = {
-  readonly name: Maybe<Scalars['String']>
   readonly label: Maybe<Scalars['String']>
   readonly url: Maybe<Scalars['String']>
 }
 
 export type ResumeLinksFilterInput = {
-  readonly name: Maybe<StringQueryOperatorInput>
   readonly label: Maybe<StringQueryOperatorInput>
   readonly url: Maybe<StringQueryOperatorInput>
 }
@@ -2228,6 +2233,14 @@ export type StringQueryOperatorInput = {
   readonly regex: Maybe<Scalars['String']>
   readonly glob: Maybe<Scalars['String']>
 }
+export type FooterDataQueryVariables = {}
+
+export type FooterDataQuery = { readonly __typename?: 'Query' } & {
+  readonly metaData: Maybe<
+    { readonly __typename?: 'metaData' } & Pick<MetaData, 'linkedin' | 'github'>
+  >
+}
+
 export type SiteLinksDataQueryVariables = {}
 
 export type SiteLinksDataQuery = { readonly __typename?: 'Query' } & {
