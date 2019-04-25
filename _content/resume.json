@@ -22,7 +22,7 @@
         {
           "started": "2018-12-01T15:07:09.769Z",
           "position": "Front-End Developer",
-          "technologies": "* JavaScript and Flow, React, Redux\n* Jest, Testcafe\n",
+          "technologies": "* JavaScript with Flow, React, Redux\n* Node.js\n* Jest, Testcafe\n",
           "name": "Zoover Media B.V.",
           "url": "https://greatplacefortalent.nl/about-zoover/",
           "finished": "",
@@ -48,7 +48,7 @@
           "name": "Bleeve B.V. (GreenHome)",
           "url": "https://greenhome.nl/over-greenhome",
           "finished": "2018-06-30T13:51:46.876Z",
-          "accomplishments": "* Implemented end to end testing and integration testing with Cypress and Jest\r\n* Rewrite and transfer of greenhome.nl from Angular 1.5 to React.\r\n* Cooperation with the designer to improve user experience and accessibility of the products.\r\n",
+          "accomplishments": "* Implemented end to end testing and integration testing with Cypress and Jest.\n* Rewrite and transfer of greenhome.nl from Angular 1.5 to React.\n* Improved user experience, by improving accessibility of the websites and actively working with the designer on improving user interfaces.",
           "location": "Amsterdam, NL",
           "description": "An independent marketplace for energy-neutral house improvements, with the competitive advantage of applying e-commerce methods in a traditional industry."
         }
@@ -61,7 +61,7 @@
         {
           "started": "2017-01-01T15:36:12.324Z",
           "position": "Web Development Bootcamp",
-          "technologies": "* JavaScript, Ruby\n* Ruby on Rails\r, Node, React, Redux, Mocha, Chai\r\n* PostgreSQL, MongoDB\r\n",
+          "technologies": "* JavaScript, Ruby\n* Ruby on Rails\r, Node, React, Redux\n* Mocha, Chai\r\n* PostgreSQL, MongoDB\r\n",
           "name": "Codaisseur B.V.",
           "url": "https://codaisseur.com/become-a-developer",
           "finished": "2017-03-31T14:36:12.348Z",
