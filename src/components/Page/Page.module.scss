@@ -1,4 +1,9 @@
 .container {
+  padding: {
+    top: $space-single;
+    bottom: $space-double;
+  }
+
   * {
     box-sizing: border-box;
 
@@ -7,10 +12,25 @@
       box-sizing: border-box;
     }
   }
+  color: $black;
+
+  a {
+    color: $black;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  @include max-width {
+    padding: {
+      left: $space-container;
+      right: $space-container;
+    }
+  }
 }
 
 .wrapper {
   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 $space-container;
 }

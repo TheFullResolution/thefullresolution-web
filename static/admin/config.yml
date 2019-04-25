@@ -15,6 +15,12 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
+      - label: "Home"
+        name: "home"
+        file: _content/home.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Content, name: description, widget: markdown }
       - label: "Resume"
         name: "resume"
         file: "_content/resume.json"

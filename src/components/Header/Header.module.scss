@@ -1,9 +1,29 @@
 .wrapper {
   max-width: $max-width;
-  margin: 0 auto;
-  padding: $space-container;
+  margin: {
+    top: 0;
+    bottom: $space-double;
+    left: auto;
+    right: auto
+  }
 
   h1 {
-      margin: 0;
+    margin-bottom: $space-single;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  a {
+    margin-left: $space-half;
+    text-decoration: none;
+    + a {
+      margin-left: $space-single;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
   }
 }
+

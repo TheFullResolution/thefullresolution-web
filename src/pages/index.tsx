@@ -5,8 +5,7 @@ import Markdown from 'markdown-to-jsx'
 const HomePage: React.FC = () => (
   <Page>
     <Markdown>
-      {`      
-# Nec impia fortissima tantis Cyanen fabricataque caecis
+{`# Nec impia fortissima tantis Cyanen fabricataque caecis
 
 ## Iam ducebas elidite humanis luteave
 

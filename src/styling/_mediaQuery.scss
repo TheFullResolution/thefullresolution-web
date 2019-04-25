@@ -27,9 +27,3 @@
     @content;
   }
 }
-
-@mixin more-max-width {
-  @media (min-width: #{$max-width}) {
-    @content;
-  }
-}
