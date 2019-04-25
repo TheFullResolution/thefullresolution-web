@@ -42,10 +42,6 @@ $font-half: 12px;
   }
 }
 
-.block {
-  margin-bottom: $space-double;
-}
-
 .positionBlock {
   margin-bottom: $space-single;
 }
@@ -71,4 +67,5 @@ $font-half: 12px;
 .details {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  margin-bottom: $space-double;
 }

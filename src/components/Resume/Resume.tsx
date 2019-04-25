@@ -35,7 +35,7 @@ export const Resume: React.FC<Props> = ({ data }) => {
             }) => {
               const nameWithLink = url ? <a href={url}>{name}</a> : name
               return (
-                <div key={`${name}${position}`} className={styles.block}>
+                <div key={`${name}${position}`}>
                   <div className={styles.positionBlock}>
                     <div className={styles.positionTitle}>
                       <GoBriefcase />
@@ -55,20 +55,22 @@ export const Resume: React.FC<Props> = ({ data }) => {
                       <p className={styles.description}>{description}</p>
                     )}
                   </div>
-                  <div className={styles.details}>
-                    {technologies && (
-                      <div>
-                        <h4>Technologies</h4>
-                        <Markdown>{technologies}</Markdown>
-                      </div>
-                    )}
-                    {accomplishments && (
-                      <div>
-                        <h4>Accomplishments</h4>
-                        <Markdown>{accomplishments}</Markdown>
-                      </div>
-                    )}
-                  </div>
+                  {(technologies || accomplishments) && (
+                    <div className={styles.details}>
+                      {technologies && (
+                        <div>
+                          <h4>Technologies</h4>
+                          <Markdown>{technologies}</Markdown>
+                        </div>
+                      )}
+                      {accomplishments && (
+                        <div>
+                          <h4>Accomplishments</h4>
+                          <Markdown>{accomplishments}</Markdown>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               )
             },
