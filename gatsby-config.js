@@ -1,8 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: 'Jedrzej Lewandowski - Portfolio Page',
-    description:
-      'This is a portfolio page of Jedrzej Lewandowski, Front-End Developer passionate about learning and building awesome websites.',
     menuLinks: [
       {
         name: 'home',
