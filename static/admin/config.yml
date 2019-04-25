@@ -9,25 +9,31 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
+      - label: "Site Metadata"
+        name: "siteMetadata"
+        file: _content/siteMetaData.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
       - label: "Resume"
         name: "resume"
         file: "_content/resume.json"
         fields:
-          - {label: Name, name: name, widget: string}
-          - {label: Phone, name: phone, widget: string}
-          - {label: Email, name: email, widget: string}
+          - { label: Name, name: name, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
           - label: "Links"
             name: links
             widget: list
             fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Label, name: label, widget: string}
-              - {label: Url, name: url, widget: string}
+              - { label: Name, name: name, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Url, name: url, widget: string }
           - label: "Section"
             name: section
             widget: list
             fields:
-              - {label: Title, name: title, widget: string}
+              - { label: Title, name: title, widget: string }
               - label: "Date Display"
                 name: "date_display"
                 widget: "select"
@@ -36,14 +42,13 @@ collections:
                 name: content
                 widget: list
                 fields:
-                  - {label: Name, name: name, widget: string}
-                  - {label: Position, name: position, widget: string, required: false}
-                  - {label: Location, name: location, widget: string, required: false}
-                  - {label: Url, name: url, widget: string, required: false}
-                  - {label: Description, name: description, widget: markdown, required: false}
-                  - {label: Started, name: started, widget: date}
-                  - {label: Present, name: present, widget: boolean, default: false, required: false}
-                  - {label: Finished, name: finished, widget: date, required: false}
-                  - {label: "Technologies & Tools", name: technologies, widget: markdown, required: false}
-                  - {label: "Accomplishments", name: accomplishments, widget: markdown, required: false}
-
+                  - { label: Name, name: name, widget: string }
+                  - { label: Position, name: position, widget: string, required: false }
+                  - { label: Location, name: location, widget: string, required: false }
+                  - { label: Url, name: url, widget: string, required: false }
+                  - { label: Description, name: description, widget: markdown, required: false }
+                  - { label: Started, name: started, widget: date }
+                  - { label: Present, name: present, widget: boolean, default: false, required: false }
+                  - { label: Finished, name: finished, widget: date, required: false }
+                  - { label: "Technologies & Tools", name: technologies, widget: markdown, required: false }
+                  - { label: "Accomplishments", name: accomplishments, widget: markdown, required: false }
