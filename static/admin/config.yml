@@ -9,9 +9,9 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
-      - label: "Site Metadata"
-        name: "siteMetadata"
-        file: _content/siteMetaData.json
+      - label: "Meta Data"
+        name: "metaData"
+        file: _content/metaData.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }

@@ -11,13 +11,13 @@ interface Props {
 }
 
 export const Resume: React.FC<Props> = ({ data }) => {
-  const { contentJson } = data
-  if (!contentJson || !contentJson.section) {
+  const { resume } = data
+  if (!resume || !resume.section) {
     return <p>No data at the moment</p>
   }
   return (
     <>
-      {contentJson.section.map(({ title, content, date_display }) => (
+      {resume.section.map(({ title, content, date_display }) => (
         <div key={title} className={styles.container}>
           <h2>{title}</h2>
           {content.map(

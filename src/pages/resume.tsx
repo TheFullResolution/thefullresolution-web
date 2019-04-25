@@ -20,7 +20,7 @@ export default ResumePage
 
 export const query = graphql`
   query ResumeData {
-    contentJson {
+    resume {
       name
       phone
       email

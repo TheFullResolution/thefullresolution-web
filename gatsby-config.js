@@ -35,7 +35,12 @@ module.exports = {
         path: `${__dirname}/_content`,
       },
     },
-    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: ({ node, object, isArray }) => node.name,
+      },
+    },
     {
       resolve: `gatsby-plugin-eslint`,
       options: {
