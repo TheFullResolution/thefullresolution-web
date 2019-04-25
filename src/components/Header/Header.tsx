@@ -5,9 +5,9 @@ import { SiteLinksDataQuery } from '../../graphql-types'
 import * as styles from './Header.module.scss'
 
 export const Header: React.FC = () => {
-  const { site, siteMetaData }: SiteLinksDataQuery = useStaticQuery(graphql`
+  const { site, metaData }: SiteLinksDataQuery = useStaticQuery(graphql`
     query SiteLinksData {
-      siteMetaData {
+      metaData {
         title
       }
       site {
@@ -18,13 +18,12 @@ export const Header: React.FC = () => {
           }
         }
       }
-
     }
   `)
 
   return (
     <header className={styles.wrapper}>
-      <h1>{siteMetaData.title}</h1>
+      <h1>{metaData.title}</h1>
       <nav>
         {site.siteMetadata.menuLinks.map(link => (
           <Link key={link.name} to={link.link}>

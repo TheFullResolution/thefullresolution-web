@@ -368,7 +368,7 @@ export type File = Node & {
   /** Copy file to static directory and return public url to it */
   readonly publicURL: Maybe<Scalars['String']>
   readonly childResume: Maybe<Resume>
-  readonly childSiteMetaData: Maybe<SiteMetaData>
+  readonly childMetaData: Maybe<MetaData>
 }
 
 export type FileModifiedTimeArgs = {
@@ -674,6 +674,154 @@ export type IntQueryOperatorInput = {
   readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>
 }
 
+export type MetaData = Node & {
+  readonly id: Scalars['ID']
+  readonly parent: Maybe<Node>
+  readonly children: ReadonlyArray<Node>
+  readonly internal: Internal
+  readonly title: Maybe<Scalars['String']>
+  readonly description: Maybe<Scalars['String']>
+}
+
+export type MetaDataConnection = {
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<MetaDataEdge>
+  readonly nodes: ReadonlyArray<MetaData>
+  readonly pageInfo: PageInfo
+  readonly distinct: ReadonlyArray<Scalars['String']>
+  readonly group: ReadonlyArray<MetaDataGroupConnection>
+}
+
+export type MetaDataConnectionDistinctArgs = {
+  field: MetaDataFieldsEnum
+}
+
+export type MetaDataConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>
+  limit: Maybe<Scalars['Int']>
+  field: MetaDataFieldsEnum
+}
+
+export type MetaDataEdge = {
+  readonly next: Maybe<MetaData>
+  readonly node: MetaData
+  readonly previous: Maybe<MetaData>
+}
+
+export enum MetaDataFieldsEnum {
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  Title = 'title',
+  Description = 'description',
+}
+
+export type MetaDataFilterInput = {
+  readonly id: Maybe<StringQueryOperatorInput>
+  readonly parent: Maybe<NodeFilterInput>
+  readonly children: Maybe<NodeFilterListInput>
+  readonly internal: Maybe<InternalFilterInput>
+  readonly title: Maybe<StringQueryOperatorInput>
+  readonly description: Maybe<StringQueryOperatorInput>
+}
+
+export type MetaDataGroupConnection = {
+  readonly totalCount: Scalars['Int']
+  readonly edges: ReadonlyArray<MetaDataEdge>
+  readonly nodes: ReadonlyArray<MetaData>
+  readonly pageInfo: PageInfo
+  readonly field: Scalars['String']
+  readonly fieldValue: Maybe<Scalars['String']>
+}
+
+export type MetaDataSortInput = {
+  readonly fields: Maybe<ReadonlyArray<Maybe<MetaDataFieldsEnum>>>
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
+}
+
 /** Node Interface */
 export type Node = {
   readonly id: Scalars['ID']
@@ -710,8 +858,8 @@ export type Query = {
   readonly allDirectory: Maybe<DirectoryConnection>
   readonly resume: Maybe<Resume>
   readonly allResume: Maybe<ResumeConnection>
-  readonly siteMetaData: Maybe<SiteMetaData>
-  readonly allSiteMetaData: Maybe<SiteMetaDataConnection>
+  readonly metaData: Maybe<MetaData>
+  readonly allMetaData: Maybe<MetaDataConnection>
 }
 
 export type QueryFileArgs = {
@@ -894,7 +1042,7 @@ export type QueryAllResumeArgs = {
   limit: Maybe<Scalars['Int']>
 }
 
-export type QuerySiteMetaDataArgs = {
+export type QueryMetaDataArgs = {
   id: Maybe<StringQueryOperatorInput>
   parent: Maybe<NodeFilterInput>
   children: Maybe<NodeFilterListInput>
@@ -903,9 +1051,9 @@ export type QuerySiteMetaDataArgs = {
   description: Maybe<StringQueryOperatorInput>
 }
 
-export type QueryAllSiteMetaDataArgs = {
-  filter: Maybe<SiteMetaDataFilterInput>
-  sort: Maybe<SiteMetaDataSortInput>
+export type QueryAllMetaDataArgs = {
+  filter: Maybe<MetaDataFilterInput>
+  sort: Maybe<MetaDataSortInput>
   skip: Maybe<Scalars['Int']>
   limit: Maybe<Scalars['Int']>
 }
@@ -1321,154 +1469,6 @@ export type SiteGroupConnection = {
   readonly pageInfo: PageInfo
   readonly field: Scalars['String']
   readonly fieldValue: Maybe<Scalars['String']>
-}
-
-export type SiteMetaData = Node & {
-  readonly id: Scalars['ID']
-  readonly parent: Maybe<Node>
-  readonly children: ReadonlyArray<Node>
-  readonly internal: Internal
-  readonly title: Maybe<Scalars['String']>
-  readonly description: Maybe<Scalars['String']>
-}
-
-export type SiteMetaDataConnection = {
-  readonly totalCount: Scalars['Int']
-  readonly edges: ReadonlyArray<SiteMetaDataEdge>
-  readonly nodes: ReadonlyArray<SiteMetaData>
-  readonly pageInfo: PageInfo
-  readonly distinct: ReadonlyArray<Scalars['String']>
-  readonly group: ReadonlyArray<SiteMetaDataGroupConnection>
-}
-
-export type SiteMetaDataConnectionDistinctArgs = {
-  field: SiteMetaDataFieldsEnum
-}
-
-export type SiteMetaDataConnectionGroupArgs = {
-  skip: Maybe<Scalars['Int']>
-  limit: Maybe<Scalars['Int']>
-  field: SiteMetaDataFieldsEnum
-}
-
-export type SiteMetaDataEdge = {
-  readonly next: Maybe<SiteMetaData>
-  readonly node: SiteMetaData
-  readonly previous: Maybe<SiteMetaData>
-}
-
-export enum SiteMetaDataFieldsEnum {
-  Id = 'id',
-  ParentId = 'parent___id',
-  ParentParentId = 'parent___parent___id',
-  ParentParentParentId = 'parent___parent___parent___id',
-  ParentParentParentChildren = 'parent___parent___parent___children',
-  ParentParentChildren = 'parent___parent___children',
-  ParentParentChildrenId = 'parent___parent___children___id',
-  ParentParentChildrenChildren = 'parent___parent___children___children',
-  ParentParentInternalContent = 'parent___parent___internal___content',
-  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
-  ParentParentInternalDescription = 'parent___parent___internal___description',
-  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
-  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
-  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
-  ParentParentInternalOwner = 'parent___parent___internal___owner',
-  ParentParentInternalType = 'parent___parent___internal___type',
-  ParentChildren = 'parent___children',
-  ParentChildrenId = 'parent___children___id',
-  ParentChildrenParentId = 'parent___children___parent___id',
-  ParentChildrenParentChildren = 'parent___children___parent___children',
-  ParentChildrenChildren = 'parent___children___children',
-  ParentChildrenChildrenId = 'parent___children___children___id',
-  ParentChildrenChildrenChildren = 'parent___children___children___children',
-  ParentChildrenInternalContent = 'parent___children___internal___content',
-  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
-  ParentChildrenInternalDescription = 'parent___children___internal___description',
-  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
-  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
-  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
-  ParentChildrenInternalOwner = 'parent___children___internal___owner',
-  ParentChildrenInternalType = 'parent___children___internal___type',
-  ParentInternalContent = 'parent___internal___content',
-  ParentInternalContentDigest = 'parent___internal___contentDigest',
-  ParentInternalDescription = 'parent___internal___description',
-  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
-  ParentInternalIgnoreType = 'parent___internal___ignoreType',
-  ParentInternalMediaType = 'parent___internal___mediaType',
-  ParentInternalOwner = 'parent___internal___owner',
-  ParentInternalType = 'parent___internal___type',
-  Children = 'children',
-  ChildrenId = 'children___id',
-  ChildrenParentId = 'children___parent___id',
-  ChildrenParentParentId = 'children___parent___parent___id',
-  ChildrenParentParentChildren = 'children___parent___parent___children',
-  ChildrenParentChildren = 'children___parent___children',
-  ChildrenParentChildrenId = 'children___parent___children___id',
-  ChildrenParentChildrenChildren = 'children___parent___children___children',
-  ChildrenParentInternalContent = 'children___parent___internal___content',
-  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
-  ChildrenParentInternalDescription = 'children___parent___internal___description',
-  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
-  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
-  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
-  ChildrenParentInternalOwner = 'children___parent___internal___owner',
-  ChildrenParentInternalType = 'children___parent___internal___type',
-  ChildrenChildren = 'children___children',
-  ChildrenChildrenId = 'children___children___id',
-  ChildrenChildrenParentId = 'children___children___parent___id',
-  ChildrenChildrenParentChildren = 'children___children___parent___children',
-  ChildrenChildrenChildren = 'children___children___children',
-  ChildrenChildrenChildrenId = 'children___children___children___id',
-  ChildrenChildrenChildrenChildren = 'children___children___children___children',
-  ChildrenChildrenInternalContent = 'children___children___internal___content',
-  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
-  ChildrenChildrenInternalDescription = 'children___children___internal___description',
-  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
-  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
-  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
-  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
-  ChildrenChildrenInternalType = 'children___children___internal___type',
-  ChildrenInternalContent = 'children___internal___content',
-  ChildrenInternalContentDigest = 'children___internal___contentDigest',
-  ChildrenInternalDescription = 'children___internal___description',
-  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
-  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
-  ChildrenInternalMediaType = 'children___internal___mediaType',
-  ChildrenInternalOwner = 'children___internal___owner',
-  ChildrenInternalType = 'children___internal___type',
-  InternalContent = 'internal___content',
-  InternalContentDigest = 'internal___contentDigest',
-  InternalDescription = 'internal___description',
-  InternalFieldOwners = 'internal___fieldOwners',
-  InternalIgnoreType = 'internal___ignoreType',
-  InternalMediaType = 'internal___mediaType',
-  InternalOwner = 'internal___owner',
-  InternalType = 'internal___type',
-  Title = 'title',
-  Description = 'description',
-}
-
-export type SiteMetaDataFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>
-  readonly parent: Maybe<NodeFilterInput>
-  readonly children: Maybe<NodeFilterListInput>
-  readonly internal: Maybe<InternalFilterInput>
-  readonly title: Maybe<StringQueryOperatorInput>
-  readonly description: Maybe<StringQueryOperatorInput>
-}
-
-export type SiteMetaDataGroupConnection = {
-  readonly totalCount: Scalars['Int']
-  readonly edges: ReadonlyArray<SiteMetaDataEdge>
-  readonly nodes: ReadonlyArray<SiteMetaData>
-  readonly pageInfo: PageInfo
-  readonly field: Scalars['String']
-  readonly fieldValue: Maybe<Scalars['String']>
-}
-
-export type SiteMetaDataSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<SiteMetaDataFieldsEnum>>>
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
 }
 
 export type SitePage = Node & {
@@ -2064,8 +2064,8 @@ export type StringQueryOperatorInput = {
 export type SiteLinksDataQueryVariables = {}
 
 export type SiteLinksDataQuery = { readonly __typename?: 'Query' } & {
-  readonly siteMetaData: Maybe<
-    { readonly __typename?: 'siteMetaData' } & Pick<SiteMetaData, 'title'>
+  readonly metaData: Maybe<
+    { readonly __typename?: 'metaData' } & Pick<MetaData, 'title'>
   >
   readonly site: Maybe<
     { readonly __typename?: 'Site' } & {
@@ -2090,9 +2090,9 @@ export type SiteLinksDataQuery = { readonly __typename?: 'Query' } & {
 export type HelmetDataQueryVariables = {}
 
 export type HelmetDataQuery = { readonly __typename?: 'Query' } & {
-  readonly siteMetaData: Maybe<
-    { readonly __typename?: 'siteMetaData' } & Pick<
-      SiteMetaData,
+  readonly metaData: Maybe<
+    { readonly __typename?: 'metaData' } & Pick<
+      MetaData,
       'title' | 'description'
     >
   >

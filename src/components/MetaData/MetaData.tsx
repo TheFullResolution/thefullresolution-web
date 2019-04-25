@@ -6,13 +6,13 @@ import { HelmetDataQuery } from '../../graphql-types'
 export const MetaData: React.FC = () => {
   const data: HelmetDataQuery = useStaticQuery(graphql`
     query HelmetData {
-      siteMetaData {
+      metaData {
           title
           description
         }
     }
   `)
-  const { title, description } = data.siteMetaData
+  const { title, description } = data.metaData
 
   return (
     <Helmet
