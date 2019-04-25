@@ -3,7 +3,7 @@ import * as React from 'react'
 import { ResumeDataQuery } from '../../graphql-types'
 import { formatDate } from '../../utils/formatDate'
 import * as styles from './Resume.module.scss'
-import { GoBriefcase, GoHistory } from 'react-icons/go'
+import { GoBriefcase, GoMail, GoDeviceMobile, GoHistory } from 'react-icons/go'
 
 interface Props {
   data: ResumeDataQuery
@@ -22,11 +22,18 @@ export const Resume: React.FC<Props> = ({ data }) => {
         <div className={styles.contact}>
           <ul>
             <li>
-              <span>Phone:</span>
+              <span>
+                <GoDeviceMobile />
+                Phone:
+              </span>
               <span>{resume.phone}</span>
             </li>
             <li>
-              <span>Email:</span> <span>{resume.email}</span>
+              <span>
+                <GoMail />
+                Email:
+              </span>
+              <span>{resume.email}</span>
             </li>
           </ul>
           <ul>
