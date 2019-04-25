@@ -1,6 +1,5 @@
 import Markdown from 'markdown-to-jsx'
 import * as React from 'react'
-
 import { ResumeDataQuery } from '../../graphql-types'
 import { formatDate } from '../../utils/formatDate'
 import * as styles from './Resume.module.scss'
@@ -16,10 +15,32 @@ export const Resume: React.FC<Props> = ({ data }) => {
     return <p>No data at the moment</p>
   }
   return (
-    <>
-      <h1 className={styles.pageHeading}>Resume</h1>
+    <div className={styles.container}>
+      <h1 className={styles.notInPrint}>Resume</h1>
+      <div className={styles.onlyPrint}>
+        <h1>{resume.name}</h1>
+        <div className={styles.contact}>
+          <ul>
+            <li>
+              <span>Phone:</span>
+              <span>{resume.phone}</span>
+            </li>
+            <li>
+              <span>Email:</span> <span>{resume.email}</span>
+            </li>
+          </ul>
+          <ul>
+            {resume.links.map(link => (
+              <li key={link.url}>
+                <span>{link.label}:</span>
+                <span>{link.url}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
       {resume.section.map(({ title, content, date_display }) => (
-        <div key={title} className={styles.container}>
+        <div key={title}>
           <h2>{title}</h2>
           {content.map(
             ({
@@ -36,7 +57,7 @@ export const Resume: React.FC<Props> = ({ data }) => {
             }) => {
               const nameWithLink = url ? <a href={url}>{name}</a> : name
               return (
-                <div key={`${name}${position}`}>
+                <div key={`${name}${position}`} className={styles.position}>
                   <div className={styles.positionBlock}>
                     <div className={styles.positionTitle}>
                       <GoBriefcase />
@@ -78,6 +99,6 @@ export const Resume: React.FC<Props> = ({ data }) => {
           )}
         </div>
       ))}
-    </>
+    </div>
   )
 }

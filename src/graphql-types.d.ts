@@ -2284,7 +2284,7 @@ export type ResumeDataQuery = { readonly __typename?: 'Query' } & {
             Maybe<
               { readonly __typename?: 'resumeLinks' } & Pick<
                 ResumeLinks,
-                'name' | 'url'
+                'label' | 'url'
               >
             >
           >

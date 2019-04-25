@@ -3,7 +3,11 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { HelmetDataQuery } from '../../graphql-types'
 
-export const MetaData: React.FC = () => {
+interface Props {
+  page: string
+}
+
+export const MetaData: React.FC<Props> = ({page}) => {
   const data: HelmetDataQuery = useStaticQuery(graphql`
     query HelmetData {
       metaData {
@@ -16,7 +20,7 @@ export const MetaData: React.FC = () => {
 
   return (
     <Helmet
-      title={title}
+      title={`${title} - ${page}`}
       meta={[
         {
           name: 'description',

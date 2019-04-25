@@ -2,11 +2,40 @@ $font-base: 16px;
 $font-single: 14px;
 $font-half: 12px;
 
-.pageHeading {
-    text-align: center
+.onlyPrint {
+  display: none;
+
+  @media print {
+    display: initial;
+  }
+}
+
+.notInPrint {
+  @media print {
+    display: none;
+  }
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
 }
 
 .container {
+  h1 {
+    text-align: center;
+  }
+
   h2 {
     border-bottom: 1px solid $black;
     padding-bottom: $space-half;
@@ -37,6 +66,22 @@ $font-half: 12px;
   li {
     margin-bottom: 0;
   }
+
+  @media print {
+    h2 {
+      font-size: $font-single;
+    }
+    h3,
+    h4,
+    ul,
+    p {
+      font-size: $font-half;
+    }
+  }
+}
+
+.position {
+  page-break-inside: avoid;
 }
 
 .positionBlock {
@@ -65,4 +110,8 @@ $font-half: 12px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin-bottom: $space-double;
+
+  @media print {
+    margin-bottom: $space-single;
+  }
 }

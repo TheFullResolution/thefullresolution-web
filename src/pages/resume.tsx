@@ -11,7 +11,7 @@ interface Props {
 
 const ResumePage: React.FC<Props> = ({ data }) => {
   return (
-    <Page>
+    <Page page="Resume">
       <Resume data={data} />
     </Page>
   )
@@ -26,7 +26,7 @@ export const query = graphql`
       phone
       email
       links {
-        name
+        label
         url
       }
       section {

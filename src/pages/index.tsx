@@ -10,7 +10,7 @@ interface Props {
 }
 
 const HomePage: React.FC<Props> = ({ data }) => (
-  <Page>
+  <Page page="Personal Page">
     <Markdown>{data.home.content}</Markdown>
   </Page>
 )
