@@ -17,6 +17,7 @@ export const Resume: React.FC<Props> = ({ data }) => {
   }
   return (
     <>
+      <h1 className={styles.pageHeading}>Resume</h1>
       {resume.section.map(({ title, content, date_display }) => (
         <div key={title} className={styles.container}>
           <h2>{title}</h2>

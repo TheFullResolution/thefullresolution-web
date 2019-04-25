@@ -3,10 +3,15 @@ import Markdown from 'markdown-to-jsx'
 import * as React from 'react'
 
 import { Page } from '../components/Page/Page'
+import { HomeDataQuery } from '../graphql-types'
 
-const HomePage: React.FC = () => (
+interface Props {
+  data: HomeDataQuery
+}
+
+const HomePage: React.FC<Props> = ({ data }) => (
   <Page>
-    <Markdown />
+    <Markdown>{data.home.content}</Markdown>
   </Page>
 )
 

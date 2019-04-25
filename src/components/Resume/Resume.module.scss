@@ -2,6 +2,10 @@ $font-base: 16px;
 $font-single: 14px;
 $font-half: 12px;
 
+.pageHeading {
+    text-align: center
+}
+
 .container {
   h2 {
     border-bottom: 1px solid $black;
@@ -33,7 +37,6 @@ $font-half: 12px;
   li {
     margin-bottom: 0;
   }
-
 }
 
 .positionBlock {
