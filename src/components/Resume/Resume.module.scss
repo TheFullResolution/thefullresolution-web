@@ -2,6 +2,13 @@ $font-base: 16px;
 $font-single: 14px;
 $font-half: 12px;
 
+@media print {
+  @page {
+    size: auto;
+    margin: 20mm 0 10mm 0;
+  }
+}
+
 .onlyPrint {
   display: none;
 

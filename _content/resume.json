@@ -4,17 +4,14 @@
   "email": "lewandowski.jedrzej@gmail.com",
   "links": [
     {
-      "name": "github.com/TheFullResolution",
       "label": "Github",
       "url": "github.com/TheFullResolution"
     },
     {
-      "name": "linkedin.com/in/lewandowskijedrzej/",
       "label": "Linkedin",
       "url": "linkedin.com/in/lewandowskijedrzej/"
     },
     {
-      "name": "ss",
       "label": "Web",
       "url": "thefullresolution.com"
     }
