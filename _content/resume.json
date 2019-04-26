@@ -28,9 +28,10 @@
           "name": "Zoover Media B.V.",
           "url": "https://greatplacefortalent.nl/about-zoover/",
           "finished": "",
+          "accomplishments": "* Improved performance and accessibility of homepage and navigation by rewriting the legacy user interface.\n* Actively working with the designers on defining the new user experience for critical parts of the website.\n* Contributing to the future of zoover.nl stack, by initiating discussion of new tools and libraries and refactoring the code base.",
           "location": "Amsterdam, NL",
           "present": true,
-          "description": "Zoover is a Dutch website that focuses on collecting and sharing reviews about holiday destinations. "
+          "description": "Zoover.nl a Dutch website that focuses on collecting and sharing reviews about holiday destinations."
         },
         {
           "started": "2018-07-01T13:49:20.232Z",
@@ -39,7 +40,7 @@
           "name": "de Bijenkorf",
           "url": "https://www.debijenkorf.nl/over-de-bijenkorf",
           "finished": "2018-11-30T14:49:20.248Z",
-          "accomplishments": "* Rewrote Search component, introducing keyboard support, accessibility and modularizing it, so it can be implemented across different repositories.",
+          "accomplishments": "* Rewrote Search component, introducing keyboard and accessibility support.\n* Took an active role in extending the component library distributed via private npm account.",
           "location": "Amsterdam, NL",
           "description": "A chain of high-end department stores in the Netherlands, with its flagship store on Dam Square in Amsterdam."
         },
@@ -50,7 +51,7 @@
           "name": "Bleeve B.V. (GreenHome)",
           "url": "https://greenhome.nl/over-greenhome",
           "finished": "2018-06-30T13:51:46.876Z",
-          "accomplishments": "* Implemented end to end testing and integration testing with Cypress and Jest.\n* Rewrite and transfer of greenhome.nl from Angular 1.5 to React.\n* Improved user experience, by improving accessibility of the websites and actively working with the designer on improving user interfaces.",
+          "accomplishments": "* Implemented end to end testing and integration testing with Cypress and Jest.\n* Rewrite and transfer of greenhome.nl from Angular 1.5 to React.\n* Improved user experience, by improving the accessibility of the websites and actively working with the designer on improving user interfaces.",
           "location": "Amsterdam, NL",
           "description": "An independent marketplace for energy-neutral house improvements, with the competitive advantage of applying e-commerce methods in a traditional industry."
         }
