@@ -27,20 +27,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-netlify-cms`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/_content`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-json`,
-      options: {
-        typeName: ({ node, object, isArray }) => node.name,
-      },
-    },
     {
       resolve: `gatsby-plugin-eslint`,
       options: {
@@ -53,7 +39,28 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `media`,
+        path: `${__dirname}/_cms/media`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/_cms/content`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: ({ node, object, isArray }) => node.name,
+      },
+    },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-cms`,
     `gatsby-mdx`,
   ],
 }

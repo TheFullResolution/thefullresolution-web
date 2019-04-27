@@ -2,8 +2,8 @@ backend:
   name: github
   repo: TheFullResolution/thefullresolution
 
-media_folder: static/assets
-public_folder: assets
+media_folder: _cms/media
+public_folder: media
 
 collections:
   - label: "Pages"
@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Meta Data"
         name: "metaData"
-        file: _content/metaData.json
+        file: _cms/content/metaData.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
@@ -25,13 +25,13 @@ collections:
                 multiple: false
       - label: "Home"
         name: "home"
-        file: _content/home.json
+        file: _cms/content/home.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Content, name: content, widget: markdown }
       - label: "Resume"
         name: "resume"
-        file: "_content/resume.json"
+        file: "_cms/content/resume.json"
         fields:
           - { label: Name, name: name, widget: string }
           - { label: Phone, name: phone, widget: string }
