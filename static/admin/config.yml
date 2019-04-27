@@ -16,7 +16,13 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
           - { label: Github, name: github, widget: string }
-          - { label: Linkedin, name: linkedin, widget: string }    
+          - { label: Linkedin, name: linkedin, widget: string }
+          - label: "Banner"
+            name: "banner"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
       - label: "Home"
         name: "home"
         file: _content/home.json
