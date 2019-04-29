@@ -46,6 +46,8 @@ module.exports = {
         path: `${__dirname}/_cms/media`,
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -56,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        typeName: ({ node, object, isArray }) => node.name,
+        typeName: ({ node }) => node.name,
       },
     },
     `gatsby-plugin-react-helmet`,
