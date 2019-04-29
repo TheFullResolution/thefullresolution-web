@@ -43,7 +43,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/static/images/uploads`,
+        path: `${__dirname}/static/images`,
       },
     },
     `gatsby-plugin-sharp`,
@@ -63,7 +63,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify-cms-paths-json`,
     `gatsby-mdx`,
   ],
 }
