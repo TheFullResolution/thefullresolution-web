@@ -20,7 +20,7 @@
     "@types/react-helmet": "5.0.8",
     "@types/typography": "0.16.2",
     "classnames": "2.2.6",
-    "gatsby": "2.3.32",
+    "gatsby": "2.3.33",
     "gatsby-image": "2.0.40",
     "gatsby-mdx": "0.6.2",
     "gatsby-plugin-netlify-cms": "3.0.18",
@@ -50,6 +50,7 @@
     "@graphql-codegen/cli": "1.1.1",
     "@graphql-codegen/typescript": "1.1.1",
     "@graphql-codegen/typescript-operations": "1.1.1",
+    "@types/node": "11.13.8",
     "@typescript-eslint/eslint-plugin": "1.7.0",
     "@typescript-eslint/parser": "1.7.0",
     "eslint-config-prettier": "4.2.0",
@@ -58,9 +59,6 @@
     "eslint-plugin-react-hooks": "1.6.0",
     "gatsby-plugin-eslint": "2.0.5",
     "prettier": "1.17.0",
-    "sass": "1.19.0",
-    "tslint": "5.16.0",
-    "tslint-loader": "3.5.4",
-    "tslint-react": "4.0.0"
+    "sass": "1.19.0"
   }
 }

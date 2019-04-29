@@ -19,6 +19,12 @@ module.exports = {
     browser: true,
     node: true,
   },
+  settings: {
+    react: {
+      pragma: 'React',
+      version: '16.8',
+    },
+  },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',

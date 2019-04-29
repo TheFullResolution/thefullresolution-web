@@ -21,16 +21,16 @@
       color: $green;
     }
   }
+}
 
+.wrapper {
+  max-width: $max-width;
+  margin: 0 auto;
+  
   @include max-width {
     padding: {
       left: $space-container;
       right: $space-container;
     }
   }
-}
-
-.wrapper {
-  max-width: $max-width;
-  margin: 0 auto;
 }

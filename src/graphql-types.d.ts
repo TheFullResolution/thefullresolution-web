@@ -2956,19 +2956,6 @@ export type SiteLinksDataQuery = { readonly __typename?: 'Query' } & {
       >
     }
   >
-  readonly file: Maybe<
-    { readonly __typename?: 'File' } & {
-      readonly childImageSharp: Maybe<
-        { readonly __typename?: 'ImageSharp' } & {
-          readonly fixed: Maybe<
-            {
-              readonly __typename?: 'ImageSharpFixed'
-            } & GatsbyImageSharpFixedFragment
-          >
-        }
-      >
-    }
-  >
 }
 
 export type HelmetDataQueryVariables = {}
@@ -2979,6 +2966,31 @@ export type HelmetDataQuery = { readonly __typename?: 'Query' } & {
       MetaData,
       'title' | 'description'
     >
+  >
+}
+
+export type AllFileImageQueryVariables = {}
+
+export type AllFileImageQuery = { readonly __typename?: 'Query' } & {
+  readonly allFile: Maybe<
+    { readonly __typename?: 'FileConnection' } & {
+      readonly nodes: ReadonlyArray<
+        { readonly __typename?: 'File' } & Pick<
+          File,
+          'relativePath' | 'base' | 'relativeDirectory'
+        > & {
+            readonly childImageSharp: Maybe<
+              { readonly __typename?: 'ImageSharp' } & {
+                readonly fluid: Maybe<
+                  {
+                    readonly __typename?: 'ImageSharpFluid'
+                  } & GatsbyImageSharpFluid_WithWebp_TracedSvgFragment
+                >
+              }
+            >
+          }
+      >
+    }
   >
 }
 
