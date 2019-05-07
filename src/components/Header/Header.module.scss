@@ -7,6 +7,10 @@
     left: auto;
     right: auto;
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 .wrapper {
@@ -30,10 +34,6 @@
     &.active {
       text-decoration: underline;
     }
-  }
-
-  @media print {
-    display: none;
   }
 
   @include max-width {
