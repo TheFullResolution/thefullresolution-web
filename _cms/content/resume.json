@@ -24,11 +24,11 @@
         {
           "started": "2018-12-01T15:07:09.769Z",
           "position": "Front-End Developer",
-          "technologies": "* JavaScript with Flow, React, Redux\n* Node.js\n* Jest, Testcafe\n",
+          "technologies": "* Typescript, React, Redux\n* Node.js\n* Jest, Testcafe",
           "name": "Zoover Media B.V.",
           "url": "https://greatplacefortalent.nl/about-zoover/",
           "finished": "",
-          "accomplishments": "* Improved performance and accessibility of homepage and navigation by rewriting the legacy user interface.\n* Actively working with the designers on defining the new user experience for critical parts of the website.\n* Contributing to the future of zoover.nl stack, by initiating discussion of new tools and libraries and refactoring the code base.",
+          "accomplishments": "* Took leading role in complete rewrite of the accommodation profile page. \n* Improved performance and accessibility of homepage and navigation by rewriting the legacy user interface.\n* Actively working with the designers on defining the new user experience for critical parts of the website.",
           "location": "Amsterdam, NL",
           "present": true,
           "description": "Zoover.nl a Dutch website that focuses on collecting and sharing reviews about holiday destinations."
