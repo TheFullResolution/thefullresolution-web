@@ -1,11 +1,21 @@
-$font-base: 16px;
-$font-single: 14px;
-$font-half: 12px;
+:root {
+  --space-quarter: #{$space-quarter};
+  --space-half: #{$space-half};
+  --space-single: #{$space-single};
+  --space-double: #{$space-double};
+}
 
 @media print {
+  :root {
+    --space-quarter: #{$space-quarter / 2};
+    --space-half: #{$space-half / 2};
+    --space-single: #{$space-single / 2};
+    --space-double: #{$space-double / 2};
+  }
+
   @page {
     size: auto;
-    margin: 20mm 0 10mm 0;
+    margin: 10mm;
   }
 }
 
@@ -41,7 +51,7 @@ $font-half: 12px;
       align-items: center;
 
       svg {
-        margin-right: $space-half;
+        margin-right: var(--space-half);
       }
     }
   }
@@ -54,14 +64,14 @@ $font-half: 12px;
 
   h2 {
     border-bottom: 1px solid $black;
-    padding-bottom: $space-half;
-    margin-top: $space-single;
-    margin-bottom: $space-single;
+    padding-bottom: var(--space-half);
+    margin-top: var(--space-single);
+    margin-bottom: var(--space-single);
   }
 
   h3 {
     font-size: $font-base;
-    margin-bottom: $space-half;
+    margin-bottom: var(--space-half);
   }
 
   h4 {
@@ -70,13 +80,13 @@ $font-half: 12px;
 
   h4,
   ul {
-    margin-bottom: $space-half;
+    margin-bottom: var(--space-half);
     font-size: $font-single;
   }
 
   p {
     font-size: $font-single;
-    margin-bottom: $space-quarter;
+    margin-bottom: var(--space-quarter);
   }
 
   li {
@@ -89,7 +99,7 @@ $font-half: 12px;
 }
 
 .positionBlock {
-  margin-bottom: $space-single;
+  margin-bottom: var(--space-single);
 }
 
 .positionTitle {
@@ -98,7 +108,7 @@ $font-half: 12px;
   flex-wrap: wrap;
 
   svg {
-    margin-right: $space-quarter;
+    margin-right: var(--space-quarter);
   }
 
   h3 {
@@ -113,7 +123,7 @@ $font-half: 12px;
 .details {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin-bottom: $space-double;
+  margin-bottom: var(--space-double);
 }
 
 @media print {
@@ -123,10 +133,14 @@ $font-half: 12px;
       font-size: $font-single;
     }
     h3,
-    h4,
+    h4
+    {
+      font-size: $font-half;
+    }
+
     ul,
     p {
-      font-size: $font-half;
+      font-size: $font-half - 2;
     }
 
     a {
@@ -135,6 +149,6 @@ $font-half: 12px;
   }
 
   .details {
-    margin-bottom: $space-single;
+    margin-bottom: var(--space-single);
   }
 }
