@@ -128,6 +128,7 @@
 
 @media print {
   .container {
+    color-adjust: exact;
     h2 {
       margin-top: 0;
       font-size: $font-single;
