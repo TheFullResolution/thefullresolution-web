@@ -29,7 +29,7 @@ export const Header: React.FC<Props> = ({ page }) => {
   `)
   return (
     <header className={styles.container}>
-      <ResponsiveImg image={metaData.banner} alt="banner" />
+      <ResponsiveImg image={metaData.banner} alt="banner" className={styles.image}/>
       <div className={styles.wrapper}>
         <h1>
           {metaData.title} - {page}
