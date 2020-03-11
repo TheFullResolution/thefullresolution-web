@@ -1,0 +1,8 @@
+.container {
+
+  :global(.markdown-image) {
+    width: 150px;
+    float: right;
+    margin:  $space-quarter 0 $space-quarter $space-quarter;
+  }
+}

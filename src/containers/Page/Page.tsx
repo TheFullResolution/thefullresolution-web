@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Header } from '../Header/Header';
+import { Header } from '../../components/Header/Header';
 import * as styles from './Page.module.scss';
-import { MetaData } from '../MetaData/MetaData';
-import { Footer } from '../Footer/Footer';
+import { MetaData } from '../../components/MetaData/MetaData';
+import { Footer } from '../../components/Footer/Footer';
 
 interface Props {
   page: string

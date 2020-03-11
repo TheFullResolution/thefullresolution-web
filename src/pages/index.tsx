@@ -1,19 +1,20 @@
 import { graphql } from 'gatsby'
-import Markdown from 'markdown-to-jsx'
 import * as React from 'react'
-
-import { Page } from '../components/Page/Page'
+import { Page } from '../containers/Page/Page'
 import { HomeDataQuery } from '../graphql-types'
+import { Home } from '../containers/Home/Home'
 
 interface Props {
   data: HomeDataQuery
 }
 
-const HomePage: React.FC<Props> = ({ data }) => (
-  <Page page="Personal Page">
-    <Markdown>{data.home.content}</Markdown>
-  </Page>
-)
+const HomePage: React.FC<Props> = ({ data }) => {
+  return (
+    <Page page="Personal Page">
+      <Home>{data.home.content}</Home>
+    </Page>
+  )
+}
 
 export default HomePage
 

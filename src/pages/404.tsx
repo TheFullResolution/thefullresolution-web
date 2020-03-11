@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { GoIssueOpened } from 'react-icons/go'
-import { Page } from '../components/Page/Page'
+import { Page } from '../containers/Page/Page'
 
 const Page404: React.FC = () => (
   <Page page="404">

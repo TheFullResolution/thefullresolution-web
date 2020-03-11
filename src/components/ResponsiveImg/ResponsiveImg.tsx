@@ -6,10 +6,16 @@ import { AllFileImageQuery } from '../../graphql-types'
 interface Props {
   image: string
   alt: string
+  title?: string
   className?: string
 }
 
-export const ResponsiveImg: React.FC<Props> = ({ image, alt, className }) => {
+export const ResponsiveImg: React.FC<Props> = ({
+  image,
+  title,
+  alt,
+  className,
+}) => {
   const { allFile }: AllFileImageQuery = useStaticQuery(graphql`
     query AllFileImage {
       allFile(filter: { relativeDirectory: { eq: "uploads" } }) {
@@ -32,5 +38,13 @@ export const ResponsiveImg: React.FC<Props> = ({ image, alt, className }) => {
 
   if (!gatsbyImageConfig) return null
 
-  return <Img fluid={gatsbyImageConfig.childImageSharp.fluid} fadeIn={false} alt={alt}  className={className} />
+  return (
+    <Img
+      fluid={gatsbyImageConfig.childImageSharp.fluid}
+      fadeIn={false}
+      alt={alt}
+      title={title ?? alt}
+      className={className}
+    />
+  )
 }
