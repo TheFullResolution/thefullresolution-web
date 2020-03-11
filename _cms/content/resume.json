@@ -28,10 +28,10 @@
           "name": "Zoover Media B.V.",
           "url": "https://greatplacefortalent.nl/about-zoover/",
           "finished": "",
-          "accomplishments": "* Took a leading role in a complete rewrite of the accommodation profile page. \n* Improved performance and accessibility of homepage and navigation by rewriting the legacy user interface.\n* Actively working with the designers on defining the new user experience for critical parts of the website.",
+          "accomplishments": "* Migration of pages and features from the legacy platform to the new React application.\n* Deploying completely redesigned new accommodation page with improved accessibility, mobile design and features.\n* Simplifying the build configuration, improving website performance and unifying fragmented user interface components",
           "location": "Amsterdam, NL",
           "present": true,
-          "description": "Zoover.nl a Dutch website that focuses on collecting and sharing reviews about holiday destinations."
+          "description": "Zoover.nl a Dutch travel platform, providing information about holiday destinations and offering packages from major tour operators."
         },
         {
           "started": "2018-07-01T13:49:20.232Z",
@@ -40,7 +40,7 @@
           "name": "de Bijenkorf",
           "url": "https://www.debijenkorf.nl/over-de-bijenkorf",
           "finished": "2018-11-30T14:49:20.248Z",
-          "accomplishments": "* Rewrote Search component, introducing keyboard and accessibility support.\n* Took an active role in extending the component library distributed via private npm account.",
+          "accomplishments": "* Rewrote Search component, introducing keyboard and accessibility support.\n* Took an active role in extending the component library.",
           "location": "Amsterdam, NL",
           "description": "A chain of high-end department stores in the Netherlands, with its flagship store on Dam Square in Amsterdam."
         },
