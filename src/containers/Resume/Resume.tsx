@@ -1,9 +1,9 @@
-import Markdown from 'markdown-to-jsx'
 import * as React from 'react'
 import { ResumeDataQuery } from '../../graphql-types'
 import { formatDate } from '../../utils/formatDate'
 import * as styles from './Resume.module.scss'
-import { GoBriefcase, GoMail, GoDeviceMobile, GoHistory } from 'react-icons/go'
+import { GoBriefcase, GoHistory } from 'react-icons/go'
+import { Markdown } from '../../components/Markdown/Markdown'
 
 interface Props {
   data: ResumeDataQuery
@@ -16,36 +16,22 @@ export const Resume: React.FC<Props> = ({ data }) => {
   }
   return (
     <div className={styles.container}>
-      <h1 className={styles.notInPrint}>Resume</h1>
       <div className={styles.onlyPrint}>
         <h1>{resume.name}</h1>
         <div className={styles.contact}>
           <ul>
-            <li>
-              <span>
-                <GoDeviceMobile />
-                Phone:
-              </span>
-              <span>{resume.phone}</span>
-            </li>
-            <li>
-              <span>
-                <GoMail />
-                Email:
-              </span>
-              <span>{resume.email}</span>
-            </li>
-          </ul>
-          <ul>
-            {resume.links.map(link => (
-              <li key={link.url}>
-                <span>{link.label}:</span>
-                <span>{link.url}</span>
-              </li>
+            {resume.contact.map(({ item }, index) => (
+              <li key={index}><Markdown className={styles.item}>{item}</Markdown></li>
             ))}
           </ul>
         </div>
       </div>
+      {resume.skills.map(({ title, technologies }) => (
+        <div key={title}>
+          <h2>{title}</h2>
+          <Markdown className={styles.skills}>{technologies}</Markdown>
+        </div>
+      ))}
       {resume.section.map(({ title, content, date_display }) => (
         <div key={title}>
           <h2>{title}</h2>
@@ -78,7 +64,7 @@ export const Resume: React.FC<Props> = ({ data }) => {
                         {nameWithLink} - {position}{' '}
                         {location && `(${location})`}
                       </h3>
-                      <p>
+                      <p className={styles.time}>
                         <GoHistory />
                         {formatDate(started, date_display)} -{' '}
                         {present

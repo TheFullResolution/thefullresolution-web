@@ -25,9 +25,12 @@ export const query = graphql`
       name
       phone
       email
-      links {
-        label
-        url
+      contact {
+        item
+      }
+      skills {
+        title
+        technologies
       }
       section {
         title

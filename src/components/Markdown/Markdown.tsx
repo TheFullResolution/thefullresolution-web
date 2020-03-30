@@ -1,6 +1,12 @@
 import React from 'react'
 import MarkdownToJsx from 'markdown-to-jsx'
 import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg'
+import * as FaIcons from "react-icons/fa";
+import * as GoIcons from "react-icons/go";
+import {IconType} from 'react-icons'
+
+const TypedFaIcons = FaIcons as Record<string, IconType>
+const TypedGoIcons = GoIcons as Record<string, IconType>
 
 interface Props {
   className?: string
@@ -11,7 +17,14 @@ const ImageWrapper: React.FC<{ alt: string; title: string; src: string }> = ({
   title,
   src,
 }) => {
-  return <ResponsiveImg className="markdown-image" image={src} alt={alt} title={title} />
+  return (
+    <ResponsiveImg
+      className="markdown-image"
+      image={src}
+      alt={alt}
+      title={title}
+    />
+  )
 }
 
 const PWrapper: React.FC = ({ children }) => {
@@ -30,18 +43,26 @@ const PWrapper: React.FC = ({ children }) => {
   } else return <p>{children}</p>
 }
 
+const ItagWrapper: React.FC<{children: string}> = ({ children }) => {
+  const Icon = TypedFaIcons[children] ?? TypedGoIcons[children]
+  // console.log(JSON.stringify(ReactIcons, null, 2))
+  return <Icon />
+}
+
 export const Markdown: React.FC<Props> = ({ className, children }) => {
   return (
-    <MarkdownToJsx
-      className={className}
-      options={{
-        overrides: {
-          img: ImageWrapper,
-          p: PWrapper,
-        },
-      }}
-    >
-      {children}
-    </MarkdownToJsx>
+    <div className={className}>
+      <MarkdownToJsx
+        options={{
+          overrides: {
+            img: ImageWrapper,
+            p: PWrapper,
+            i: ItagWrapper,
+          },
+        }}
+      >
+        {children}
+      </MarkdownToJsx>
+    </div>
   )
 }

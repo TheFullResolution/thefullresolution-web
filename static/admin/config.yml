@@ -34,14 +34,17 @@ collections:
         file: "_cms/content/resume.json"
         fields:
           - { label: Name, name: name, widget: string }
-          - { label: Phone, name: phone, widget: string }
-          - { label: Email, name: email, widget: string }
-          - label: "Links"
-            name: links
+          - label: "Contact"
+            name: contact
             widget: list
             fields:
-              - { label: Label, name: label, widget: string }
-              - { label: Url, name: url, widget: string }
+              - { label: Item, name: item, widget: markdown }
+          - label: "Skills"
+            name: skills
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: "List", name: technologies, widget: markdown, required: true }
           - label: "Section"
             name: section
             widget: list
