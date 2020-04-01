@@ -28,7 +28,8 @@ collections:
         file: _cms/content/home.json
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Content, name: content, widget: markdown }
+          - { label: About, name: about, widget: markdown }
+          - { label: Tech Stack, name: techStack, widget: markdown }
       - label: "Resume"
         name: "resume"
         file: "_cms/content/resume.json"

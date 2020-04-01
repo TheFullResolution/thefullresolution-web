@@ -23,7 +23,7 @@
 }
 
 @mixin max-width {
-  @media (max-width: #{$max-width - 1px}) {
+  @media (max-width: #{$max-width + 15px}) {
     @content;
   }
 }

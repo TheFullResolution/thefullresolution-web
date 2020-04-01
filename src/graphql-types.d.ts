@@ -60,7 +60,9 @@ export type Directory = Node & {
   readonly atime: Scalars['Date'];
   readonly mtime: Scalars['Date'];
   readonly ctime: Scalars['Date'];
+  /** @deprecated Use `birthTime` instead */
   readonly birthtime: Maybe<Scalars['Date']>;
+  /** @deprecated Use `birthTime` instead */
   readonly birthtimeMs: Maybe<Scalars['Float']>;
   readonly blksize: Maybe<Scalars['Int']>;
   readonly blocks: Maybe<Scalars['Int']>;
@@ -369,7 +371,9 @@ export type File = Node & {
   readonly atime: Scalars['Date'];
   readonly mtime: Scalars['Date'];
   readonly ctime: Scalars['Date'];
+  /** @deprecated Use `birthTime` instead */
   readonly birthtime: Maybe<Scalars['Date']>;
+  /** @deprecated Use `birthTime` instead */
   readonly birthtimeMs: Maybe<Scalars['Float']>;
   readonly blksize: Maybe<Scalars['Int']>;
   readonly blocks: Maybe<Scalars['Int']>;
@@ -379,9 +383,9 @@ export type File = Node & {
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
-  readonly childResume: Maybe<Resume>;
   readonly childHome: Maybe<Home>;
   readonly childMetaData: Maybe<MetaData>;
+  readonly childResume: Maybe<Resume>;
 };
 
 
@@ -681,6 +685,91 @@ export enum FileFieldsEnum {
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
+  ChildHomeId = 'childHome___id',
+  ChildHomeParentId = 'childHome___parent___id',
+  ChildHomeParentParentId = 'childHome___parent___parent___id',
+  ChildHomeParentParentChildren = 'childHome___parent___parent___children',
+  ChildHomeParentChildren = 'childHome___parent___children',
+  ChildHomeParentChildrenId = 'childHome___parent___children___id',
+  ChildHomeParentChildrenChildren = 'childHome___parent___children___children',
+  ChildHomeParentInternalContent = 'childHome___parent___internal___content',
+  ChildHomeParentInternalContentDigest = 'childHome___parent___internal___contentDigest',
+  ChildHomeParentInternalDescription = 'childHome___parent___internal___description',
+  ChildHomeParentInternalFieldOwners = 'childHome___parent___internal___fieldOwners',
+  ChildHomeParentInternalIgnoreType = 'childHome___parent___internal___ignoreType',
+  ChildHomeParentInternalMediaType = 'childHome___parent___internal___mediaType',
+  ChildHomeParentInternalOwner = 'childHome___parent___internal___owner',
+  ChildHomeParentInternalType = 'childHome___parent___internal___type',
+  ChildHomeChildren = 'childHome___children',
+  ChildHomeChildrenId = 'childHome___children___id',
+  ChildHomeChildrenParentId = 'childHome___children___parent___id',
+  ChildHomeChildrenParentChildren = 'childHome___children___parent___children',
+  ChildHomeChildrenChildren = 'childHome___children___children',
+  ChildHomeChildrenChildrenId = 'childHome___children___children___id',
+  ChildHomeChildrenChildrenChildren = 'childHome___children___children___children',
+  ChildHomeChildrenInternalContent = 'childHome___children___internal___content',
+  ChildHomeChildrenInternalContentDigest = 'childHome___children___internal___contentDigest',
+  ChildHomeChildrenInternalDescription = 'childHome___children___internal___description',
+  ChildHomeChildrenInternalFieldOwners = 'childHome___children___internal___fieldOwners',
+  ChildHomeChildrenInternalIgnoreType = 'childHome___children___internal___ignoreType',
+  ChildHomeChildrenInternalMediaType = 'childHome___children___internal___mediaType',
+  ChildHomeChildrenInternalOwner = 'childHome___children___internal___owner',
+  ChildHomeChildrenInternalType = 'childHome___children___internal___type',
+  ChildHomeInternalContent = 'childHome___internal___content',
+  ChildHomeInternalContentDigest = 'childHome___internal___contentDigest',
+  ChildHomeInternalDescription = 'childHome___internal___description',
+  ChildHomeInternalFieldOwners = 'childHome___internal___fieldOwners',
+  ChildHomeInternalIgnoreType = 'childHome___internal___ignoreType',
+  ChildHomeInternalMediaType = 'childHome___internal___mediaType',
+  ChildHomeInternalOwner = 'childHome___internal___owner',
+  ChildHomeInternalType = 'childHome___internal___type',
+  ChildHomeTitle = 'childHome___title',
+  ChildHomeContent = 'childHome___content',
+  ChildHomeAbout = 'childHome___about',
+  ChildHomeTechStack = 'childHome___techStack',
+  ChildMetaDataId = 'childMetaData___id',
+  ChildMetaDataParentId = 'childMetaData___parent___id',
+  ChildMetaDataParentParentId = 'childMetaData___parent___parent___id',
+  ChildMetaDataParentParentChildren = 'childMetaData___parent___parent___children',
+  ChildMetaDataParentChildren = 'childMetaData___parent___children',
+  ChildMetaDataParentChildrenId = 'childMetaData___parent___children___id',
+  ChildMetaDataParentChildrenChildren = 'childMetaData___parent___children___children',
+  ChildMetaDataParentInternalContent = 'childMetaData___parent___internal___content',
+  ChildMetaDataParentInternalContentDigest = 'childMetaData___parent___internal___contentDigest',
+  ChildMetaDataParentInternalDescription = 'childMetaData___parent___internal___description',
+  ChildMetaDataParentInternalFieldOwners = 'childMetaData___parent___internal___fieldOwners',
+  ChildMetaDataParentInternalIgnoreType = 'childMetaData___parent___internal___ignoreType',
+  ChildMetaDataParentInternalMediaType = 'childMetaData___parent___internal___mediaType',
+  ChildMetaDataParentInternalOwner = 'childMetaData___parent___internal___owner',
+  ChildMetaDataParentInternalType = 'childMetaData___parent___internal___type',
+  ChildMetaDataChildren = 'childMetaData___children',
+  ChildMetaDataChildrenId = 'childMetaData___children___id',
+  ChildMetaDataChildrenParentId = 'childMetaData___children___parent___id',
+  ChildMetaDataChildrenParentChildren = 'childMetaData___children___parent___children',
+  ChildMetaDataChildrenChildren = 'childMetaData___children___children',
+  ChildMetaDataChildrenChildrenId = 'childMetaData___children___children___id',
+  ChildMetaDataChildrenChildrenChildren = 'childMetaData___children___children___children',
+  ChildMetaDataChildrenInternalContent = 'childMetaData___children___internal___content',
+  ChildMetaDataChildrenInternalContentDigest = 'childMetaData___children___internal___contentDigest',
+  ChildMetaDataChildrenInternalDescription = 'childMetaData___children___internal___description',
+  ChildMetaDataChildrenInternalFieldOwners = 'childMetaData___children___internal___fieldOwners',
+  ChildMetaDataChildrenInternalIgnoreType = 'childMetaData___children___internal___ignoreType',
+  ChildMetaDataChildrenInternalMediaType = 'childMetaData___children___internal___mediaType',
+  ChildMetaDataChildrenInternalOwner = 'childMetaData___children___internal___owner',
+  ChildMetaDataChildrenInternalType = 'childMetaData___children___internal___type',
+  ChildMetaDataInternalContent = 'childMetaData___internal___content',
+  ChildMetaDataInternalContentDigest = 'childMetaData___internal___contentDigest',
+  ChildMetaDataInternalDescription = 'childMetaData___internal___description',
+  ChildMetaDataInternalFieldOwners = 'childMetaData___internal___fieldOwners',
+  ChildMetaDataInternalIgnoreType = 'childMetaData___internal___ignoreType',
+  ChildMetaDataInternalMediaType = 'childMetaData___internal___mediaType',
+  ChildMetaDataInternalOwner = 'childMetaData___internal___owner',
+  ChildMetaDataInternalType = 'childMetaData___internal___type',
+  ChildMetaDataTitle = 'childMetaData___title',
+  ChildMetaDataDescription = 'childMetaData___description',
+  ChildMetaDataGithub = 'childMetaData___github',
+  ChildMetaDataLinkedin = 'childMetaData___linkedin',
+  ChildMetaDataBanner = 'childMetaData___banner',
   ChildResumeId = 'childResume___id',
   ChildResumeParentId = 'childResume___parent___id',
   ChildResumeParentParentId = 'childResume___parent___parent___id',
@@ -743,90 +832,7 @@ export enum FileFieldsEnum {
   ChildResumeSkillsTitle = 'childResume___skills___title',
   ChildResumeSkillsTechnologies = 'childResume___skills___technologies',
   ChildResumeContact = 'childResume___contact',
-  ChildResumeContactItem = 'childResume___contact___item',
-  ChildHomeId = 'childHome___id',
-  ChildHomeParentId = 'childHome___parent___id',
-  ChildHomeParentParentId = 'childHome___parent___parent___id',
-  ChildHomeParentParentChildren = 'childHome___parent___parent___children',
-  ChildHomeParentChildren = 'childHome___parent___children',
-  ChildHomeParentChildrenId = 'childHome___parent___children___id',
-  ChildHomeParentChildrenChildren = 'childHome___parent___children___children',
-  ChildHomeParentInternalContent = 'childHome___parent___internal___content',
-  ChildHomeParentInternalContentDigest = 'childHome___parent___internal___contentDigest',
-  ChildHomeParentInternalDescription = 'childHome___parent___internal___description',
-  ChildHomeParentInternalFieldOwners = 'childHome___parent___internal___fieldOwners',
-  ChildHomeParentInternalIgnoreType = 'childHome___parent___internal___ignoreType',
-  ChildHomeParentInternalMediaType = 'childHome___parent___internal___mediaType',
-  ChildHomeParentInternalOwner = 'childHome___parent___internal___owner',
-  ChildHomeParentInternalType = 'childHome___parent___internal___type',
-  ChildHomeChildren = 'childHome___children',
-  ChildHomeChildrenId = 'childHome___children___id',
-  ChildHomeChildrenParentId = 'childHome___children___parent___id',
-  ChildHomeChildrenParentChildren = 'childHome___children___parent___children',
-  ChildHomeChildrenChildren = 'childHome___children___children',
-  ChildHomeChildrenChildrenId = 'childHome___children___children___id',
-  ChildHomeChildrenChildrenChildren = 'childHome___children___children___children',
-  ChildHomeChildrenInternalContent = 'childHome___children___internal___content',
-  ChildHomeChildrenInternalContentDigest = 'childHome___children___internal___contentDigest',
-  ChildHomeChildrenInternalDescription = 'childHome___children___internal___description',
-  ChildHomeChildrenInternalFieldOwners = 'childHome___children___internal___fieldOwners',
-  ChildHomeChildrenInternalIgnoreType = 'childHome___children___internal___ignoreType',
-  ChildHomeChildrenInternalMediaType = 'childHome___children___internal___mediaType',
-  ChildHomeChildrenInternalOwner = 'childHome___children___internal___owner',
-  ChildHomeChildrenInternalType = 'childHome___children___internal___type',
-  ChildHomeInternalContent = 'childHome___internal___content',
-  ChildHomeInternalContentDigest = 'childHome___internal___contentDigest',
-  ChildHomeInternalDescription = 'childHome___internal___description',
-  ChildHomeInternalFieldOwners = 'childHome___internal___fieldOwners',
-  ChildHomeInternalIgnoreType = 'childHome___internal___ignoreType',
-  ChildHomeInternalMediaType = 'childHome___internal___mediaType',
-  ChildHomeInternalOwner = 'childHome___internal___owner',
-  ChildHomeInternalType = 'childHome___internal___type',
-  ChildHomeTitle = 'childHome___title',
-  ChildHomeContent = 'childHome___content',
-  ChildMetaDataId = 'childMetaData___id',
-  ChildMetaDataParentId = 'childMetaData___parent___id',
-  ChildMetaDataParentParentId = 'childMetaData___parent___parent___id',
-  ChildMetaDataParentParentChildren = 'childMetaData___parent___parent___children',
-  ChildMetaDataParentChildren = 'childMetaData___parent___children',
-  ChildMetaDataParentChildrenId = 'childMetaData___parent___children___id',
-  ChildMetaDataParentChildrenChildren = 'childMetaData___parent___children___children',
-  ChildMetaDataParentInternalContent = 'childMetaData___parent___internal___content',
-  ChildMetaDataParentInternalContentDigest = 'childMetaData___parent___internal___contentDigest',
-  ChildMetaDataParentInternalDescription = 'childMetaData___parent___internal___description',
-  ChildMetaDataParentInternalFieldOwners = 'childMetaData___parent___internal___fieldOwners',
-  ChildMetaDataParentInternalIgnoreType = 'childMetaData___parent___internal___ignoreType',
-  ChildMetaDataParentInternalMediaType = 'childMetaData___parent___internal___mediaType',
-  ChildMetaDataParentInternalOwner = 'childMetaData___parent___internal___owner',
-  ChildMetaDataParentInternalType = 'childMetaData___parent___internal___type',
-  ChildMetaDataChildren = 'childMetaData___children',
-  ChildMetaDataChildrenId = 'childMetaData___children___id',
-  ChildMetaDataChildrenParentId = 'childMetaData___children___parent___id',
-  ChildMetaDataChildrenParentChildren = 'childMetaData___children___parent___children',
-  ChildMetaDataChildrenChildren = 'childMetaData___children___children',
-  ChildMetaDataChildrenChildrenId = 'childMetaData___children___children___id',
-  ChildMetaDataChildrenChildrenChildren = 'childMetaData___children___children___children',
-  ChildMetaDataChildrenInternalContent = 'childMetaData___children___internal___content',
-  ChildMetaDataChildrenInternalContentDigest = 'childMetaData___children___internal___contentDigest',
-  ChildMetaDataChildrenInternalDescription = 'childMetaData___children___internal___description',
-  ChildMetaDataChildrenInternalFieldOwners = 'childMetaData___children___internal___fieldOwners',
-  ChildMetaDataChildrenInternalIgnoreType = 'childMetaData___children___internal___ignoreType',
-  ChildMetaDataChildrenInternalMediaType = 'childMetaData___children___internal___mediaType',
-  ChildMetaDataChildrenInternalOwner = 'childMetaData___children___internal___owner',
-  ChildMetaDataChildrenInternalType = 'childMetaData___children___internal___type',
-  ChildMetaDataInternalContent = 'childMetaData___internal___content',
-  ChildMetaDataInternalContentDigest = 'childMetaData___internal___contentDigest',
-  ChildMetaDataInternalDescription = 'childMetaData___internal___description',
-  ChildMetaDataInternalFieldOwners = 'childMetaData___internal___fieldOwners',
-  ChildMetaDataInternalIgnoreType = 'childMetaData___internal___ignoreType',
-  ChildMetaDataInternalMediaType = 'childMetaData___internal___mediaType',
-  ChildMetaDataInternalOwner = 'childMetaData___internal___owner',
-  ChildMetaDataInternalType = 'childMetaData___internal___type',
-  ChildMetaDataTitle = 'childMetaData___title',
-  ChildMetaDataDescription = 'childMetaData___description',
-  ChildMetaDataGithub = 'childMetaData___github',
-  ChildMetaDataLinkedin = 'childMetaData___linkedin',
-  ChildMetaDataBanner = 'childMetaData___banner'
+  ChildResumeContactItem = 'childResume___contact___item'
 }
 
 export type FileFilterInput = {
@@ -869,9 +875,9 @@ export type FileFilterInput = {
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
-  readonly childResume: Maybe<ResumeFilterInput>;
   readonly childHome: Maybe<HomeFilterInput>;
   readonly childMetaData: Maybe<MetaDataFilterInput>;
+  readonly childResume: Maybe<ResumeFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -908,6 +914,8 @@ export type Home = Node & {
   readonly internal: Internal;
   readonly title: Maybe<Scalars['String']>;
   readonly content: Maybe<Scalars['String']>;
+  readonly about: Maybe<Scalars['String']>;
+  readonly techStack: Maybe<Scalars['String']>;
 };
 
 export type HomeConnection = {
@@ -1027,7 +1035,9 @@ export enum HomeFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   Title = 'title',
-  Content = 'content'
+  Content = 'content',
+  About = 'about',
+  TechStack = 'techStack'
 }
 
 export type HomeFilterInput = {
@@ -1037,6 +1047,8 @@ export type HomeFilterInput = {
   readonly internal: Maybe<InternalFilterInput>;
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly content: Maybe<StringQueryOperatorInput>;
+  readonly about: Maybe<StringQueryOperatorInput>;
+  readonly techStack: Maybe<StringQueryOperatorInput>;
 };
 
 export type HomeGroupConnection = {
@@ -1086,8 +1098,10 @@ export enum ImageFormat {
 export type ImageSharp = Node & {
   readonly __typename?: 'ImageSharp';
   readonly fixed: Maybe<ImageSharpFixed>;
+  /** @deprecated Resolutions was deprecated in Gatsby v2. It's been renamed to "fixed" https://example.com/write-docs-and-fix-this-example-link */
   readonly resolutions: Maybe<ImageSharpResolutions>;
   readonly fluid: Maybe<ImageSharpFluid>;
+  /** @deprecated Sizes was deprecated in Gatsby v2. It's been renamed to "fluid" https://example.com/write-docs-and-fix-this-example-link */
   readonly sizes: Maybe<ImageSharpSizes>;
   readonly original: Maybe<ImageSharpOriginal>;
   readonly resize: Maybe<ImageSharpResize>;
@@ -1824,10 +1838,10 @@ export type Query = {
   readonly allImageSharp: ImageSharpConnection;
   readonly resume: Maybe<Resume>;
   readonly allResume: ResumeConnection;
-  readonly home: Maybe<Home>;
-  readonly allHome: HomeConnection;
   readonly metaData: Maybe<MetaData>;
   readonly allMetaData: MetaDataConnection;
+  readonly home: Maybe<Home>;
+  readonly allHome: HomeConnection;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly sitePlugin: Maybe<SitePlugin>;
@@ -1875,9 +1889,9 @@ export type QueryFileArgs = {
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  childResume: Maybe<ResumeFilterInput>;
   childHome: Maybe<HomeFilterInput>;
   childMetaData: Maybe<MetaDataFilterInput>;
+  childResume: Maybe<ResumeFilterInput>;
 };
 
 
@@ -2030,24 +2044,6 @@ export type QueryAllResumeArgs = {
 };
 
 
-export type QueryHomeArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  content: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllHomeArgs = {
-  filter: Maybe<HomeFilterInput>;
-  sort: Maybe<HomeSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryMetaDataArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -2064,6 +2060,26 @@ export type QueryMetaDataArgs = {
 export type QueryAllMetaDataArgs = {
   filter: Maybe<MetaDataFilterInput>;
   sort: Maybe<MetaDataSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryHomeArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  content: Maybe<StringQueryOperatorInput>;
+  about: Maybe<StringQueryOperatorInput>;
+  techStack: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllHomeArgs = {
+  filter: Maybe<HomeFilterInput>;
+  sort: Maybe<HomeSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -3524,7 +3540,7 @@ export type HomeDataQuery = (
   { readonly __typename?: 'Query' }
   & { readonly home: Maybe<(
     { readonly __typename?: 'home' }
-    & Pick<Home, 'content'>
+    & Pick<Home, 'about' | 'techStack'>
   )> }
 );
 

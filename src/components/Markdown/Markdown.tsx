@@ -45,6 +45,7 @@ const PWrapper: React.FC = ({ children }) => {
 
 const ItagWrapper: React.FC<{children: string}> = ({ children }) => {
   const Icon = TypedFaIcons[children] ?? TypedGoIcons[children]
+  if(!Icon) return  null;
   // console.log(JSON.stringify(ReactIcons, null, 2))
   return <Icon />
 }

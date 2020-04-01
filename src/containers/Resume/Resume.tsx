@@ -21,7 +21,9 @@ export const Resume: React.FC<Props> = ({ data }) => {
         <div className={styles.contact}>
           <ul>
             {resume.contact.map(({ item }, index) => (
-              <li key={index}><Markdown className={styles.item}>{item}</Markdown></li>
+              <li key={index}>
+                <Markdown className={styles.item}>{item}</Markdown>
+              </li>
             ))}
           </ul>
         </div>
@@ -59,11 +61,13 @@ export const Resume: React.FC<Props> = ({ data }) => {
                 <div key={`${name}${position}`} className={styles.position}>
                   <div className={styles.positionBlock}>
                     <div className={styles.positionTitle}>
-                      <GoBriefcase />
-                      <h3>
-                        {nameWithLink} - {position}{' '}
-                        {location && `(${location})`}
-                      </h3>
+                      <div className={styles.positionHeader}>
+                        <GoBriefcase />
+                        <h3>
+                          {nameWithLink} - {position}{' '}
+                          {location && `(${location})`}
+                        </h3>
+                      </div>
                       <p className={styles.time}>
                         <GoHistory />
                         {formatDate(started, date_display)} -{' '}

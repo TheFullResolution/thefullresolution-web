@@ -1,8 +1,31 @@
-.container {
-
+.about {
   :global(.markdown-image) {
     width: 150px;
     float: right;
-    margin:  $space-quarter 0 $space-quarter $space-quarter;
+    margin: $space-quarter 0 $space-quarter $space-quarter;
+  }
+}
+
+.techStack {
+  ul {
+    display: grid;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: var(--space-double);
+
+    @include mobile-big {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: var(--space-quarter);
+      }
+    }
+
   }
 }

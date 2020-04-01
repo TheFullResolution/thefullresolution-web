@@ -11,7 +11,7 @@ interface Props {
 const HomePage: React.FC<Props> = ({ data }) => {
   return (
     <Page page="Personal Page">
-      <Home>{data.home.content}</Home>
+      <Home data={data} />
     </Page>
   )
 }
@@ -21,7 +21,8 @@ export default HomePage
 export const query = graphql`
   query HomeData {
     home {
-      content
+      about
+      techStack
     }
   }
 `
