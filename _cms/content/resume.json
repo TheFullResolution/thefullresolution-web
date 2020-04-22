@@ -28,7 +28,7 @@
           "name": "Zoover Media B.V.",
           "url": "https://greatplacefortalent.nl/about-zoover/",
           "finished": "",
-          "accomplishments": "* Migration of pages and features from the legacy platform to the new React application.\r\n* Deploying completely redesigned new accommodation page with improved accessibility, mobile design, and features.\r\n* Simplifying the build configuration, improving website performance and unifying fragmented user interface components.\r\n",
+          "accomplishments": "* Complete rewrite of the lister page to decouple frontend and backend filters and improve the performance. \n* Deploying completely redesigned new accommodation page with improved accessibility, mobile design, and new features.\n* Simplifying the build configuration, improving website performance and unifying fragmented user interface components.",
           "location": "Amsterdam, NL",
           "present": true,
           "description": "Zoover.nl a Dutch travel platform, providing information about holiday destinations and offering packages from major tour operators."
@@ -40,7 +40,7 @@
           "name": "de Bijenkorf",
           "url": "https://www.debijenkorf.nl/over-de-bijenkorf",
           "finished": "2018-11-30T14:49:20.248Z",
-          "accomplishments": "* Rewrote Search component, introducing keyboard and accessibility support.\n* Took an active role in extending the component library.",
+          "accomplishments": "* Rewrite of search component, introducing keyboard and accessibility support.\n* Active role in extending the internal component library.",
           "location": "Amsterdam, NL",
           "description": "A chain of high-end department stores in the Netherlands, with its flagship store on Dam Square in Amsterdam."
         },
@@ -51,7 +51,7 @@
           "name": "Bleeve B.V. (GreenHome)",
           "url": "https://greenhome.nl/over-greenhome",
           "finished": "2018-06-30T13:51:46.876Z",
-          "accomplishments": "* Implemented end to end testing and integration testing with Cypress and Jest.\n* Rewrite and transfer of greenhome.nl from Angular 1.5 to React.\n* Improved user experience, by improving the accessibility of the websites and actively working with the designer on improving user interfaces.",
+          "accomplishments": "* Implementation of end to end testing and integration testing with Cypress and Jest.\n* Rewrite and transfer of greenhome.nl from Angular 1.5 to React.",
           "location": "Amsterdam, NL",
           "description": "An independent marketplace for energy-neutral house improvements, with the competitive advantage of applying e-commerce methods in a traditional industry."
         }
