@@ -61,6 +61,14 @@ module.exports = {
         typeName: ({ node }) => node.name,
       },
     },
+    `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: '_cms/blog'
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
   ],
