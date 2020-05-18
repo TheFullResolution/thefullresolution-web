@@ -1,6 +1,8 @@
 ---
 contentKey: blog
 title: First Entry & First Project - 2D JS Game
+tags:
+  - JavaScript
 date: 2020-05-14T04:26:15.463Z
 ---
 #Hello
