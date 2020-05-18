@@ -17,9 +17,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+
   const result = await graphql(`
-    query {
-      allMarkdownRemark {
+    {
+      postsRemark: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 2000
+      ) {
         edges {
           node {
             fileAbsolutePath
@@ -29,19 +33,32 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              tags
+            }
           }
+        }
+      }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+          totalCount
         }
       }
     }
   `)
 
-  const blogEntries = result.data.allMarkdownRemark.edges.filter(
+  // handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  const blogEntries = result.data.postsRemark.edges.filter(
     ({ node }) => node.frontmatter.contentKey === 'blog',
   )
 
   blogEntries.forEach(({ node }) => {
-    console.log('-------------------------------------------------------------')
-    console.log({ slug: node.fields.slug })
     createPage({
       path: node.fields.slug,
       component: path.resolve('./src/templates/blog.tsx'),
@@ -54,7 +71,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const postsPerPage = 5
   const numPages = Math.ceil(blogEntries.length / postsPerPage)
 
-  console.log({ numPages })
+  const tags = result.data.tagsGroup.group.map((tag) => ({
+    ...tag,
+    url: `/tags/${encodeURI(tag.fieldValue)}/`,
+  }))
+
   for (let i = 0; i < numPages; i++) {
     createPage({
       path: i === 0 ? '/blog' : `/blog/${i + 1}`,
@@ -64,7 +85,20 @@ exports.createPages = async ({ graphql, actions }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+        tags
       },
     })
   }
+
+  // Make tag pages
+  tags.forEach((tag) => {
+    createPage({
+      path: tag.url,
+      component: path.resolve('./src/templates/tag-list.tsx'),
+      context: {
+        tag: tag.fieldValue,
+        count: tag.totalCount,
+      },
+    })
+  })
 }

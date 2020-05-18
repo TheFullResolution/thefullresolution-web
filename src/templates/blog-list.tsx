@@ -1,10 +1,16 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+import { BlogListQuery, SitePageContext } from '../graphql-types'
+import { Page } from '../containers/Page/Page'
+import { BlogList } from '../containers/BlogList/BlogList'
 
-import {graphql} from 'gatsby'
 
-const BlogListTemplate: React.FC<any> = ({ data, pageContext }) => {
-  console.log({pageContext})
+interface Props {
+  data: BlogListQuery
+  pageContext: SitePageContext
+}
 
+const BlogListTemplate: React.FC<Props> = ({ data, pageContext }) => {
   const isFirstPage = pageContext.currentPage === 1
   const isLastPage = pageContext.currentPage === pageContext.numPages
   const previousPage =
@@ -14,21 +20,21 @@ const BlogListTemplate: React.FC<any> = ({ data, pageContext }) => {
   const nextPage = `/blog/${pageContext.currentPage + 1}`
 
   return (
-    <div>
-      {data?.allMarkdownRemark?.edges.map((entry) => (
-        <h1 key={entry.node.frontmatter.title}>
-          {entry.node.frontmatter.title}
-        </h1>
-      ))}
-    </div>
+    <Page page="Blog">
+      <BlogList
+        data={data}
+        pagination={{ isFirstPage, isLastPage, previousPage, nextPage }}
+        tags={pageContext.tags}
+      />
+    </Page>
   )
 }
 
 export default BlogListTemplate
 
 export const query = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
+  query BlogList($skip: Int!, $limit: Int!) {
+    blogList: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { contentKey: { eq: "blog" } } }
       limit: $limit
@@ -39,14 +45,18 @@ export const query = graphql`
           id
           frontmatter {
             title
+            tags
             date(formatString: "MMMM D, YYYY")
           }
           fields {
             slug
           }
-          excerpt
+          excerpt(format: MARKDOWN)
         }
       }
+    }
+    page: blogList {
+      intro
     }
   }
 `

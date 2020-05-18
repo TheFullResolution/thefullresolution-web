@@ -2,8 +2,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
-import * as styles from './Footer.module.scss'
 import { FooterDataQuery } from '../../graphql-types'
+import * as styles from './Footer.module.scss'
 
 export const Footer: React.FC = () => {
   const { metaData }: FooterDataQuery = useStaticQuery(graphql`

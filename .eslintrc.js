@@ -11,7 +11,7 @@ module.exports = {
     'prettier/react',
     'prettier/@typescript-eslint',
   ],
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'import'],
   globals: {
     __PATH_PREFIX__: true,
   },
@@ -32,5 +32,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'import/order': 'error',
   },
 }

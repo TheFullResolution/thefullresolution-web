@@ -1,0 +1,34 @@
+.list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.tag {
+  padding: $space-quarter $space-half;
+  border: 1px solid $gray-dark;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  color: $gray-dark;
+  font-size: $font-half;
+
+  span {
+    font-size: $font-quarter;
+    margin-left: $space-quarter;
+  }
+}
+
+a.tag {
+  text-decoration: none;
+  font-size: $font-single;
+
+  &:hover {
+    color: $white;
+    background-color: $green;
+  }
+
+  span {
+    font-size: $font-half;
+  }
+}

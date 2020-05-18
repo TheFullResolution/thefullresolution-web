@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { graphql } from 'gatsby'
+import { HomeDataQuery } from '../graphql-types'
 
 const BlogTemplate: React.FC<any> = ({ data }) => {
   return (
@@ -14,7 +14,7 @@ const BlogTemplate: React.FC<any> = ({ data }) => {
 export default BlogTemplate
 
 export const query = graphql`
-  query($slug: String!) {
+  query Blog($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
