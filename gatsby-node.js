@@ -96,6 +96,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: tag.url,
       component: path.resolve('./src/templates/tag-list.tsx'),
       context: {
+        tags,
         tag: tag.fieldValue,
         count: tag.totalCount,
       },

@@ -4306,7 +4306,7 @@ export type TagListQueryVariables = {
 
 export type TagListQuery = (
   { readonly __typename?: 'Query' }
-  & { readonly allMarkdownRemark: (
+  & { readonly blogList: (
     { readonly __typename?: 'MarkdownRemarkConnection' }
     & { readonly edges: ReadonlyArray<(
       { readonly __typename?: 'MarkdownRemarkEdge' }
@@ -4315,7 +4315,7 @@ export type TagListQuery = (
         & Pick<MarkdownRemark, 'id' | 'excerpt'>
         & { readonly frontmatter: Maybe<(
           { readonly __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>
+          & Pick<MarkdownRemarkFrontmatter, 'title' | 'tags' | 'date'>
         )>, readonly fields: Maybe<(
           { readonly __typename?: 'MarkdownRemarkFields' }
           & Pick<MarkdownRemarkFields, 'slug'>

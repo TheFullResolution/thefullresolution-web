@@ -1,0 +1,38 @@
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+.blogHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  h2 {
+    margin-right: $space-single;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+}
+
+.tagLabel {
+  margin-right: $space-single;
+}

@@ -2,8 +2,8 @@ import React from 'react'
 import { BlogQuery } from '../../graphql-types'
 import { Markdown } from '../../components/Markdown/Markdown'
 import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg'
-import * as styles from './BlogEntry.module.scss'
 import { Tags } from '../../components/Tags/Tags'
+import * as styles from './BlogEntry.module.scss'
 
 interface Props {
   data: BlogQuery

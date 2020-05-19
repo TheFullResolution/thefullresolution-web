@@ -1,15 +1,23 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { SitePageContext, TagListQuery } from '../graphql-types'
+import { Page } from '../containers/Page/Page'
+import { TagList } from '../containers/TagList/TagList'
 
-const TagListTemplate: React.FC<any> = ({ data }) => {
+interface Props {
+  data: TagListQuery
+  pageContext: SitePageContext
+}
+
+const TagListTemplate: React.FC<Props> = ({ data, pageContext }) => {
   return (
-    <div>
-      {data?.allMarkdownRemark?.edges.map((entry) => (
-        <h1 key={entry.node.frontmatter.title}>
-          {entry.node.frontmatter.title}
-        </h1>
-      ))}
-    </div>
+    <Page page={`${pageContext.tag} Blog Entries`}>
+      <TagList
+        data={data}
+        tags={pageContext.tags}
+        currentTag={pageContext.tag}
+      />
+    </Page>
   )
 }
 
@@ -17,7 +25,7 @@ export default TagListTemplate
 
 export const query = graphql`
   query TagList($tag: String!) {
-    allMarkdownRemark(
+    blogList: allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
@@ -29,12 +37,13 @@ export const query = graphql`
           id
           frontmatter {
             title
+            tags
             date(formatString: "MMMM D, YYYY")
           }
           fields {
             slug
           }
-          excerpt
+          excerpt(format: MARKDOWN)
         }
       }
     }
