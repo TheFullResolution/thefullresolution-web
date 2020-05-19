@@ -1040,6 +1040,7 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
   ChildMarkdownRemarkFrontmatterTags = 'childMarkdownRemark___frontmatter___tags',
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
+  ChildMarkdownRemarkFrontmatterBanner = 'childMarkdownRemark___frontmatter___banner',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -2001,6 +2002,7 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterContentKey = 'frontmatter___contentKey',
   FrontmatterTags = 'frontmatter___tags',
   FrontmatterDate = 'frontmatter___date',
+  FrontmatterBanner = 'frontmatter___banner',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -2133,6 +2135,7 @@ export type MarkdownRemarkFrontmatter = {
   readonly contentKey: Maybe<Scalars['String']>;
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly date: Maybe<Scalars['Date']>;
+  readonly banner: Maybe<Scalars['String']>;
 };
 
 
@@ -2148,6 +2151,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   readonly contentKey: Maybe<StringQueryOperatorInput>;
   readonly tags: Maybe<StringQueryOperatorInput>;
   readonly date: Maybe<DateQueryOperatorInput>;
+  readonly banner: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -4287,10 +4291,10 @@ export type BlogQuery = (
   { readonly __typename?: 'Query' }
   & { readonly markdownRemark: Maybe<(
     { readonly __typename?: 'MarkdownRemark' }
-    & Pick<MarkdownRemark, 'html'>
+    & Pick<MarkdownRemark, 'rawMarkdownBody'>
     & { readonly frontmatter: Maybe<(
       { readonly __typename?: 'MarkdownRemarkFrontmatter' }
-      & Pick<MarkdownRemarkFrontmatter, 'title'>
+      & Pick<MarkdownRemarkFrontmatter, 'title' | 'tags' | 'date' | 'banner'>
     )> }
   )> }
 );

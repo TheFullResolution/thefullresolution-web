@@ -5,30 +5,23 @@
 }
 
 .tag {
-  padding: $space-quarter $space-half;
-  border: 1px solid $gray-dark;
-  border-radius: 5px;
   display: flex;
   align-items: center;
-  color: $gray-dark;
-  font-size: $font-half;
+  margin: 0;
+
+  svg {
+    font-size: $font-single + 6;
+  }
 
   span {
-    font-size: $font-quarter;
     margin-left: $space-quarter;
   }
 }
 
 a.tag {
-  text-decoration: none;
-  font-size: $font-single;
+  text-decoration: underline;
 
   &:hover {
-    color: $white;
-    background-color: $green;
-  }
-
-  span {
-    font-size: $font-half;
+    text-decoration: none;
   }
 }

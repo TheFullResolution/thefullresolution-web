@@ -25,7 +25,7 @@ export const BlogList: React.FC<Props> = ({ data, pagination, tags }) => {
         <Markdown className={styles.intro}>{page.intro}</Markdown>
       )}
       <div className={styles.filters}>
-        <span>Filter By Tags:</span>
+        <span>View By Tags:</span>
         <Tags asLinks={true} tags={tags} />
       </div>
 

@@ -1,13 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { HomeDataQuery } from '../graphql-types'
+import { BlogQuery } from '../graphql-types'
+import { Page } from '../containers/Page/Page'
+import { BlogEntry } from '../containers/BlogEntry/BlogEntry'
 
-const BlogTemplate: React.FC<any> = ({ data }) => {
+interface Props {
+  data: BlogQuery
+}
+
+const BlogTemplate: React.FC<Props> = ({ data }) => {
   return (
-    <div>
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </div>
+    <Page page={data.markdownRemark.frontmatter.title} hideBanner={true}>
+      <BlogEntry data={data} />
+    </Page>
   )
 }
 
@@ -16,9 +21,12 @@ export default BlogTemplate
 export const query = graphql`
   query Blog($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      rawMarkdownBody
       frontmatter {
         title
+        tags
+        date(formatString: "MMMM D, YYYY")
+        banner
       }
     }
   }
