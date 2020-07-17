@@ -52,7 +52,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/_cms/content`,
+        path: `${__dirname}/cms/content`,
       },
     },
     {
@@ -65,7 +65,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: '_cms/blog',
+        path: 'cms/blog',
       },
     },
 
