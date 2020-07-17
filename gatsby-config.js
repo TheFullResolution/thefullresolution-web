@@ -52,13 +52,26 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/_cms/content`,
+        path: `${__dirname}/cms/content`,
       },
     },
     {
       resolve: `gatsby-transformer-json`,
       options: {
         typeName: ({ node }) => node.name,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: 'cms/blog',
+      },
+    },
+
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
       },
     },
     `gatsby-plugin-react-helmet`,

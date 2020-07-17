@@ -1,0 +1,10 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: $space-double;
+
+  > span {
+    margin-right: $space-single;
+  }
+}

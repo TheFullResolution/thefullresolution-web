@@ -22,7 +22,7 @@
     margin: {
       bottom: $space-single;
       top: $space-single;
-    };
+    }
   }
   nav {
     display: flex;
@@ -38,6 +38,10 @@
     &.active {
       text-decoration: underline;
     }
+  }
+
+  &.noBanner {
+    margin-top: $space-double;
   }
 
   @include max-width {

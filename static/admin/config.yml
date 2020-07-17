@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Meta Data"
         name: "metaData"
-        file: _cms/content/metaData.json
+        file: cms/content/metaData.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
@@ -25,14 +25,19 @@ collections:
                 multiple: false
       - label: "Home"
         name: "home"
-        file: _cms/content/home.json
+        file: cms/content/home.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: About, name: about, widget: markdown }
           - { label: Tech Stack, name: techStack, widget: markdown }
+      - label: "Blog List"
+        name: "blogList"
+        file: cms/content/blogList.json
+        fields:
+          - { label: Intro, name: intro, widget: markdown }
       - label: "Resume"
         name: "resume"
-        file: "_cms/content/resume.json"
+        file: "cms/content/resume.json"
         fields:
           - { label: Name, name: name, widget: string }
           - label: "Contact"
@@ -69,3 +74,20 @@ collections:
                   - { label: Finished, name: finished, widget: date, required: false }
                   - { label: "Technologies & Tools", name: technologies, widget: markdown, required: false }
                   - { label: "Accomplishments", name: accomplishments, widget: markdown, required: false }
+  - name: "blog"
+    label: "Blog"
+    folder: "cms/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Content Key", name: "contentKey", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Tags"
+        name: "tags"
+        multiple: true
+        min: 1
+        widget: "select"
+        options: ["JavaScript", "C++", "React", "Angular"]
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Banner", name: "banner", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }

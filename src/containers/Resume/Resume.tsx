@@ -1,9 +1,9 @@
 import * as React from 'react'
+import { GoBriefcase, GoHistory } from 'react-icons/go'
 import { ResumeDataQuery } from '../../graphql-types'
 import { formatDate } from '../../utils/formatDate'
-import * as styles from './Resume.module.scss'
-import { GoBriefcase, GoHistory } from 'react-icons/go'
 import { Markdown } from '../../components/Markdown/Markdown'
+import * as styles from './Resume.module.scss'
 
 interface Props {
   data: ResumeDataQuery

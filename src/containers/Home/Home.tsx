@@ -1,7 +1,7 @@
 import React from 'react'
-import * as styles from './Home.module.scss'
 import { Markdown } from '../../components/Markdown/Markdown'
 import { HomeDataQuery } from '../../graphql-types'
+import * as styles from './Home.module.scss'
 
 interface Props {
   data: HomeDataQuery

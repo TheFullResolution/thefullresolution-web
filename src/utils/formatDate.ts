@@ -1,5 +1,4 @@
-export function formatDate(date: string, type: string) {
-  
+export function formatDate(date: string, type: string): string {
   const DateObject = new Date(date)
 
   switch (type) {
