@@ -6,6 +6,10 @@ module.exports = {
         link: '/',
       },
       {
+        name: 'blog',
+        link: '/blog'
+      },
+      {
         name: 'resume',
         link: '/resume',
       },

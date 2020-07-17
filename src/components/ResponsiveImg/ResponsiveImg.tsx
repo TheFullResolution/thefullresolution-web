@@ -8,6 +8,7 @@ interface Props {
   alt: string
   title?: string
   className?: string
+  imgStyle?: Record<string, string>
 }
 
 export const ResponsiveImg: React.FC<Props> = ({
@@ -15,6 +16,7 @@ export const ResponsiveImg: React.FC<Props> = ({
   title,
   alt,
   className,
+  imgStyle = {},
 }) => {
   const { allFile }: AllFileImageQuery = useStaticQuery(graphql`
     query AllFileImage {
@@ -32,7 +34,7 @@ export const ResponsiveImg: React.FC<Props> = ({
     }
   `)
 
-  const gatsbyImageConfig = allFile.nodes.find(el => {
+  const gatsbyImageConfig = allFile.nodes.find((el) => {
     return el.base === image.substr(image.lastIndexOf('/') + 1)
   })
 
@@ -45,6 +47,7 @@ export const ResponsiveImg: React.FC<Props> = ({
       alt={alt}
       title={title ?? alt}
       className={className}
+      imgStyle={imgStyle}
     />
   )
 }
