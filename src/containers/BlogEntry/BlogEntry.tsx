@@ -16,6 +16,7 @@ export const BlogEntry: React.FC<Props> = ({ data }) => {
         image={data.markdownRemark.frontmatter.banner}
         alt="banner"
         className={styles.image}
+        imgStyle={{"objectFit": "contain"}}
       />
       <div className={styles.extraInfo}>
         <Tags tags={data.markdownRemark.frontmatter.tags} />{' '}
