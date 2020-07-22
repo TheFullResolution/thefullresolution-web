@@ -27,6 +27,8 @@ export const query = graphql`
         tags
         date(formatString: "MMMM D, YYYY")
         banner
+        banner_position
+        banner_source
       }
     }
   }

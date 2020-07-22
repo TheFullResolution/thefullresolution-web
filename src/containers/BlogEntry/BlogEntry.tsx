@@ -10,17 +10,25 @@ interface Props {
 }
 
 export const BlogEntry: React.FC<Props> = ({ data }) => {
+  const {
+    banner,
+    banner_position,
+    banner_source,
+    date,
+    tags,
+  } = data.markdownRemark.frontmatter
   return (
     <div className={styles.container}>
       <ResponsiveImg
-        image={data.markdownRemark.frontmatter.banner}
+        image={banner}
         alt="banner"
         className={styles.image}
-        imgStyle={{"objectFit": "contain"}}
+        imgStyle={{ objectPosition: banner_position }}
       />
+        <Markdown className={styles.source}>{banner_source}</Markdown>
       <div className={styles.extraInfo}>
-        <Tags tags={data.markdownRemark.frontmatter.tags} />{' '}
-        <span>{data.markdownRemark.frontmatter.date}</span>
+        <Tags tags={tags} />
+        <span>{date}</span>
       </div>
       <Markdown>{data.markdownRemark.rawMarkdownBody}</Markdown>
     </div>
