@@ -5,6 +5,7 @@ tags:
   - JavaScript
 date: 2020-07-17T12:17:39.161Z
 banner: uploads/just_start.jpg
+banner_position: 50% 100%
 banner source: Photo by [Dayne
   Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
   on
