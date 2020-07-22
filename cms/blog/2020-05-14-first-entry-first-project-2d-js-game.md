@@ -4,7 +4,11 @@ title: First Entry
 tags:
   - JavaScript
 date: 2020-07-17T12:17:39.161Z
-banner: uploads/findthekey.png
+banner: uploads/just_start.jpg
+banner source: Photo by [Dayne
+  Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+  on
+  [Unsplash](https://unsplash.com/s/photos/start?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
 ---
 # First Blog Entry
 
@@ -13,6 +17,8 @@ This is my first blog entry on my page. I am keeping it short to finally merge t
 During my Udacity’s Frontend Developer Nanodegree course., I made the 2D JavaScript arcade game. To progress further in the course, I had to submit a working game and fulfill the list of requirements.  I still remember how challenging it was for me to understand Object-Oriented Programming. I felt overwhelmed and considered dropping the course. 
 
 Luckily instead of giving up, I decided to scan GitHub for other projects from Udacity’s students. Once I could see the practical implementation of OOP everything clicked. I was able to move forward. 
+
+![Game Screen Shot](uploads/findthekey.png "Find The Key Game Screen Shot")
 
 After that experience, I started a thread on the course’s forum. I described my experience and shared the code of my game. I encouraged others to do the same, to help others who might be struggling as I did. What surprised me was the number of replies. Many other students were sharing their games or thanking me for the help. The thread stayed active for years, with hundreds of replies. 
 
