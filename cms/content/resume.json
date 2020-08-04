@@ -27,10 +27,10 @@
           "technologies": "* Typescript, React, Redux\n* Node.js\n* Jest, Testcafe",
           "name": "Zoover Media B.V.",
           "url": "https://greatplacefortalent.nl/about-zoover/",
-          "finished": "",
+          "finished": "2020-07-30T22:00:00.000Z",
           "accomplishments": "* Complete rewrite of the lister page to decouple frontend and backend filters and improve the performance. \n* Deploying completely redesigned new accommodation page with improved accessibility, mobile design, and new features.\n* Simplifying the build configuration, improving website performance and unifying fragmented user interface components.",
           "location": "Amsterdam, NL",
-          "present": true,
+          "present": false,
           "description": "Zoover.nl a Dutch travel platform, providing information about holiday destinations and offering packages from major tour operators."
         },
         {
