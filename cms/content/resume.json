@@ -22,13 +22,24 @@
       "date_display": "month",
       "content": [
         {
+          "started": "2020-08-01T03:37:04.629Z",
+          "position": "Senior Frontend Engineer",
+          "technologies": "* Typescript, Angular\n* Cypress, Selenium ",
+          "name": "Swapfiets",
+          "url": "https://swapfiets.nl/en/",
+          "finished": "2020-09-16T03:37:04.701Z",
+          "location": "Amsterdam, NL",
+          "present": true,
+          "description": "Swapfiets offers hassle-free urban mobility solutions, in a form of a fixed price a month subscription for a bike, an electric scooter, or an electric bike."
+        },
+        {
           "started": "2018-12-01T15:07:09.769Z",
           "position": "Front-End Developer",
-          "technologies": "* Typescript, React, Redux\n* Node.js\n* Jest, Testcafe",
+          "technologies": "* Typescript, React, Redux\n* Node.js, Express.js\n* Jest, Testcafe",
           "name": "Zoover Media B.V.",
           "url": "https://greatplacefortalent.nl/about-zoover/",
           "finished": "2020-07-30T22:00:00.000Z",
-          "accomplishments": "* Complete rewrite of the lister page to decouple frontend and backend filters and improve the performance. \n* Deploying completely redesigned new accommodation page with improved accessibility, mobile design, and new features.\n* Simplifying the build configuration, improving website performance and unifying fragmented user interface components.",
+          "accomplishments": "* Complete rewrite of the lister page to decouple frontend and backend filters and improve the performance.\n* Deploying a completely redesigned new accommodation page with improved accessibility, mobile design, and new features.\n* Simplifying the build configuration, improving website performance, and unifying fragmented user interface components.",
           "location": "Amsterdam, NL",
           "present": false,
           "description": "Zoover.nl a Dutch travel platform, providing information about holiday destinations and offering packages from major tour operators."
@@ -36,11 +47,11 @@
         {
           "started": "2018-07-01T13:49:20.232Z",
           "position": "Front-End Developer",
-          "technologies": "* JavaScript, React, Redux, Sass\n* Jest, BrowserStack, Cypress",
+          "technologies": "* JavaScript, React, Redux, Sass \n* Jest, BrowserStack, Cypress",
           "name": "de Bijenkorf",
           "url": "https://www.debijenkorf.nl/over-de-bijenkorf",
           "finished": "2018-11-30T14:49:20.248Z",
-          "accomplishments": "* Rewrite of search component, introducing keyboard and accessibility support.\n* Active role in extending the internal component library.",
+          "accomplishments": "* Rewrite of search component, introducing keyboard and accessibility support. \n* Active role in extending the internal component library.\n",
           "location": "Amsterdam, NL",
           "description": "A chain of high-end department stores in the Netherlands, with its flagship store on Dam Square in Amsterdam."
         },
