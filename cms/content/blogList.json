@@ -2,5 +2,6 @@
   "title": "Blog",
   "intro": "Future compendium of computer science knowledge. For now, a pretty empty list of my piteous attempts to write about my experience as a developer. ",
   "banner": "uploads/markus-winkler-_nvkjg0alia-unsplash.jpg",
-  "banner_source": "Photo by [Markus Winkler](https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/collections/9847324/messages-for-the-world?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
+  "banner_source": "Photo by [Markus Winkler](https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/collections/9847324/messages-for-the-world?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)",
+  "banner_position": "50% 100%"
 }
