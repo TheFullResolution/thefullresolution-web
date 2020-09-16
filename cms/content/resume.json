@@ -1,19 +1,28 @@
 {
-  "name": "Jedrzej (Andrew) Lewandowski",
-  "phone": "+31 631 044 555",
-  "email": "lewandowski.jedrzej@gmail.com",
-  "links": [
+  "contact": [
     {
-      "label": "Github",
-      "url": "github.com/TheFullResolution"
+      "item": "<i>GoDeviceMobile</i> Phone: +31 631 044 555"
     },
     {
-      "label": "Linkedin",
-      "url": "linkedin.com/in/lewandowskijedrzej/"
+      "item": "<i>GoMail</i> Email: lewandowski.jedrzej@gmail.com"
     },
     {
-      "label": "Web",
-      "url": "thefullresolution.com"
+      "item": "<i>FaGithub</i> GitHub: github.com/TheFullResolution"
+    },
+    {
+      "item": "<i>FaLinkedin</i> LinkedIn: linkedin.com/in/lewandowskijedrzej/"
+    },
+    {
+      "item": "<i>FaInternetExplorer</i> Web: thefullresolution.com"
+    },
+    {
+      "item": "<i>FaMapMarkerAlt</i> Location: Amsterdam, the Netherlands"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Key Skills",
+      "technologies": "* React, Angular\n* TypeScript, JavaScript\n* NodeJS, Express, GraphQL\n* CSS, Sass\n* RxJS, NextJS, GatsbyJS\n* C++ (learning)\n"
     }
   ],
   "section": [
@@ -155,30 +164,23 @@
       ]
     }
   ],
-  "skills": [
+  "name": "Jedrzej (Andrew) Lewandowski",
+  "banner": "uploads/61310017.jpg",
+  "banner_source": "Photo by me on AnalogPics",
+  "phone": "+31 631 044 555",
+  "links": [
     {
-      "title": "Key Skills",
-      "technologies": "* React, Angular\n* TypeScript, JavaScript\n* NodeJS, Express, GraphQL\n* CSS, Sass\n* RxJS, NextJS, GatsbyJS\n* C++ (learning)\n"
+      "label": "Github",
+      "url": "github.com/TheFullResolution"
+    },
+    {
+      "label": "Linkedin",
+      "url": "linkedin.com/in/lewandowskijedrzej/"
+    },
+    {
+      "label": "Web",
+      "url": "thefullresolution.com"
     }
   ],
-  "contact": [
-    {
-      "item": "<i>GoDeviceMobile</i> Phone: +31 631 044 555"
-    },
-    {
-      "item": "<i>GoMail</i> Email: lewandowski.jedrzej@gmail.com"
-    },
-    {
-      "item": "<i>FaGithub</i> GitHub: github.com/TheFullResolution"
-    },
-    {
-      "item": "<i>FaLinkedin</i> LinkedIn: linkedin.com/in/lewandowskijedrzej/"
-    },
-    {
-      "item": "<i>FaInternetExplorer</i> Web: thefullresolution.com"
-    },
-    {
-      "item": "<i>FaMapMarkerAlt</i> Location: Amsterdam, the Netherlands"
-    }
-  ]
+  "email": "lewandowski.jedrzej@gmail.com"
 }
