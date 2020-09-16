@@ -27,6 +27,7 @@ export const Header: React.FC<Props> = ({
       metaData {
         title
         banner
+        banner_source
       }
       site {
         siteMetadata {
@@ -48,7 +49,11 @@ export const Header: React.FC<Props> = ({
             className={styles.image}
             imgStyle={{ objectPosition: banner_position ?? '' }}
           />
-          {banner_source && <Markdown className={styles.source}>{banner_source}</Markdown>}
+          {(banner_source || metaData.banner_source) && (
+            <Markdown className={styles.source}>
+              {banner_source ?? metaData.banner_source}
+            </Markdown>
+          )}
         </>
       )}
       <div className={cls(styles.wrapper, { [styles.noBanner]: hideBanner })}>
