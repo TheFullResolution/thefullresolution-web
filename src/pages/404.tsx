@@ -8,7 +8,7 @@ const Page404: React.FC = () => (
       <h1>
         <GoIssueOpened /> 404 PAGE <GoIssueOpened />
       </h1>
-      <p>{`I am sorry, the page you are looking for, doesn't exists.`}</p>
+      <p>{`I am sorry, the page you are looking for doesn't exist.`}</p>
     </div>
   </Page>
 )

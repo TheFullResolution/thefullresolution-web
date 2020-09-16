@@ -25,7 +25,7 @@ export const BlogEntry: React.FC<Props> = ({ data }) => {
         className={styles.image}
         imgStyle={{ objectPosition: banner_position }}
       />
-        <Markdown className={styles.source}>{banner_source}</Markdown>
+      <Markdown className={styles.source}>{banner_source}</Markdown>
       <div className={styles.extraInfo}>
         <Tags tags={tags} />
         <span>{date}</span>

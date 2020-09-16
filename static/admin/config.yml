@@ -23,6 +23,7 @@ collections:
             media_library:
               config:
                 multiple: false
+          - { label: "Banner Attribution", name: "banner_source", widget: "markdown" }
       - label: "Home"
         name: "home"
         file: cms/content/home.json
@@ -35,10 +36,30 @@ collections:
         file: cms/content/blogList.json
         fields:
           - { label: Intro, name: intro, widget: markdown }
+          - label: "Banner"
+            name: "banner"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
+          - { label: "Banner Attribution", name: "banner_source", widget: "markdown" }
+          - {
+              label: "Banner Position",
+              name: "banner_position",
+              widget: "string",
+              hint: "object-position:  X/Y (50% 100%)",
+            }
       - label: "Resume"
         name: "resume"
         file: "cms/content/resume.json"
         fields:
+          - label: "Banner"
+            name: "banner"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
+          - { label: "Banner Attribution", name: "banner_source", widget: "markdown" }
           - { label: Name, name: name, widget: string }
           - label: "Contact"
             name: contact

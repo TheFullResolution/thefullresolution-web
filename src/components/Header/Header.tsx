@@ -1,17 +1,27 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import * as React from 'react'
-import { GoGitCompare } from 'react-icons/go'
-import cls from 'classnames'
-import { SiteLinksDataQuery } from '../../graphql-types'
-import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg'
-import * as styles from './Header.module.scss'
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import * as React from 'react';
+import { GoGitCompare } from 'react-icons/go';
+import cls from 'classnames';
+import { SiteLinksDataQuery } from '../../graphql-types';
+import { Markdown } from '../Markdown/Markdown';
+import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
+import * as styles from './Header.module.scss';
 
 interface Props {
-  page: string
-  hideBanner?: boolean
+  page: string;
+  hideBanner?: boolean;
+  banner?: string;
+  banner_source?: string;
+  banner_position?: string;
 }
 
-export const Header: React.FC<Props> = ({ page, hideBanner }) => {
+export const Header: React.FC<Props> = ({
+  page,
+  hideBanner,
+  banner,
+  banner_source,
+  banner_position,
+}) => {
   const { site, metaData }: SiteLinksDataQuery = useStaticQuery(graphql`
     query SiteLinksData {
       metaData {
@@ -27,15 +37,19 @@ export const Header: React.FC<Props> = ({ page, hideBanner }) => {
         }
       }
     }
-  `)
+  `);
   return (
     <header className={styles.container}>
       {!hideBanner && (
-        <ResponsiveImg
-          image={metaData.banner}
-          alt="banner"
-          className={styles.image}
-        />
+        <>
+          <ResponsiveImg
+            image={banner ?? metaData.banner}
+            alt="banner"
+            className={styles.image}
+            imgStyle={{ objectPosition: banner_position ?? '' }}
+          />
+          {banner_source && <Markdown className={styles.source}>{banner_source}</Markdown>}
+        </>
       )}
       <div className={cls(styles.wrapper, { [styles.noBanner]: hideBanner })}>
         <h1>
@@ -55,5 +69,5 @@ export const Header: React.FC<Props> = ({ page, hideBanner }) => {
         </nav>
       </div>
     </header>
-  )
-}
+  );
+};
