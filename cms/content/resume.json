@@ -22,7 +22,7 @@
   "skills": [
     {
       "title": "Key Skills",
-      "technologies": "* React, Angular\n* TypeScript, JavaScript\n* NodeJS, Express, GraphQL\n* CSS, Sass\n* RxJS, NextJS, GatsbyJS\n* C++ (learning)\n"
+      "technologies": "* React, Angular\n* TypeScript, JavaScript\n* NodeJS, Express, GraphQL\n* CSS, Sass, CSSinJS\n* Redux, RxJS, NextJS, GatsbyJS\n* C++ (learning)\n"
     }
   ],
   "section": [
