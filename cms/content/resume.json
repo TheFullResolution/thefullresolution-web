@@ -91,13 +91,13 @@
           "finished": "2017-03-31T14:36:12.348Z",
           "accomplishments": "",
           "location": "Amsterdam, NL",
-          "description": "Two-month immersive bootcamp, designed to teach full stack web development, focusing on group collaboration and the latest web standards. Tech stack included: Ruby on Rails , Node, React, Redux, Mocha, Chai, PostgreSQL and MongoDB"
+          "description": "Two-month Bootcamp, designed to teach full-stack web development. "
         },
         {
           "name": "Udacity",
           "position": "Senior Web Developer Nanodegree",
           "location": "Online Education",
-          "description": "Course for intermediate front-end developers, created together with Google to teach the latest web technologies and standards. Tech stack included: Angular 1.5, React, Redux, Sass, Web Forms and Web Accessibility.",
+          "description": "Course for intermediate front-end developers.",
           "started": "2016-03-31T22:00:00.000Z",
           "finished": "2016-11-29T23:00:00.000Z",
           "technologies": "",
@@ -112,7 +112,7 @@
           "finished": "2015-12-29T23:00:00.000Z",
           "accomplishments": "",
           "location": "Online Education",
-          "description": "Course created together with Google, GitHub, AT&T and Hack Reactor, designed to introduce basics of front-end development."
+          "description": "A course designed to introduce the basics of front-end development."
         }
       ]
     },
