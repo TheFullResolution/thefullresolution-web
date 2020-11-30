@@ -1,18 +1,19 @@
-import * as React from 'react'
-import { GoBriefcase, GoHistory } from 'react-icons/go'
-import { ResumeDataQuery } from '../../graphql-types'
-import { formatDate } from '../../utils/formatDate'
-import { Markdown } from '../../components/Markdown/Markdown'
-import * as styles from './Resume.module.scss'
+import * as React from 'react';
+import { GoHistory } from '@react-icons/all-files/go/GoHistory';
+import { GoBriefcase } from '@react-icons/all-files/go/GoBriefcase';
+import { ResumeDataQuery } from '../../graphql-types';
+import { formatDate } from '../../utils/formatDate';
+import { Markdown } from '../../components/Markdown/Markdown';
+import * as styles from './Resume.module.scss';
 
 interface Props {
-  data: ResumeDataQuery
+  data: ResumeDataQuery;
 }
 
 export const Resume: React.FC<Props> = ({ data }) => {
-  const { resume } = data
+  const { resume } = data;
   if (!resume || !resume.section) {
-    return <p>No data at the moment</p>
+    return <p>No data at the moment</p>;
   }
   return (
     <div className={styles.container}>
@@ -56,7 +57,7 @@ export const Resume: React.FC<Props> = ({ data }) => {
                 </a>
               ) : (
                 name
-              )
+              );
               return (
                 <div key={`${name}${position}`} className={styles.position}>
                   <div className={styles.positionBlock}>
@@ -97,11 +98,11 @@ export const Resume: React.FC<Props> = ({ data }) => {
                     </div>
                   )}
                 </div>
-              )
+              );
             },
           )}
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
