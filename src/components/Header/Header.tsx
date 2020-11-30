@@ -1,6 +1,6 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { GoGitCompare } from 'react-icons/go';
+import { GoGitCompare } from '@react-icons/all-files/go/GoGitCompare';
 import cls from 'classnames';
 import { SiteLinksDataQuery } from '../../graphql-types';
 import { Markdown } from '../Markdown/Markdown';

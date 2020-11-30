@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
+import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
 
 import { FooterDataQuery } from '../../graphql-types'
 import * as styles from './Footer.module.scss'
