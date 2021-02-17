@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { GoHistory } from '@react-icons/all-files/go/GoHistory';
 import { GoBriefcase } from '@react-icons/all-files/go/GoBriefcase';
+import { GoHistory } from '@react-icons/all-files/go/GoHistory';
+import * as React from 'react';
+import { Markdown } from '../../components/Markdown/Markdown';
 import { ResumeDataQuery } from '../../graphql-types';
 import { formatDate } from '../../utils/formatDate';
-import { Markdown } from '../../components/Markdown/Markdown';
-import * as styles from './Resume.module.scss';
+import styles from './Resume.module.scss';
 
 interface Props {
   data: ResumeDataQuery;

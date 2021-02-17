@@ -1,11 +1,9 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { BlogQuery } from '../graphql-types'
-import { Page } from '../containers/Page/Page'
-import { BlogEntry } from '../containers/BlogEntry/BlogEntry'
+import React from 'react';
+import { BlogEntry } from '../containers/BlogEntry/BlogEntry';
+import { Page } from '../containers/Page/Page';
 
 interface Props {
-  data: BlogQuery
+  data: any;
 }
 
 const BlogTemplate: React.FC<Props> = ({ data }) => {
@@ -13,23 +11,7 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
     <Page page={data.markdownRemark.frontmatter.title} hideBanner={true}>
       <BlogEntry data={data} />
     </Page>
-  )
-}
+  );
+};
 
-export default BlogTemplate
-
-export const query = graphql`
-  query Blog($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      rawMarkdownBody
-      frontmatter {
-        title
-        tags
-        date(formatString: "MMMM D, YYYY")
-        banner
-        banner_position
-        banner_source
-      }
-    }
-  }
-`
+export default BlogTemplate;

@@ -1,28 +1,13 @@
-import { graphql } from 'gatsby'
-import * as React from 'react'
-import { Page } from '../containers/Page/Page'
-import { HomeDataQuery } from '../graphql-types'
-import { Home } from '../containers/Home/Home'
+import * as React from 'react';
+import Home from '../containers/Home/Home.mdx';
+import { Page } from '../containers/Page/Page';
 
-interface Props {
-  data: HomeDataQuery
-}
-
-const HomePage: React.FC<Props> = ({ data }) => {
+const HomePage: React.FC = () => {
   return (
     <Page page="Personal Page">
-      <Home data={data} />
+      <Home />
     </Page>
-  )
-}
+  );
+};
 
-export default HomePage
-
-export const query = graphql`
-  query HomeData {
-    home {
-      about
-      techStack
-    }
-  }
-`
+export default HomePage;

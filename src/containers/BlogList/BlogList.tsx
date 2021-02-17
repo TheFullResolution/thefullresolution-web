@@ -1,24 +1,24 @@
-import React from 'react'
-import { BlogListQuery, SitePageContextTags } from '../../graphql-types'
-import { Markdown } from '../../components/Markdown/Markdown'
-import { Tags } from '../../components/Tags/Tags'
-import { BlogEntryList } from '../../components/BlogEntryList/BlogEntryList'
-import * as styles from './BlogList.module.scss'
+import React from 'react';
+import { BlogEntryList } from '../../components/BlogEntryList/BlogEntryList';
+import { Markdown } from '../../components/Markdown/Markdown';
+import { Tags } from '../../components/Tags/Tags';
+import { BlogListQuery, SitePageContextTags } from '../../graphql-types';
+import styles from './BlogList.module.scss';
 
 interface Props {
-  data: BlogListQuery
+  data: BlogListQuery;
   pagination: {
-    isFirstPage: boolean
-    isLastPage: boolean
-    previousPage: string
-    nextPage: string
-  }
-  tags: readonly SitePageContextTags[]
+    isFirstPage: boolean;
+    isLastPage: boolean;
+    previousPage: string;
+    nextPage: string;
+  };
+  tags: readonly SitePageContextTags[];
 }
 
 export const BlogList: React.FC<Props> = ({ data, pagination, tags }) => {
-  const { blogList, page } = data
-  const { isFirstPage } = pagination
+  const { blogList, page } = data;
+  const { isFirstPage } = pagination;
   return (
     <>
       {isFirstPage && (
@@ -31,5 +31,5 @@ export const BlogList: React.FC<Props> = ({ data, pagination, tags }) => {
 
       <BlogEntryList blogList={blogList} />
     </>
-  )
-}
+  );
+};

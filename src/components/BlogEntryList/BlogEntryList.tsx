@@ -1,20 +1,20 @@
-import React, { Fragment } from 'react'
-import { Link } from 'gatsby'
-import { Markdown } from '../Markdown/Markdown'
-import { Tags } from '../Tags/Tags'
-import { BlogListQuery } from '../../graphql-types'
-import * as styles from './BlogEntryList.module.scss'
+import { Link } from 'gatsby';
+import React, { Fragment } from 'react';
+import { BlogListQuery } from '../../graphql-types';
+import { Markdown } from '../Markdown/Markdown';
+import { Tags } from '../Tags/Tags';
+import styles from './BlogEntryList.module.scss';
 
 interface Props {
-  blogList: BlogListQuery['blogList']
+  blogList: BlogListQuery['blogList'];
 }
 
 export const BlogEntryList: React.FC<Props> = ({ blogList }) => {
   return (
     <ul className={styles.list}>
       {blogList.edges.map(({ node }) => {
-        const { slug } = node.fields
-        const title = node.frontmatter.title || slug
+        const { slug } = node.fields;
+        const title = node.frontmatter.title || slug;
 
         return (
           <Fragment key={slug}>
@@ -38,8 +38,8 @@ export const BlogEntryList: React.FC<Props> = ({ blogList }) => {
               </div>
             </article>
           </Fragment>
-        )
+        );
       })}
     </ul>
-  )
-}
+  );
+};

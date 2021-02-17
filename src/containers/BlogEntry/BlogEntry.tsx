@@ -1,12 +1,12 @@
-import React from 'react'
-import { BlogQuery } from '../../graphql-types'
-import { Markdown } from '../../components/Markdown/Markdown'
-import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg'
-import { Tags } from '../../components/Tags/Tags'
-import * as styles from './BlogEntry.module.scss'
+import React from 'react';
+import { Markdown } from '../../components/Markdown/Markdown';
+import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg';
+import { Tags } from '../../components/Tags/Tags';
+import { BlogQuery } from '../../graphql-types';
+import styles from './BlogEntry.module.scss';
 
 interface Props {
-  data: BlogQuery
+  data: BlogQuery;
 }
 
 export const BlogEntry: React.FC<Props> = ({ data }) => {
@@ -16,7 +16,7 @@ export const BlogEntry: React.FC<Props> = ({ data }) => {
     banner_source,
     date,
     tags,
-  } = data.markdownRemark.frontmatter
+  } = data.markdownRemark.frontmatter;
   return (
     <div className={styles.container}>
       <ResponsiveImg
@@ -32,5 +32,5 @@ export const BlogEntry: React.FC<Props> = ({ data }) => {
       </div>
       <Markdown>{data.markdownRemark.rawMarkdownBody}</Markdown>
     </div>
-  )
-}
+  );
+};

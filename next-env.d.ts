@@ -1,5 +1,18 @@
+/// <reference types="next" />
+/// <reference types="next/types/global" />
+
+declare module '*.module.scss' {
+  const content: { [className: string]: string };
+  export = content;
+}
+
 declare module '*.scss' {
-  const content: {[className: string]: string};
+  const content: string;
+  export = content;
+}
+
+declare module '*.json' {
+  const content: { [key: string]: string };
   export = content;
 }
 

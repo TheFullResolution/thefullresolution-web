@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { GoIssueOpened } from '@react-icons/all-files/go/GoIssueOpened';
+import * as React from 'react';
 import { Page } from '../containers/Page/Page';
 
 const Page404: React.FC = () => (

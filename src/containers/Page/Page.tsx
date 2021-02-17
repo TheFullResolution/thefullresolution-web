@@ -1,8 +1,9 @@
-import * as React from 'react';
-import { Header } from '../../components/Header/Header';
-import { MetaData } from '../../components/MetaData/MetaData';
+import React from 'react';
 import { Footer } from '../../components/Footer/Footer';
-import * as styles from './Page.module.scss';
+import { Header } from '../../components/Header/Header';
+import { PageHead } from '../../components/PageHead/PageHead';
+import { typography } from '../../utils/typography';
+import styles from './Page.module.scss';
 
 interface Props {
   page: string;
@@ -11,6 +12,8 @@ interface Props {
   banner_position?: string;
   hideBanner?: boolean;
 }
+
+const globalStyles = typography.toString();
 
 export const Page: React.FC<Props> = ({
   children,
@@ -28,7 +31,7 @@ export const Page: React.FC<Props> = ({
       banner_position={banner_position}
       banner_source={banner_source}
     />
-    <MetaData page={page} />
+    <PageHead page={page} styles={globalStyles} />
     <main className={styles.wrapper}>{children}</main>
     <Footer />
   </div>

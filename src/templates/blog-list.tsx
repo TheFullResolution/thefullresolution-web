@@ -1,12 +1,10 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { BlogListQuery, SitePageContext } from '../graphql-types';
-import { Page } from '../containers/Page/Page';
 import { BlogList } from '../containers/BlogList/BlogList';
+import { Page } from '../containers/Page/Page';
 
 interface Props {
-  data: BlogListQuery;
-  pageContext: SitePageContext;
+  data: any;
+  pageContext: any;
 }
 
 const BlogListTemplate: React.FC<Props> = ({ data, pageContext }) => {
@@ -35,35 +33,3 @@ const BlogListTemplate: React.FC<Props> = ({ data, pageContext }) => {
 };
 
 export default BlogListTemplate;
-
-export const query = graphql`
-  query BlogList($skip: Int!, $limit: Int!) {
-    blogList: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { contentKey: { eq: "blog" } } }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            tags
-            date(formatString: "MMMM D, YYYY")
-          }
-          fields {
-            slug
-          }
-          excerpt(format: MARKDOWN)
-        }
-      }
-    }
-    page: blogList {
-      intro
-      banner
-      banner_position
-      banner_source
-    }
-  }
-`;

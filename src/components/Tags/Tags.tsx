@@ -1,11 +1,11 @@
-import React from 'react';
-import { FaJsSquare } from '@react-icons/all-files/fa/FaJsSquare';
-import { FaCuttlefish } from '@react-icons/all-files/fa/FaCuttlefish';
-import { FaReact } from '@react-icons/all-files/fa/FaReact';
 import { FaAngular } from '@react-icons/all-files/fa/FaAngular';
+import { FaCuttlefish } from '@react-icons/all-files/fa/FaCuttlefish';
+import { FaJsSquare } from '@react-icons/all-files/fa/FaJsSquare';
+import { FaReact } from '@react-icons/all-files/fa/FaReact';
 import { Link } from 'gatsby';
+import React from 'react';
 import { SitePageContextTags } from '../../graphql-types';
-import * as styles from './Tags.module.scss';
+import styles from './Tags.module.scss';
 
 interface PropsNoLink {
   tags: readonly string[];
