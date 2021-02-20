@@ -1,3 +1,4 @@
+import cls from 'classnames';
 import Image from 'next/image';
 import React from 'react';
 import styles from './PageImage.module.scss';
@@ -7,6 +8,8 @@ export interface PageImageProps {
   ratioHeight: number;
   src: string;
   alt: string;
+  className?: string;
+  objectPosition?: string;
 }
 
 export const PageImage: React.FC<PageImageProps> = ({
@@ -14,13 +17,21 @@ export const PageImage: React.FC<PageImageProps> = ({
   ratioHeight,
   ratioWidth,
   alt,
+  className,
+  objectPosition,
 }) => {
   return (
     <div
-      className={styles.container}
+      className={cls(styles.container, className)}
       style={{ paddingTop: `calc(${ratioHeight} / ${ratioWidth} * 100%)` }}
     >
-      <Image src={src} alt={alt} layout="fill" objectFit="cover" />
+      <Image
+        src={src}
+        alt={alt}
+        layout="fill"
+        objectFit="cover"
+        objectPosition={objectPosition}
+      />
     </div>
   );
 };
