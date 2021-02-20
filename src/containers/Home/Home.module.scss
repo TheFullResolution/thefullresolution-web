@@ -1,9 +1,9 @@
-.about {
-  :global(.markdown-image) {
-    width: 150px;
-    float: right;
-    margin: $space-quarter 0 $space-quarter $space-quarter;
-  }
+.aboutImage {
+  float: right;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  margin: $space-quarter 0 $space-quarter $space-quarter;
 }
 
 .techStack {
@@ -13,7 +13,6 @@
     padding: 0;
     margin: 0;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: var(--space-double);
 
     @include mobile-big {
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -23,9 +22,8 @@
       display: flex;
       align-items: center;
       svg {
-        margin-right: var(--space-quarter);
+        margin-right: $space-quarter;
       }
     }
-
   }
 }
