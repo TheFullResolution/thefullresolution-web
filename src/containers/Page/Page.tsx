@@ -9,10 +9,9 @@ import styles from './Page.module.scss';
 interface Props {
   title: string;
   globalData: SiteData;
-  banner: string;
-  banner_source: string;
+  banner?: string;
+  banner_source?: string;
   banner_position?: string;
-  hideBanner?: boolean;
 }
 
 const googleFonts = getGoogleFontLink(typography);
@@ -21,7 +20,6 @@ const globalStyles = typography.toString();
 export const Page: React.FC<Props> = ({
   children,
   title,
-  hideBanner,
   banner,
   banner_position,
   banner_source,
@@ -31,7 +29,6 @@ export const Page: React.FC<Props> = ({
     <Header
       title={title}
       globalData={globalData}
-      hideBanner={hideBanner}
       banner={banner}
       banner_position={banner_position}
       banner_source={banner_source}

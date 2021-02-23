@@ -1,3 +1,15 @@
+.wrapper {
+  .banner {
+    height: 400px;
+    margin-bottom: $space-double;
+  }
+
+  p {
+    text-align: right;
+  }
+}
+
+
 .image {
   height: 400px;
   margin-bottom: $space-double;

@@ -7,16 +7,14 @@ import { PageImage } from '../PageImage/PageImage';
 import styles from './Header.module.scss';
 
 interface Props {
-  hideBanner?: boolean;
   globalData: SiteData;
   title: string;
-  banner: string;
-  banner_source: string;
+  banner?: string;
+  banner_source?: string;
   banner_position?: string;
 }
 
 export const Header: React.FC<Props> = ({
-  hideBanner,
   banner,
   title,
   banner_source,
@@ -25,7 +23,7 @@ export const Header: React.FC<Props> = ({
 }) => {
   return (
     <header className={styles.container}>
-      {!hideBanner && (
+      {banner && (
         <>
           <PageImage
             src={banner}
@@ -38,7 +36,7 @@ export const Header: React.FC<Props> = ({
           {banner_source && <p className={styles.source}>{banner_source}</p>}
         </>
       )}
-      <div className={cls(styles.wrapper, { [styles.noBanner]: hideBanner })}>
+      <div className={cls(styles.wrapper, { [styles.noBanner]: !banner })}>
         <h1>
           {globalData.metaData.title} - {title}
         </h1>

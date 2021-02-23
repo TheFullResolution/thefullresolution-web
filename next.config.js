@@ -6,6 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const withMDX = require('@next/mdx')()
 
 module.exports = withMDX(withBundleAnalyzer({
+  pageExtensions: ['ts', 'tsx', 'mdx'],
   sassOptions: {
     //LOOK OUT FOR THAT SHIT - CHANGES NAMES DEPENDS ON RELEASE (NEXTJS uses prependData, sass loader uses additionalData)
     prependData: '@import "src/styles";',

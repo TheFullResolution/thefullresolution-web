@@ -27,3 +27,8 @@ declare module 'typography-theme-noriega' {
 
   export = Theme;
 }
+
+declare module 'remark-mdx' {
+  const remarkPlugin: any;
+  export default remarkPlugin;
+}
