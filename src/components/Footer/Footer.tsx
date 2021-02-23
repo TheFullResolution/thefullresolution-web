@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
     <footer className={styles.container}>
       <div className={styles.links}>
         <a
-          href={siteData.metaData.linkedin}
+          href={siteData.metaData.contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
           Linkedin
         </a>
         <a
-          href={siteData.metaData.github}
+          href={siteData.metaData.contact.github}
           target="_blank"
           rel="noopener noreferrer"
         >

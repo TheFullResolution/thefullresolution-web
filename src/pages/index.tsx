@@ -3,16 +3,18 @@ import * as React from 'react';
 import Home from '../containers/Home/Home.mdx';
 import { Page } from '../containers/Page/Page';
 import { homeData, HomeData } from '../data/homeData';
-import { siteData } from '../data/siteData';
+import { SiteData, siteData } from '../data/siteData';
 
 interface Props {
   data: HomeData;
+  globalData: SiteData;
 }
 
-const HomePage: React.FC<Props> = ({ data }) => {
+const HomePage: React.FC<Props> = ({ data, globalData }) => {
   return (
     <Page
-      title={`${siteData.metaData.title} - ${data.title}`}
+      globalData={globalData}
+      title={data.title}
       banner={data.banner}
       banner_source={data.banner_source}
     >
@@ -27,6 +29,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       data: homeData,
+      globalData: siteData,
     },
   };
 };

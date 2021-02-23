@@ -2,12 +2,13 @@ import { GoGitCompare } from '@react-icons/all-files/go/GoGitCompare';
 import cls from 'classnames';
 import Link from 'next/link';
 import * as React from 'react';
-import { siteData } from '../../data/siteData';
+import { SiteData } from '../../data/siteData';
 import { PageImage } from '../PageImage/PageImage';
 import styles from './Header.module.scss';
 
 interface Props {
   hideBanner?: boolean;
+  globalData: SiteData;
   title: string;
   banner: string;
   banner_source: string;
@@ -20,6 +21,7 @@ export const Header: React.FC<Props> = ({
   title,
   banner_source,
   banner_position,
+  globalData,
 }) => {
   return (
     <header className={styles.container}>
@@ -37,10 +39,12 @@ export const Header: React.FC<Props> = ({
         </>
       )}
       <div className={cls(styles.wrapper, { [styles.noBanner]: hideBanner })}>
-        <h1>{title}</h1>
+        <h1>
+          {globalData.metaData.title} - {title}
+        </h1>
         <nav>
           <GoGitCompare />
-          {siteData.menuLinks.map((link) => (
+          {globalData.menuLinks.map((link) => (
             <Link key={link.name} href={link.link}>
               {link.name}
             </Link>
