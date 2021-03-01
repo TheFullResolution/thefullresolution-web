@@ -1,0 +1,30 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding-top: $space-double;
+
+  li {
+    display: flex;
+    border-top: 1px solid $gray-dark;
+    padding-top: $space-double;
+    align-items: center;
+    margin-bottom: $space-double;
+
+    svg {
+      margin-right: $space-single;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .heading {
+    margin-bottom: $space-half;
+  }
+}

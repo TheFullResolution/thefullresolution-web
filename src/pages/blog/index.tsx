@@ -1,30 +1,43 @@
 import path from 'path';
+import compareDesc from 'date-fns/compareDesc';
+import toDate from 'date-fns/toDate';
 import fs from 'fs-extra';
+import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 import * as React from 'react';
-import remark from 'remark';
-import mdx from 'remark-mdx';
+import { BlogList } from '../../containers/BlogList/BlogList';
 import { Page } from '../../containers/Page/Page';
+import { blogData, BlogData } from '../../data/blogData';
 import { siteData, SiteData } from '../../data/siteData';
+import { BlogListFilesData } from '../../types/BlogListFilesData';
+import { checkIfMetaWorks } from '../../utils/checkIfMetaWorks';
 
 interface Props {
   globalData: SiteData;
+  data: BlogData;
+  blogList?: BlogListFilesData[];
 }
 
-const BlogList: React.FC<Props> = ({ globalData }) => {
+const BlogListPage: React.FC<Props> = ({ data, globalData, blogList }) => {
   return (
-    <Page title="Blog List" globalData={globalData}>
-      YOLO
+    <Page
+      globalData={globalData}
+      title={data.title}
+      banner={data.banner}
+      banner_source={data.banner_source}
+    >
+      <BlogList data={data} blogList={blogList} />
     </Page>
   );
 };
 
-export default BlogList;
+export default BlogListPage;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const blogPath = './src/pages/blog';
+
   const items = fs.readdirSync(blogPath);
-  const arr = [];
+  const blogList: BlogListFilesData[] = [];
   for (let i = 0; i < items.length; i++) {
     const filePath = path.join(blogPath, items[i]);
 
@@ -34,19 +47,30 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       try {
         const file = fs.readFileSync(filePath, 'utf8');
 
-        const contents = await remark().use(mdx).process(file);
+        const { data } = matter(file);
+        if (!checkIfMetaWorks(data)) {
+          throw Error(`Meta is not correct ${JSON.stringify(data, null, 2)}`);
+        }
 
-        arr.push(contents);
+        blogList.push({
+          meta: { ...data, date: toDate(data.date).toISOString() },
+          url: filePath
+            .replace(/^src\/pages\/blog/, '/blog')
+            .replace(/.mdx?$/, '')
+            .replace(/.tsx?$/, ''),
+        });
       } catch (e) {
         console.log(`Error reading frontmatter of ${filePath}`, e);
       }
     }
   }
 
-  console.log(arr);
-
   return {
     props: {
+      blogList: blogList.sort((a, b) =>
+        compareDesc.arguments(a.meta.date, b.meta.date),
+      ),
+      data: blogData,
       globalData: siteData,
     },
   };

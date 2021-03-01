@@ -28,7 +28,11 @@ declare module 'typography-theme-noriega' {
   export = Theme;
 }
 
-declare module 'remark-mdx' {
+declare module '@mdx-js/mdx' {
+  export const createCompiler: any;
+}
+
+declare module 'unist-util-remove' {
   const remarkPlugin: any;
   export default remarkPlugin;
 }
