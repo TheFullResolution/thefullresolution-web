@@ -9,23 +9,23 @@
   }
 
   @media print {
-      display: none;
+    display: none;
   }
 }
 
 .links {
+  display: flex;
+  justify-content: center;
+
+  a {
     display: flex;
-    justify-content: center;
+    align-items: center;
 
-    a {
-        display: flex;
-        align-items: center;
-
-        svg {
-            margin-right: $space-quarter;
-        }
-        + a {
-            margin-left: $space-double;
-        }
+    svg {
+      margin-right: $space-quarter;
     }
+    + a {
+      margin-left: $space-double;
+    }
+  }
 }

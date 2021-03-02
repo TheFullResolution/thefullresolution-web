@@ -32,6 +32,7 @@ export const Header: React.FC<Props> = ({
             ratioWidth={16}
             className={styles.image}
             objectPosition={banner_position}
+            priority
           />
           {banner_source && <p className={styles.source}>{banner_source}</p>}
         </>

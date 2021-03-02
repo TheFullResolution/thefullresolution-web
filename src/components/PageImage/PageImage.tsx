@@ -10,6 +10,7 @@ export interface PageImageProps {
   alt: string;
   className?: string;
   objectPosition?: string;
+  priority?: boolean;
 }
 
 export const PageImage: React.FC<PageImageProps> = ({
@@ -19,6 +20,7 @@ export const PageImage: React.FC<PageImageProps> = ({
   alt,
   className,
   objectPosition,
+  priority,
 }) => {
   return (
     <div
@@ -31,6 +33,7 @@ export const PageImage: React.FC<PageImageProps> = ({
         layout="fill"
         objectFit="cover"
         objectPosition={objectPosition}
+        priority={priority}
       />
     </div>
   );
