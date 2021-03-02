@@ -1,0 +1,29 @@
+.wrapper {
+  .banner {
+    height: 400px;
+    margin-bottom: $space-double;
+  }
+
+  p {
+    text-align: right;
+  }
+}
+
+
+.image {
+  height: 400px;
+  margin-bottom: $space-double;
+  border: 2px solid $gray;
+}
+
+.extraInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $space-double;
+}
+
+.source {
+  margin-bottom: $space-double;
+}

@@ -1,15 +1,30 @@
-.intro {
-  margin-bottom: $space-double;
-}
+.list {
+  list-style: none;
+  margin: 0;
+  padding-top: $space-double;
 
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: $space-double;
+  li {
+    display: flex;
+    border-top: 1px solid $gray-dark;
+    padding-top: $space-double;
+    align-items: center;
+    margin-bottom: $space-double;
 
-  > span {
-    margin-right: $space-single;
+    svg {
+      margin-right: $space-single;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .heading {
+    margin-bottom: $space-half;
   }
 }
-

@@ -1,41 +1,40 @@
-import * as React from 'react';
-import { GoHistory } from '@react-icons/all-files/go/GoHistory';
 import { GoBriefcase } from '@react-icons/all-files/go/GoBriefcase';
-import { ResumeDataQuery } from '../../graphql-types';
+import { GoHistory } from '@react-icons/all-files/go/GoHistory';
+import * as React from 'react';
+import { Contact } from '../../components/Contact/Contact';
+import type { ResumeData } from '../../data/resumeData';
+import { SiteData } from '../../data/siteData';
 import { formatDate } from '../../utils/formatDate';
-import { Markdown } from '../../components/Markdown/Markdown';
-import * as styles from './Resume.module.scss';
+import styles from './Resume.module.scss';
 
 interface Props {
-  data: ResumeDataQuery;
+  data: ResumeData;
+  globalData: SiteData;
 }
 
-export const Resume: React.FC<Props> = ({ data }) => {
-  const { resume } = data;
-  if (!resume || !resume.section) {
+export const Resume: React.FC<Props> = ({ data, globalData }) => {
+  if (!data || !data.section) {
     return <p>No data at the moment</p>;
   }
   return (
     <div className={styles.container}>
       <div className={styles.onlyPrint}>
-        <h1>{resume.name}</h1>
+        <h1>{data.name}</h1>
         <div className={styles.contact}>
+          <Contact globalData={globalData} />
+        </div>
+      </div>
+      {data.skills.map(({ title, technologies }) => (
+        <div key={title} className={styles.skills}>
+          <h2>{title}</h2>
           <ul>
-            {resume.contact.map(({ item }, index) => (
-              <li key={index}>
-                <Markdown className={styles.item}>{item}</Markdown>
-              </li>
+            {technologies.map((el) => (
+              <li key={el}>{el}</li>
             ))}
           </ul>
         </div>
-      </div>
-      {resume.skills.map(({ title, technologies }) => (
-        <div key={title}>
-          <h2>{title}</h2>
-          <Markdown className={styles.skills}>{technologies}</Markdown>
-        </div>
       ))}
-      {resume.section.map(({ title, content, date_display }) => (
+      {data.section.map(({ title, content, date_display }) => (
         <div key={title}>
           <h2>{title}</h2>
           {content.map(
@@ -86,13 +85,21 @@ export const Resume: React.FC<Props> = ({ data }) => {
                       {technologies && (
                         <div>
                           <h4>Technologies</h4>
-                          <Markdown>{technologies}</Markdown>
+                          <ul>
+                            {technologies.map((el) => (
+                              <li key={el}>{el}</li>
+                            ))}
+                          </ul>
                         </div>
                       )}
                       {accomplishments && (
                         <div>
                           <h4>Accomplishments</h4>
-                          <Markdown>{accomplishments}</Markdown>
+                          <ul>
+                            {accomplishments.map((el) => (
+                              <li key={el}>{el}</li>
+                            ))}
+                          </ul>
                         </div>
                       )}
                     </div>

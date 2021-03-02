@@ -1,28 +1,35 @@
-import { graphql } from 'gatsby'
-import * as React from 'react'
-import { Page } from '../containers/Page/Page'
-import { HomeDataQuery } from '../graphql-types'
-import { Home } from '../containers/Home/Home'
+import { GetStaticProps } from 'next';
+import * as React from 'react';
+import Home from '../containers/Home/Home.mdx';
+import { Page } from '../containers/Page/Page';
+import { homeData, HomeData } from '../data/homeData';
+import { SiteData, siteData } from '../data/siteData';
 
 interface Props {
-  data: HomeDataQuery
+  data: HomeData;
+  globalData: SiteData;
 }
 
-const HomePage: React.FC<Props> = ({ data }) => {
+const HomePage: React.FC<Props> = ({ data, globalData }) => {
   return (
-    <Page page="Personal Page">
-      <Home data={data} />
+    <Page
+      globalData={globalData}
+      title={data.title}
+      banner={data.banner}
+      banner_source={data.banner_source}
+    >
+      <Home />
     </Page>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
 
-export const query = graphql`
-  query HomeData {
-    home {
-      about
-      techStack
-    }
-  }
-`
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      data: homeData,
+      globalData: siteData,
+    },
+  };
+};

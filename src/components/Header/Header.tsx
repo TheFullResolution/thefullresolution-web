@@ -1,73 +1,49 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import * as React from 'react';
 import { GoGitCompare } from '@react-icons/all-files/go/GoGitCompare';
 import cls from 'classnames';
-import { SiteLinksDataQuery } from '../../graphql-types';
-import { Markdown } from '../Markdown/Markdown';
-import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
-import * as styles from './Header.module.scss';
+import Link from 'next/link';
+import * as React from 'react';
+import { SiteData } from '../../data/siteData';
+import { PageImage } from '../PageImage/PageImage';
+import styles from './Header.module.scss';
 
 interface Props {
-  page: string;
-  hideBanner?: boolean;
+  globalData: SiteData;
+  title: string;
   banner?: string;
   banner_source?: string;
   banner_position?: string;
 }
 
 export const Header: React.FC<Props> = ({
-  page,
-  hideBanner,
   banner,
+  title,
   banner_source,
   banner_position,
+  globalData,
 }) => {
-  const { site, metaData }: SiteLinksDataQuery = useStaticQuery(graphql`
-    query SiteLinksData {
-      metaData {
-        title
-        banner
-        banner_source
-      }
-      site {
-        siteMetadata {
-          menuLinks {
-            name
-            link
-          }
-        }
-      }
-    }
-  `);
   return (
     <header className={styles.container}>
-      {!hideBanner && (
+      {banner && (
         <>
-          <ResponsiveImg
-            image={banner ?? metaData.banner}
+          <PageImage
+            src={banner}
             alt="banner"
+            ratioHeight={4}
+            ratioWidth={16}
             className={styles.image}
-            imgStyle={{ objectPosition: banner_position ?? '' }}
+            objectPosition={banner_position}
           />
-          {(banner_source || metaData.banner_source) && (
-            <Markdown className={styles.source}>
-              {banner_source ?? metaData.banner_source}
-            </Markdown>
-          )}
+          {banner_source && <p className={styles.source}>{banner_source}</p>}
         </>
       )}
-      <div className={cls(styles.wrapper, { [styles.noBanner]: hideBanner })}>
+      <div className={cls(styles.wrapper, { [styles.noBanner]: !banner })}>
         <h1>
-          {metaData.title} - {page}
+          {globalData.metaData.title} - {title}
         </h1>
         <nav>
           <GoGitCompare />
-          {site.siteMetadata.menuLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.link}
-              activeClassName={styles.active}
-            >
+          {globalData.menuLinks.map((link) => (
+            <Link key={link.name} href={link.link}>
               {link.name}
             </Link>
           ))}

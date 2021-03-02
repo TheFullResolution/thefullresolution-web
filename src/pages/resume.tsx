@@ -1,61 +1,36 @@
-import { graphql } from 'gatsby';
+import { GetStaticProps } from 'next';
 import * as React from 'react';
-
 import { Page } from '../containers/Page/Page';
 import { Resume } from '../containers/Resume/Resume';
-import { ResumeDataQuery } from '../graphql-types';
+import { resumeData, ResumeData } from '../data/resumeData';
+import { SiteData, siteData } from '../data/siteData';
 
 interface Props {
-  data: ResumeDataQuery;
+  data: ResumeData;
+  globalData: SiteData;
 }
 
-const ResumePage: React.FC<Props> = ({ data }) => {
+const ResumePage: React.FC<Props> = ({ data, globalData }) => {
   return (
     <Page
-      page="Resume"
-      banner={data.resume.banner}
-      banner_position={data.resume.banner_position}
-      banner_source={data.resume.banner_source}
+      title="Resume"
+      globalData={globalData}
+      banner={data.banner}
+      banner_position={data.banner_position}
+      banner_source={data.banner_source}
     >
-      <Resume data={data} />
+      <Resume data={data} globalData={globalData} />
     </Page>
   );
 };
 
 export default ResumePage;
 
-export const query = graphql`
-  query ResumeData {
-    resume {
-      name
-      banner
-      banner_position
-      banner_source
-      phone
-      email
-      contact {
-        item
-      }
-      skills {
-        title
-        technologies
-      }
-      section {
-        title
-        date_display
-        content {
-          name
-          position
-          location
-          url
-          description
-          started
-          present
-          finished
-          technologies
-          accomplishments
-        }
-      }
-    }
-  }
-`;
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      data: resumeData,
+      globalData: siteData,
+    },
+  };
+};

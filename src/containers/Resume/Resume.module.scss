@@ -1,23 +1,4 @@
-:root {
-  --space-quarter: #{$space-quarter};
-  --space-half: #{$space-half};
-  --space-single: #{$space-single};
-  --space-double: #{$space-double};
-}
 
-@media print {
-  :root {
-    --space-quarter: #{$space-quarter / 2};
-    --space-half: #{$space-half / 2};
-    --space-single: #{$space-single / 2};
-    --space-double: #{$space-double / 2};
-  }
-
-  @page {
-    size: auto;
-    margin: 10mm;
-  }
-}
 
 .onlyPrint {
   display: none;
