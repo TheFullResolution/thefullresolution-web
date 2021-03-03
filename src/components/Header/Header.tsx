@@ -34,7 +34,12 @@ export const Header: React.FC<Props> = ({
             objectPosition={banner_position}
             priority
           />
-          {banner_source && <p className={styles.source}>{banner_source}</p>}
+          {banner_source && (
+            <div
+              className={styles.source}
+              dangerouslySetInnerHTML={{ __html: banner_source }}
+            />
+          )}
         </>
       )}
       <div className={cls(styles.wrapper, { [styles.noBanner]: !banner })}>
