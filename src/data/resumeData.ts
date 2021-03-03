@@ -61,13 +61,18 @@ export const resumeData: ResumeData = {
         {
           started: '2020-08-01',
           position: 'Senior Frontend Engineer',
-          technologies: ['Typescript, Angular', 'Cypress'],
+          technologies: [
+            'Typescript',
+            'React, NextJS, Angular',
+            'Sass, Styled Components',
+            'Jest, Cypress',
+          ],
           name: 'Swapfiets',
           url: 'https://swapfiets.nl/en/',
           finished: '',
           accomplishments: [
-            'Finalized the release of the new website for the new markets.',
-            'Leading the SEO discussion and initiating tech stack discussion.',
+            'Planning and rewrite of Angular Websites to React/NextJS',
+            'Successful implementation of best SEO/Accessibility practices',
           ],
           location: 'Amsterdam, NL',
           present: true,
