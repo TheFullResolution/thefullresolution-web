@@ -18,7 +18,7 @@ export const siteData = {
   metaData: {
     title: 'Jedrzej (Andrew) Lewandowski',
     description:
-      'This is a personal page of Jedrzej Lewandowski, Front-End Developer passionate about learning and building awesome websites.',
+      'This website is a personal page of Jedrzej Lewandowski, a Front-End Developer passionate about learning and building awesome websites.',
     contact: {
       phone: '+31 631 044 555',
       phoneLabel: 'Phone: +31 631 044 555',

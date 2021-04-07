@@ -79,7 +79,7 @@ export const resumeData: ResumeData = {
           location: 'Amsterdam, NL',
           present: true,
           description:
-            'Swapfiets offers hassle-free urban mobility solutions, in a form of a fixed price a month subscription for a bike, an electric scooter, or an electric bike.',
+            'Swapfiets offers hassle-free urban mobility solutions in a fixed price-a-month subscription for a bike, an electric scooter, or an electric bike.',
         },
         {
           started: '2018-12-01',
@@ -94,12 +94,12 @@ export const resumeData: ResumeData = {
           finished: '2020-07-30T22:00:00.000Z',
           accomplishments: [
             'Complete rewrite of the lister page to decouple frontend and backend filters, improve the performance and maintainability.',
-            'Deploying a completely redesigned new accommodation page with improved accessibility, mobile design, and new features.',
+            'Deployed a wholly redesigned new accommodation page with improved accessibility, mobile design, and new features.',
           ],
           location: 'Amsterdam, NL',
           present: false,
           description:
-            'Zoover.nl a Dutch travel platform, providing information about holiday destinations and offering packages from major tour operators.',
+            'Zoover.nl, a Dutch travel platform, providing information about holiday destinations and offering packages from major tour operators.',
         },
         {
           started: '2018-07-01',
@@ -131,8 +131,8 @@ export const resumeData: ResumeData = {
           url: 'https://greenhome.nl/over-greenhome',
           finished: '2018-06-30',
           accomplishments: [
-            'Implementation of end to end testing and integration testing with Cypress and Jest.',
-            'Rewrite and transfer of greenhome.nl from Angular 1.5 to React.',
+            'Implementation of end-to-end testing and integration testing with Cypress and Jest.',
+            'Rewrite and transfer greenhome.nl from Angular 1.5 to React.',
           ],
           location: 'Amsterdam, NL',
           description:
