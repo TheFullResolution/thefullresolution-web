@@ -1,5 +1,5 @@
 import { GoGitCompare } from '@react-icons/all-files/go/GoGitCompare';
-import cls from 'classnames';
+import cls from 'clsx';
 import Link from 'next/link';
 import * as React from 'react';
 import { SiteData } from '../../data/siteData';

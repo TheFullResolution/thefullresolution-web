@@ -1,4 +1,4 @@
-import cls from 'classnames';
+import cls from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 import styles from './PageImage.module.scss';
