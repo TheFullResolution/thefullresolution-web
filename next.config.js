@@ -12,7 +12,22 @@ const withMDX = require('@next/mdx')({
 });
 
 module.exports = withMDX(
+
   withBundleAnalyzer({
+    async headers() {
+      return [
+        {
+          source: '/:all*(svg|jpg|png)',
+          locale: false,
+          headers: [
+            {
+              key: 'Cache-Control',
+              value: 'public, max-age=315400000, must-revalidate',
+            }
+          ],
+        },
+      ]
+    },
     pageExtensions: ['ts', 'tsx', 'mdx'],
     sassOptions: {
       //LOOK OUT FOR THAT SHIT - CHANGES NAMES DEPENDS ON RELEASE (NEXTJS uses prependData, sass loader uses additionalData)
