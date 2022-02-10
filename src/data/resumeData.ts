@@ -1,4 +1,4 @@
-import marked from 'marked';
+import { marked } from 'marked';
 
 export interface ResumeData {
   skills: Skill[];
@@ -217,7 +217,7 @@ export const resumeData: ResumeData = {
   ],
   name: 'Jedrzej (Andrew) Lewandowski',
   banner: '/images/61310017.jpg',
-  banner_source: marked('Photo by me on [AnalogPics](https://analogpics.com/)'),
+  banner_source: marked.parse('Photo by me on [AnalogPics](https://analogpics.com/)'),
   phone: '+31 631 044 555',
   links: [
     {

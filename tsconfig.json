@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-
-    },
+    "paths": {},
     "allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
@@ -21,8 +19,9 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2019",
-    "typeRoots": ["@types", "node_modules/@types"]
+    "typeRoots": ["@types", "node_modules/@types"],
+    "incremental": true
   },
-  "exclude": ["node_modules", "cypress"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "cypress"]
 }

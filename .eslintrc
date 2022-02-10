@@ -12,16 +12,16 @@
       "version": "detect"
     }
   },
-  "plugins": ["import"],
+  "plugins": ["import", "testing-library"],
   "extends": [
-    "plugin:testing-library/recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:mdx/recommended",
-    "plugin:prettier/recommended"
+    "next",
+    "next/core-web-vitals",
+    "prettier"
+
   ],
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
