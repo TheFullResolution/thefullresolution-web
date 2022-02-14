@@ -39,7 +39,7 @@ export const Page: React.FC<Props> = ({
       </title>
       <style>{globalStyles}</style>
       <link
-        href={`//fonts.googleapis.com/css?family=${googleFonts}&display=swap`}
+        href={`//fonts.googleapis.com/css?family=${googleFonts}&display=optional`}
         rel={'stylesheet'}
         type={'text/css'}
       />

@@ -1,9 +1,9 @@
 .onlyPrint {
-  display: none;
-
-  @media print {
-    display: initial;
-  }
+  //display: none;
+  //
+  //@media print {
+  //  display: initial;
+  //}
 }
 
 .notInPrint {
@@ -14,7 +14,14 @@
 
 .contact {
   margin-bottom: var(--space-single);
-  margin-top: var(--space-double);
+  margin-top: var(--space-single);
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+
+  .contactWrapper {
+    align-self: end;
+  }
 
   ul {
     display: grid;
@@ -50,6 +57,10 @@
     padding-bottom: var(--space-half);
     margin-top: var(--space-single);
     margin-bottom: var(--space-single);
+  }
+
+  .skills h2 {
+    margin-top: var(--space-half);
   }
 
   h3 {
@@ -104,6 +115,7 @@
   .positionHeader {
     margin-right: auto;
     display: flex;
+    align-items: center;
     margin-bottom: var(--space-half);
     @media print {
       margin-bottom: 0;
@@ -114,6 +126,15 @@
   svg {
     margin-right: var(--space-quarter);
     flex: none;
+  }
+
+  .logo {
+    display: flex;
+    margin-right: var(--space-half);
+
+    @media print {
+      margin-right: var(--space-single);
+    }
   }
 }
 
@@ -136,7 +157,7 @@
   .container {
     color-adjust: exact;
     h2 {
-      margin-top: 0;
+      margin-top: var(--space-quarter);
       font-size: $font-single;
     }
     h3,

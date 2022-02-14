@@ -1,3 +1,8 @@
+// @ts-check
+
+/**
+ * @type {import('next').NextConfig}
+ **/
 /* eslint-disable @typescript-eslint/no-var-requires,import/order */
 const path = require('path');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
