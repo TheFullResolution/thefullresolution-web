@@ -1,9 +1,9 @@
 .onlyPrint {
-  //display: none;
-  //
-  //@media print {
-  //  display: initial;
-  //}
+  display: none;
+
+  @media print {
+    display: initial;
+  }
 }
 
 .notInPrint {
